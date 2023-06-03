@@ -1,0 +1,26 @@
+
+body { margin:0 auto; background:#eee; font-family:Georgia, "Times New Roman", Times, serif}
+	.page-holder { width:909px; background-color:#fff; margin:0 auto; height:1286px}
+	.top-heading {  border: solid #56a4ba;
+  transform: translate(134px, -12px) rotate(90deg);
+  width: 390px;
+  height: 60px; float:right; font-size:42px; background-color:#2bcaf7; color:#FFFFFF; overflow:hidden;}
+  
+  .head1 { padding:19px 192px; text-transform:uppercase;}
+  
+  
+  .img-responsive { max-width:100%;}
+  .img { margin-top:0px; padding-bottom:30px;}
+  .img .logo { background:url(http://web3creations.com/old/images/logo.jpg); width:358px; height:74px; margin-top:25px; margin-bottom:10px;}
+  .mail { margin-top:0px; float:right; text-align:right; padding-right:10px;}
+  .invoice_no { background-color:#eee; padding:4px 15px; border-radius:20px 0 20px 0;}
+  .page2 { padding:0 30px;}
+  p { padding:0px; margin:6px; line-height:25px;}
+  
+  .invoice_to { padding:20px 0;}
+  
+  .col_1 { float:left; width:46%;}
+  .col_2 { float:left; width:76.3%;}
+  .col_3 { float:left; width:21.5%;}
+  .col_4 { width:24.9%; float:left;}
+  .box{ width:48.8%; float:left;}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAHYOGNIDHI</title>
+    <link rel="stylesheet"  href="sahyog.css">
+       
+</head>
+<body id="pin">
+   <!---- <form id="form1" runat="server">
+        <div class="container">
+     <div class="row">
+         <div class="col-md-10 col-md-offset-1">
+                 <div class="form-section-head">
+                     Profile
+                     </div>
+                    <div class="form-section">
+                         <div class="row">
+                             <div class="col-md-12">
+                              <div class="form-group">
+                                  <div style="margin:10px;"></div>
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <label>Name</label>
+                                           <input type="text" ID="txtName" runat="server" CssClass="form-control" placeholder="Enter Name"></asp:TextBox>
+                                      </div>
+                                      <div class="col-md-6">
+                                         <label>Mobile No.</label>
+                                          <asp:TextBox ID="txtMobileNo" runat="server" CssClass="form-control" placeholder="Enter Mobile No"></asp:TextBox>
+                                      </div>
+                                   </div>
+                                   <div style="margin:10px;"></div>
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <label>Email</label>
+                                           <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Enter Email"></asp:TextBox>
+                                      </div>
+                                      <div class="col-md-6">
+                                         <label>Address</label>
+                                          <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control" placeholder="Enter Address"></asp:TextBox>
+                                      </div>
+                                   </div>
+                                    <div style="margin:10px;"></div>
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <label>Apply For</label>
+                                           <asp:DropDownList ID="ddlApplyFor" runat="server" CssClass="form-control">
+                                              <asp:ListItem>:::Select:::</asp:ListItem>
+                                              <asp:ListItem>Member</asp:ListItem>
+                                              <asp:ListItem>Apply Loan</asp:ListItem>
+                                              <asp:ListItem>Saving Account</asp:ListItem>
+                                              <asp:ListItem>Investor</asp:ListItem>
+                                          </asp:DropDownList> 
+                                      </div>
+                                      <div class="col-md-6">
+                                          <label>Occupation</label>
+                                            <asp:DropDownList ID="ddlOccupation" runat="server" CssClass="form-control">
+                                              <asp:ListItem>:::Select Occupation:::</asp:ListItem>
+                                              <asp:ListItem>Member</asp:ListItem>
+                                              <asp:ListItem>Apply Loan</asp:ListItem>
+                                              <asp:ListItem>Saving Account</asp:ListItem>
+                                              <asp:ListItem>Investor</asp:ListItem>
+                                          </asp:DropDownList>
+                                      </div>
+                                   </div>
+                                <div style="margin:10px;"></div>
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <label>Refrence Code(Optional)</label>
+                                          <asp:TextBox ID="txtRefrenceCode" runat="server" CssClass="form-control" placeholder="Enter Refrence Code"></asp:TextBox>
+                                      </div>
+                                   </div>
+                                   <div style="margin:10px;"></div>
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <label>Pan Card</label>
+                                          <asp:FileUpload ID="FileUpload_PanCard" runat="server" />
+                                          <asp:Button ID="btnUpload_PanCard" runat="server" Text="Upload" />
+                                          <asp:Button ID="btnRemove_PanCard" runat="server" Text="Remove" />
+                                          <asp:Image ID="Image_PanCard" runat="server" ImageUrl="~/images/uploadimage.png" cssclass="" BorderStyle="None" Width="100px" Height="100px"/>
+                                      </div>
+                                       <div class="col-md-6">
+                                          <label>Address Proof</label>
+                                            <asp:FileUpload ID="FileUpload_AddressProof" runat="server" />
+                                          <asp:Button ID="btnUpload_AddressProof" runat="server" Text="Upload" />
+                                          <asp:Button ID="btnRemove_AddressProof" runat="server" Text="Remove" />
+                                           <asp:Image ID="Image_AddressProof" runat="server" BorderStyle="None" cssclass="" ImageUrl="~/images/uploadimage.png" Width="100px" Height="100px"/>
+                                      </div>
+                                   </div>
+                              </div>
+                          </div>
+                         </div>
+                        <div class="form-section">
+                            <div class="row">
+                                      <div class="col-md-12">
+                                          <center>
+                                              <asp:Button ID="btnSubmit" runat="server" Text="Submit" Cssclass="btn btn-info"/>
+                                          </center> 
+                                      </div>     
+                                  </div>
+                        </div>
+                     </div>
+             </div>
+     </div>
+ </div>
+ </form>
+-->
+<div class="container">
+        <div class="form-section">
+        
+        <div class="header">
+            PROFILE
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-md-12">
+                <div style="margin:30px"></div>
+              <div class="row">
+                <div class="form-group form-box" >
+                    <label id="one">Name</label>
+                    <input type="text" class="form-control" id="ONE" placeholder="Name"> 
+                    <label id="two"> Mobile</label>
+                    <input type="text" class="form-control" id="TWO" placeholder="Mobile">
+                    </div>  
+              </div>      
+            </div>
+            <div style="margin:30px"></div>
+            <div class="row">
+                <div class="form-group form-box">
+                    <label id="three">Email</label>
+                    <input type="text" class="form-control" id="THREE" placeholder="Email"> 
+                    <label id="four">Address</label>
+                    <input type="text" class="form-control" id="FOUR" placeholder="Address">
+                    </div>  
+              </div> 
+              <div style="margin:30px"></div>
+              <div class="row">
+                <div class="form-group form-box">
+                    <label id="five">Occupation</label>
+                    <select id="FIVE">
+                       <option>Occupation</option>
+                       <option> Self-Employed</option>
+                       <option>Private Sector</option>
+                       <option>Goverment Sector</option>
+                       <option>other</option>
+                    </select>
+                    
+                    <label id="six">Apply For</label>
+                    <select id="SIX">
+                        <option>select-one</option>
+                        <option>Member</option>
+                        <option> Apply loan</option>
+                        <option>Saving Account</option>
+                        <option>Invester</option>
+                     </select>
+                    </div>  
+              </div>
+              <div style="margin:30px"></div>
+              <div class="row">
+                <div class="form-group form-box"></div>
+                    <label id="seven">Pan Card</label><br>
+                    <input type="file" class="form-control" id="SEVEN"><br><br>
+                    <label id="eight">Address Proof</label><br>
+                    <input type="file" class="form-control" id="EIGHT">
+                    </div>  
+              </div>
+              <br><br>
+              <center>
+                <button type="submit" class="btn-md btn-theme w-100">Submit</button>
+             </center>
+            </div>
+            
+            
+                
+        </div>
+    
+    </div>
+
+</div>
+
+</body>
+</html>

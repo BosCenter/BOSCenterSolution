@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home-Easy-Talk</title>
+    <link rel="stylesheet" href="../Easy Talk - Copy/CSS/style.css">
+    <script src="../P6/JS/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="@fortawesome:registry=https://npm.fontawesome.com/">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  </head>
+  <body style="display: flex; align-items: center; flex-direction: column; justify-content: center; text-align: center; background-color: rgb(145, 200, 240);">
+
+    <div class="container-fluid" style="width: 100%; display: flex; align-items: center; justify-content: center; background-color: rgb(145, 200, 240);">
+      <div class="row" style="background: linear-gradient(to left, rgb(145, 200, 240),rgb(248, 225, 160)); width: 100%; margin-top: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.8 ); border-radius: 5px;">
+    
+    
+    
+            <!-- <div class="col-7" style="display: flex; align-items: center; background: #622EA2; padding: 8px;">
+              <i class="fa-regular fa-user" style="font-size: 21px; padding: 8px; border-radius: 8px; background-color: white; color: #622EA2;"></i>
+                <p style="position: relative; top: 5px; left: 5px; font-weight: bold; color: white; background-color: #622EA2; font-size: 14px;">Add Address <i class="fa-sharp fa-solid fa-caret-down" style="color: white;"></i></p>
+            </div>
+    
+    
+            <div class="col-3" style="display: flex; align-items: center; justify-content: flex-start; gap: 15px; background-color: #622EA2;">
+              <i class="fa-solid fa-qrcode" style="color: white; font-size: 32  px;  padding: 3px; border-radius: 4px;"></i> -->
+              
+              
+              <!-- <p style="color: white;">QR Code</p>  -->
+              <!-- <i class='bx bx-bell' style="color: white; font-size: 28px;"></i> -->
+              <!-- <i class="fa-solid fa-question" style="color: white; font-size: 21px;"></i> -->
+              <!-- <i class="fa-solid fa-wallet" style="color: white;"></i> -->
+    
+          <!-- </div> -->
+            <!-- <div class="col-2" style="display: flex; align-items: center; justify-content: flex-end; gap: 15px; background-color: #622EA2;"> -->
+    
+                <!-- <i class="fa-solid fa-qrcode" style="color: white; font-size: 21px;  padding: 3px; border-radius: 4px;"></i> -->
+    
+                <!-- <i class='bx bx-bell' style="color: white; font-size: 28px;"></i> -->
+    
+                <!-- <i class="fa-solid fa-question" style="color: white; font-size: 21px;"></i> -->
+                <!-- <i class="fa-solid fa-wallet" style="color: white;"></i> -->
+    
+            <!-- </div> -->
+    
+    
+    
+    
+            <div class="col-12" style="display: flex; align-items: center; justify-content: space-between; padding: 8px; position: relative;">
+              <div class="box-one" style="display: flex;">
+              <img src="../Easy Talk - Copy/Images/Header/user-info.png" style="border-radius: 8px;" width="40px"/>
+                <p style="position: relative; top: 5px; left: 5px; font-weight: bold; color: black; font-size: 14px;">Add Address
+                <img src="../Easy Talk - Copy/Images/Header/drop-down.png" width="20px"></p>
+              </div>
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/QR-code.png"  width="40px"/>
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/bell.png"  width="40px"/>
+            </div>
+        </div>
+  </div>
+
+    <div class="container-fluid" style="display: flex; flex-direction: column; gap: 6px; background-color: rgb(145, 200, 240); padding-bottom: 80px; ">
+
+
+
+
+      <center>
+      <div class="row" style="background-color: rgb(145, 200, 240);  margin-top: 5px;">
+      <!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+  
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../Easy Talk - Copy/Images/img/one.png" alt="Los Angeles" class="d-block w-100" style="border-radius: 8px;">
+      </div>
+      <div class="carousel-item">
+        <img src="../Easy Talk - Copy/Images/img/two.png" alt="Chicago" class="d-block w-100" style="border-radius: 8px;">
+      </div>
+      <div class="carousel-item">
+        <img src="../Easy Talk - Copy/Images/img/three.png" alt="New York" class="d-block w-100" style="border-radius: 8px;">
+      </div>
+    </div>
+  
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+  </div>
+        </div>
+      </center>
+
+
+        <center >
+        <div class="row" style="display: flex; align-items: center; gap: 10px; justify-content: center; width: 100%; border-radius: 15px; background: linear-gradient(to left, rgb(145, 200, 240),rgb(248, 225, 160)); box-shadow: 0 0 5px rgba(0,0,0,0.8 );">
+            <div class="col-12"><h5 style="font-size: 16px; font-weight: bold; text-align: start; margin-top: 10px;">Transfer Money</h5></div>
+            <div class="row" style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Tra mon/mobile.jpg"  width="40px" style="border-radius: 5px;"/>
+                <p style="font-size: 11px;  color: black; width: 190%; font-weight: 450; margin-top: 3px;">Fund<br/>Transfer</p>
+              </div>
+              <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 22px;">
+                <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Tra mon/to-bank.png"  width="40px" style="border-radius: 5px;"/>
+                <p style="font-size: 11px; color: black; width: 190%; font-weight: 450; margin-top: 3px;">To Bank/<br>UPI ID</p>
+              </div>
+              <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <!-- <i class="fa-sharp fa-solid fa-building-columns" style="padding: 8px; border-radius: 8px; color: white; background-color: #622EA2; font-size: 25px;"></i> -->
+                <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Tra mon/to-self.jpg"  width="40px" style="border-radius: 5px;"/>
+                <p style="font-size: 11px; width: 190%; font-weight: 450; color: black; margin-top: 3px;">To Self<br>Account</p>
+              </div>
+              <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <!-- <i class="fa-sharp fa-solid fa-building-columns"  style="padding: 8px; border-radius: 8px; color: white; background-color: #622EA2; font-size: 25px;"></i> -->
+                <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Tra mon/check-bank.jpg"  width="40px" style="border-radius: 5px;"/>
+                <p style="font-size: 11px; width: 200%; font-weight: 450; color: black; margin-top: 3px;">Add<br/>Amount</p>
+              </div>
+            </div>
+            <div class="row" style="display: flex; align-items: center; justify-content: center; background-color: #E7F0FF; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; position: relative; top: 5px;">
+              <div class="col-12" style="display: flex; align-items: center; justify-content: space-between; margin-top: 15px;">
+                <p style="font-size: 15px; font-weight: bold;">My UPI ID:<p style="font-size: 12px; font-weight: 500;">8825689753@ybl</p></p>
+                <i class="fa-solid fa-chevron-right" style="position: relative; bottom: 7px; color: grey;"></i>
+              </div>
+            </div>
+        </div>
+      </center>
+
+
+
+
+
+
+
+      <center>
+        <div class="row" style="width: 100%; display: flex; justify-content: space-between; padding: 5px; align-items: flex-start; margin-top: 3px;">
+          <div class="col-4 col-offset-1" style="background-color: rgb(248, 199, 63); color: white; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 3px 10px; border-radius: 8px; position: relative; right: 4px;">
+            <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/reward/wallet.png" width="40px"/>
+            <p style="font-size: 10px; width: 150%; margin-top: 3px; position: relative; top: 3px; color: black; font-weight: 500;">Easy talk Wallet</p>
+          </div>
+          <div class="col-4 col-offset-1" style="background-color: rgb(248, 199, 63); color: white; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 3px 10px; border-radius: 8px;">
+            <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/reward/reward.png" width="40px"/>
+            <p style="font-size: 10px; width: 150%; margin-top: 3px; position: relative; top: 3px; color: black; font-weight: 500;">Rewards <br></p>
+          </div>
+          <div class="col-4 col-offset-1" style="background-color: rgb(248, 199, 63); color: white; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 3px 10px; border-radius: 8px; position: relative; left: 4px;">
+            <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/reward/refer-&.png" width="40px"/>
+            <P style="font-size: 10px; width: 180%; margin-top: 3px; position: relative; top: 3px; color: black; font-weight: 500;">Refer & Get ₹100</P>
+          </div>
+        </div>
+      </center>
+
+
+
+
+
+
+
+
+
+      <center>
+        <div class="row" style="display: flex; align-items: center; gap: 10px; justify-content: center; width: 100%; border-radius: 15px;  background: linear-gradient(to left, rgb(145, 200, 240),rgb(248, 225, 160)); margin-top: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.8 ); ">
+          <div class="col-12"><h5 style="font-size: 16px; font-weight: bold; text-align: start; margin-top: 10px;">Recharge & Pay Bills</h5></div>
+          <div class="row" style="display: flex; align-items: center; justify-content: space-between; padding: 5px; margin: -10px;">
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/TM/mobile.jpg" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px;  color: black; width: 190%; font-weight: 450;">Mobile<br>Recharge</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;  position: relative; bottom: 8px;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/TM/dth.jpg" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px;  color: black; width: 190%; font-weight: 450;">DTH</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            position: relative; bottom: 8px;">       
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/TM/electricity.jpg" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px; width: 190%; font-weight: 450; color: black;">Electricity</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/TM/card-card.png" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px; width: 200%; font-weight: 450; color: black; margin-top: 3px;">Credit Card<br>Bill Pament</p>
+            </div>
+          </div>
+          <div class="row" style="display: flex; align-items: center; justify-content: space-between; margin: -10px;">
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            position: relative; bottom: 8px;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/TM/rent.jpg" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px;  color: black; width: 190%; font-weight: 450; margin-top: 3px;">Rent Payment</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 22px;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/TM/loan-repayment.jpg" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px; color: black; width: 190%; font-weight: 450; margin-top: 3px;">Loan<br>Repayment</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/TM/education-loan.png" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px; width: 190%; font-weight: 450; color: black; margin-top: 3px;">Education<br>Fees</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            position: relative; bottom: 8px;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/TM/next.png" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px; width: 200%; font-weight: 450; color: black; margin-top: 3px;">See All</p>
+            </div>
+          </div>
+        </div>
+      </center>
+
+
+
+      <center>
+        <div class="row" style="display: flex; align-items: center; gap: 10px; justify-content: center; width: 100%; border-radius: 15px; background: linear-gradient(to left, rgb(145, 200, 240),rgb(248, 225, 160)); box-shadow: 0 0 5px rgba(0,0,0,0.8 ); margin-top: 5px;">
+          <div class="col-12"><h5 style="font-size: 16px; font-weight: bold; text-align: start; margin-top: 10px;">Insurance</h5></div>
+          <div class="row" style="display: flex; align-items: center; justify-content: space-between; padding: 5px; margin: -10px;">
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Insurance/bike.png" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px;  color: black; width: 190%; font-weight: 450; margin-top: 5px;">Bike</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 22px;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Insurance/car.png" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px; color: black; width: 190%; font-weight: 450; margin-top: 5px;">Car</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 5px;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Insurance/health.png" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px; width: 190%; font-weight: 450; color: black; margin-top: 5px;">Health++</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; top: 5px ;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Insurance/PA.png" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px; width: 200%; font-weight: 450; color: black; margin-top: 5px;">Personal<br>Accident</p>
+            </div>
+          </div>
+          <div class="row" style="display: flex; align-items: center; justify-content: space-between; margin: -10px;">
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Insurance/TL.png" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px;  color: black; width: 190%; font-weight: 450; margin-top: 5px;">Term<br>Life</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 22px;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Insurance/IF.png" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px; color: black; width: 190%; font-weight: 450; margin-top: 3px;">International<br>Travel</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Insurance/IR.png" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px; width: 190%; font-weight: 450; color: black; margin-top: 3px;">Insurance<br>Renewal</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; bottom: 8px;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Insurance/next.png" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px; width: 200%; font-weight: 450; color: black; margin-top: 5px;">See All</p>
+            </div>
+          </div>
+        </div>
+      </center>
+
+
+
+
+      <center>
+        <div class="row" style="display: flex; align-items: center; gap: 10px; justify-content: center; width: 100%; border-radius: 15px;  background: linear-gradient(to left, rgb(145, 200, 240),rgb(248, 225, 160)); margin-top: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.8 );">
+          <div class="col-12"><h5 style="font-size: 16px; font-weight: bold; text-align: start; margin-top: 10px;">Travel Bookings</h5></div>
+          <div class="row" style="display: flex; align-items: center; justify-content: space-between; padding: 5px; margin: -10px;">
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Travel Booking/flight.png" style="width: 40px; border-radius: 5px;">
+              <p style="font-size: 11px;  color: black; width: 190%; font-weight: 450;">Flights</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 22px;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Travel Booking/train.jpg" style="width: 40px; border-radius: 5px;">
+              <p style="font-size: 11px; color: black; width: 190%; font-weight: 450;">IRCTC</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Travel Booking/bus.jpg" style="width: 40px; border-radius: 5px;">
+              <p style="font-size: 11px; width: 190%; font-weight: 450; color: black;">Bus</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Travel Booking/hotel.png" style="width: 40px; border-radius: 5px;">
+              <p style="font-size: 11px; width: 200%; font-weight: 450; color: black;">Hotels</p>
+            </div>
+          </div>
+        </div>
+      </center>
+
+
+
+
+      <center>
+        <div class="row" style="display: flex; align-items: center; gap: 10px; justify-content: center; width: 100%; border-radius: 15px;  background: linear-gradient(to left, rgb(145, 200, 240),rgb(248, 225, 160)); margin-top: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.8 );">
+          <div class="col-12"><h5 style="font-size: 16px; font-weight: bold; text-align: start; margin-top: 10px;">Switch</h5></div>
+          <div class="row" style="display: flex; align-items: center; justify-content: space-between; padding: 5px; margin: -10px;">
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <!-- <i class="fa-regular fa-user" style="padding: 8px; border-radius: 8px; color: whitesmoke; background-color: #622EA2; font-size: 25px;"></i> -->
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Switch/swiggy.png" style="border-radius: 5px;" width="40px">
+              <p style="font-size: 11px;  color: black; width: 190%; font-weight: 450; margin-top: 3px;">Swiggy</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 22px;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Switch/dmrc.png" style="border-radius: 5px;" width="40px">
+              <p style="font-size: 11px; color: black; width: 190%; font-weight: 450; margin-top: 3px;">Delhi Metro</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Switch/myntra.png" style="border-radius: 5px;" width="40px">
+              <p style="font-size: 11px; width: 190%; font-weight: 450; color: black; margin-top: 3px;">Myntra</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; ">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Insurance/next.png" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px; width: 200%; font-weight: 450; color: black; margin-top: 3px;">See All</p>
+            </div>
+          </div>
+        </div>
+      </center>
+
+
+
+
+
+
+      <center>
+        <div class="row" style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px; justify-content: center; width: 100%; border-radius: 15px;  background: linear-gradient(to left, rgb(145, 200, 240),rgb(248, 225, 160)); margin-top: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.8 );">
+          <div class="col-12"><h5 style="font-size: 16px; font-weight: bold; text-align: start; margin-top: 10px;">Subscriptions</h5></div>
+          <div class="row" style="display: flex; align-items: center; justify-content: space-between; padding: 5px; margin: -10px;">
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+ 
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Subcription/disney-hotstar.png" style="width: 40px; border-radius: 5px;">
+              <p style="font-size: 11px;  color: black; width: 190%; font-weight: 450; margin-top: 5px;">Hotstar</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 22px;">
+              <!-- <i class="fa-sharp fa-solid fa-building-columns" style="padding: 8px; border-radius: 8px; color: whitesmoke; background-color: #622EA2; font-size: 25px;"></i> -->
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Subcription/tinder.png" style="width: 40px; border-radius: 5px;">
+              <p style="font-size: 11px; color: black; width: 190%; font-weight: 450; margin-top: 5px;">Tinder</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <!-- <i class="fa-sharp fa-solid fa-building-columns" style="padding: 8px; border-radius: 8px; color: whitesmoke; background-color: #622EA2; font-size: 25px;"></i> -->
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Subcription/zee5.jpeg" style="width: 40px; border-radius: 5px;">
+              <p style="font-size: 11px; width: 190%; font-weight: 450; color: black; margin-top: 5px;">zee5</p>
+            </div>
+            <div class="col-3" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/Subcription/flipkart.png" width="40px" style="border-radius: 5px;" />
+              <p style="font-size: 11px; width: 200%; font-weight: 450; color: black; margin-top: 5px;">See All</p>
+            </div>
+          </div>
+        </div>
+      </center>
+    </div>
+
+    <div class="footer row" style="background-color: rgb(3, 100, 168); display: flex; align-items: center; justify-content: space-around; border: 8px solid rgb(3, 100, 168); width: 105%; padding: 12px; position: fixed; top: calc(100vh - 9vh); height: 14vh;" >
+      <div class="col-4" style="position: relative; bottom: 11px; cursor: pointer; display: flex; flex-direction: column; text-align: center; align-items: center; justify-content: center;">
+      <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/footer/history.jpg" width="35px"/>
+      <a href="#" style="text-decoration: none; color: white; font-size: 19px; font-weight: 500; position: relative; bottom: 8px;">History</a>
+      </div>
+      <div class="col-4" style="position: relative; bottom: 11px; display: flex; flex-direction: column; text-align: center; align-items: center; justify-content: center; cursor: pointer;">
+      <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/footer/home.png" width="35px"/>
+      <a href="#" style="text-decoration: none; color: white; font-size: 19px; font-weight: 500; position: relative; bottom: 8px;">Store</a>
+      </div>
+      <div class="col-4" style="position: relative; bottom: 11px; cursor: pointer; display: flex; flex-direction: column; text-align: center; align-items: center; justify-content: center;">
+      <img src="../Easy Talk - Copy/Images/All-img/Nav-Bar/footer/support.png" width="35px"/>
+      <a href="#" style="text-decoration: none; color: white; font-size: 19px; font-weight: 500; position: relative; bottom: 8px;">Support</a>
+      </div>
+    </div>
+
+    <!-- Bootstrap CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>

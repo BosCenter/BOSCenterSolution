@@ -1,0 +1,37 @@
+<div>
+	<table class="grid-view-themeclass" cellspacing="0" rules="all" border="1" id="ContentPlaceHolder1_GridView1" style="border-style:None;border-collapse:collapse;overflow:scroll;">
+		<tr>
+			<th scope="col" style="width:100px;">&nbsp;</th><th scope="col">SrNo</th><th scope="col">CallRefrenceNo</th><th scope="col">CallDate</th><th scope="col">CallStatus</th><th scope="col">CallBy</th><th scope="col">CustomerName</th><th scope="col">MobileNo</th><th scope="col">ItemType</th><th scope="col">Category</th><th scope="col">ProductCode</th><th scope="col">ProductName</th><th scope="col">TechCode</th><th scope="col">TechName</th><th scope="col">PromiseDate</th><th scope="col">PromiseTime</th>
+		</tr><tr>
+			<td style="width:100px;">
+                                          
+                                          <a id="ContentPlaceHolder1_GridView1_LinkButton2_0" class="btn btn-Success mar_top10" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridView1$ctl02$LinkButton2&#39;,&#39;&#39;)"><i class="fa fa-pencil">&nbsp;Allot</i></a>
+                                  </td><td>1</td><td>10094/A19/09/1001</td><td>15 Jan 2019</td><td>Pending</td><td>Dealer</td><td>Miss. sa11</td><td>9876543210</td><td>Test1</td><td>Tester2</td><td>1001</td><td>asdfgh</td><td>E</td><td>SAPNA RANA</td><td>15 Jan 2019</td><td>05:43-PM</td>
+		</tr><tr>
+			<td style="width:100px;">
+                                          
+                                          <a id="ContentPlaceHolder1_GridView1_LinkButton2_1" class="btn btn-Success mar_top10" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridView1$ctl03$LinkButton2&#39;,&#39;&#39;)"><i class="fa fa-pencil">&nbsp;Allot</i></a>
+                                  </td><td>2</td><td>10092/A19/07/1001</td><td>15 Jan 2019</td><td>Fresh</td><td>Branch</td><td>Miss. sa</td><td>7210522899</td><td>Test1</td><td>Tester2</td><td>1001</td><td>asdfgh</td><td>AA</td><td>SAPNA RANA</td><td>15 Jan 2019</td><td>05:43-PM</td>
+		</tr><tr>
+			<td style="width:100px;">
+                                          
+                                          <a id="ContentPlaceHolder1_GridView1_LinkButton2_2" class="btn btn-Success mar_top10" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridView1$ctl04$LinkButton2&#39;,&#39;&#39;)"><i class="fa fa-pencil">&nbsp;Allot</i></a>
+                                  </td><td>3</td><td>10074/A19/19/456</td><td>15 Jan 2019</td><td>Fresh</td><td>Branch</td><td>Mr. Demo11</td><td>7210522899</td><td>Test1</td><td>Tester2</td><td>456</td><td>trewq</td><td>AA</td><td>SAPNA RANA</td><td>15 Jan 2019</td><td>04:57-PM</td>
+		</tr><tr>
+			<td style="width:100px;">
+                                          
+                                          <a id="ContentPlaceHolder1_GridView1_LinkButton2_3" class="btn btn-Success mar_top10" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridView1$ctl05$LinkButton2&#39;,&#39;&#39;)"><i class="fa fa-pencil">&nbsp;Allot</i></a>
+                                  </td><td>4</td><td>10072/A19/07/1234</td><td>15 Jan 2019</td><td>Fresh</td><td>Branch</td><td>Mr. Demo11</td><td>7210522899</td><td>Test1</td><td>Tester2</td><td>1234</td><td>qwerty</td><td>AA</td><td>SAPNA RANA</td><td>15 Jan 2019</td><td>04:57-PM</td>
+		</tr><tr>
+			<td style="width:100px;">
+                                          
+                                          <a id="ContentPlaceHolder1_GridView1_LinkButton2_4" class="btn btn-Success mar_top10" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridView1$ctl06$LinkButton2&#39;,&#39;&#39;)"><i class="fa fa-pencil">&nbsp;Allot</i></a>
+                                  </td><td>5</td><td>10052/A19/07/1234</td><td>15 Jan 2019</td><td>Fresh</td><td>Mrs.</td><td>Mrs. Sapna</td><td>7210522899</td><td>Test1</td><td>Tester2</td><td>1234</td><td>qwerty</td><td>AA</td><td>SAPNA RANA</td><td>15 Jan 2019</td><td>01:56-PM</td>
+		</tr><tr>
+			<td style="width:100px;">
+                                          
+                                          <a id="ContentPlaceHolder1_GridView1_LinkButton2_5" class="btn btn-Success mar_top10" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$GridView1$ctl07$LinkButton2&#39;,&#39;&#39;)"><i class="fa fa-pencil">&nbsp;Allot</i></a>
+                                  </td><td>6</td><td>10005</td><td>14 Jan 2019</td><td>Fresh</td><td>Mr.</td><td>Mr. Demo</td><td>7210522899</td><td>Test1</td><td>Tester2</td><td>1234</td><td>qwerty</td><td>AA</td><td>&nbsp;</td><td>14 Jan 2019</td><td>06:27-PM</td>
+		</tr>
+	</table>
+</div>

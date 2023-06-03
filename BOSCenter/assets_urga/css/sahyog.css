@@ -1,0 +1,105 @@
+.header{
+    height: 50px;
+    width: 30%;
+    background-color:#380038;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+   
+    margin-top: 10px;
+    margin-left: 260px;
+    font-size: 30px;
+    font-family:Arial, Helvetica, sans-serif;
+    border-radius: 15px;
+
+}
+.form-section{
+    height: 450px;
+    width: 60%;
+    margin-top: 70px;
+    margin-left: 20%;
+    border: 2px solid #380038;
+    border-radius: 10px;
+    color: #380038;
+    background-color: white;
+
+
+}
+#one{
+    padding-left: 100px;
+    font-size: 20px;
+}
+#ONE{
+    height: 20PX;
+
+}
+#two{
+    padding-left: 80px;
+    font-size: 20px;
+}
+#TWO{
+    height: 20PX;
+
+}  
+#three{
+    padding-left: 100px;
+    font-size: 20px;
+
+}
+
+#THREE{
+    height: 20PX;
+
+}
+#four{
+    padding-left: 74px;
+    font-size: 20px;
+}
+#FOUR{
+    height: 20PX;
+
+}
+#five{
+    padding-left: 55px;
+    font-size: 20px;
+}
+#FIVE{
+    height: 25px;
+    width: 173px;
+
+}
+#six{
+    padding-left: 55px;
+    font-size: 20px;
+}
+#SIX{
+    height: 25px;
+    width: 170px;
+
+}
+#seven{
+    padding-left: 100px;
+    font-size: 20px;
+
+}
+#SEVEN{
+    padding-left: 100px;
+    height: 20PX;
+
+
+}
+#eight{
+    padding-left: 100px;
+    font-size: 20px;
+
+}
+#EIGHT{
+    padding-left: 100px;
+    height: 20PX;
+
+
+}
+#pin{
+    background-image:url(../img/R.jpg);
+
+}

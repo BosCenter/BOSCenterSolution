@@ -1,0 +1,142 @@
+/* Category Slider 
+==============================================*/
+.card{
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+}
+.page-info
+{
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+  border-top: 1px solid #ececec;
+}
+.category-item img {
+  border-radius: 50px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+  height: 80px;
+  margin: 1px 0 8px;
+  object-fit: scale-down;
+  padding: 1px;
+  transform: scale(1);
+  transition-duration: 0.4s;
+  width: 80px;
+}
+.category-item:hover img
+{
+   transform: scale(1.09);
+}
+.category-item {
+  padding: 8px;
+  text-align: center;
+}
+.category-item h6 {
+  font-size: 13px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.top-category {
+  background: #fff none repeat scroll 0 0;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 15px;
+  padding: 14px 0;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+}
+.category-item p {
+  margin: 0;
+}
+.top-category .owl-prev {
+  left: -70px;
+}
+.top-category .owl-next {
+  right: -70px;
+}
+/*==============================================*/
+
+/* Main Slider */
+.carousel-slider-main .owl-pagination {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+.carousel-slider-main {
+  position: relative;
+}
+.carousel-slider-main .owl-prev, .carousel-slider-main .owl-next {
+  top: 46%;
+}
+
+
+/*SLIDER*/
+
+*{box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .current {
+    background-color: #717171;
+  }
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+/*--------SLIDER--------*/
+
+
+.font-weight-500 {
+  font-weight: 500 !important;
+}
+.text-9 {
+  font-size: 36px !important;
+  font-size: 2.25rem !important;
+}
+.text-center {
+  text-align: center!important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #0c2f54;
+  font-family: "Poppins", sans-serif;
+}
+.h2, h2 {
+  font-size: 2rem;
+}

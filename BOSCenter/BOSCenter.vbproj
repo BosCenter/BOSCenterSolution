@@ -1,0 +1,2449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{5BB5D7A7-6D9A-4C8B-98EF-3773357C248F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BOSCenter</RootNamespace>
+    <AssemblyName>BOSCenter</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>false</UseIISExpress>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BOSCenter.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DesktopBuildPackageLocation>obj\Debug\Package\FINANCE.zip</DesktopBuildPackageLocation>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BOSCenter.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EmvFuncLibForWebVBNET, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EmvFuncLibForWebVBNET.dll</HintPath>
+    </Reference>
+    <Reference Include="InstamojoAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\InstamojoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.15.0\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.15.0\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.15.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Octokit, Version=0.50.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Octokit.0.50.0\lib\net46\Octokit.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=104.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SautinSoft.PdfVision, Version=5.1.8.1, Culture=neutral, PublicKeyToken=9c847e093dd15dbf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SautinSoft.PdfVision.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.15.0\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Web.Services" />
+    <Import Include="System.Web.Services.Configuration" />
+    <Import Include="System.Web.Services.Description" />
+    <Import Include="System.Web.Services.Discovery" />
+    <Import Include="System.Web.Services.Protocols" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Add_Money_EaseBuzz_Handler_Success.aspx" />
+    <Content Include="Admin\Add_Money_Handler_Success.aspx" />
+    <Content Include="Admin\Add_Money_Handler_Cancel.aspx" />
+    <Content Include="Admin\Admin_AreaMaster.aspx" />
+    <Content Include="Admin\Admin_BankAccount_Master.aspx" />
+    <Content Include="Admin\Admin_DatabaseScript.txt" />
+    <Content Include="Admin\Admin_IdSettings.aspx" />
+    <Content Include="Admin\Add_Money_Handler_Fail.aspx" />
+    <Content Include="Admin\BOS_AddMoneyToWallet.aspx" />
+    <Content Include="Admin\BOS_AEPS_Report.aspx" />
+    <Content Include="Admin\BOS_BBPS_PS.aspx" />
+    <Content Include="Admin\BOS_BillPayment_Report.aspx" />
+    <Content Include="Admin\BOS_FidyPayOut_API.aspx" />
+    <Content Include="Admin\BOS_ProductAPIMaster_AD.aspx" />
+    <Content Include="Admin\BOS_ProductService_VsAdmin1.aspx" />
+    <Content Include="Admin\Frm_AEPS_PS.aspx" />
+    <Content Include="Admin\Frm_FinancialAudit.aspx" />
+    <Content Include="Admin\Frm_Service_Report.aspx" />
+    <Content Include="Admin\cKycFormRT_Print.aspx" />
+    <Content Include="Admin\Admin_UserRigths.aspx" />
+    <Content Include="Admin\BOS_ApproveKyc.aspx" />
+    <Content Include="Admin\BOS_Axis_Bank.aspx" />
+    <Content Include="Admin\BOS_Card_Kyc_Report_RT.aspx" />
+    <Content Include="Admin\BOS_Card_Kyc_Report.aspx" />
+    <Content Include="Admin\BOS_MakePayment_Report_SA.aspx" />
+    <Content Include="Admin\BOS_ProductServiceVsAdmin_SA.aspx" />
+    <Content Include="Admin\BOS_ProductServiceVsAdmin_SA_MD.aspx" />
+    <Content Include="Admin\BOS_TransferAmount_Frm_N.aspx" />
+    <Content Include="Admin\BOS_Transfer_Agent.aspx" />
+    <Content Include="Admin\BOS_AgenentProfile.aspx" />
+    <Content Include="Admin\BOS_MakePayment.aspx" />
+    <Content Include="Admin\BOS_ProductServiceMaster.aspx" />
+    <Content Include="Admin\BOS_ProductVsProblem.aspx" />
+    <Content Include="Admin\BOS_Raise_Request_Complaint.aspx" />
+    <Content Include="Admin\BOS_RechargeAPI.aspx" />
+    <Content Include="Admin\BOS_SearchAgent.aspx" />
+    <Content Include="Admin\BOS_BankDetails.aspx" />
+    <Content Include="Admin\BOS_TransferAmount_Form.aspx" />
+    <Content Include="Admin\BOS_TransactionReport.aspx" />
+    <Content Include="Admin\BOS_WalletTransationReport.aspx" />
+    <Content Include="Admin\BOS_ChangePinNumber.aspx" />
+    <Content Include="Admin\BOS_CommissionSettingMaster.aspx" />
+    <Content Include="Admin\BOS_Trans_Com_Report.aspx" />
+    <Content Include="Admin\BOS_MoneyTransfer.aspx" />
+    <Content Include="Admin\BOS_PanCard.aspx" />
+    <Content Include="Admin\BOS_MoneyTransferTransaction_Report.aspx" />
+    <Content Include="Admin\BOS_API_LogFile.aspx" />
+    <Content Include="Admin\BOS_UnallotedForm_Report.aspx" />
+    <Content Include="Admin\BOS_PendingForm_Report.aspx" />
+    <Content Include="Admin\BOS_ClosedComplaint_Report.aspx" />
+    <Content Include="Admin\BOS_API_Vs_Category.aspx" />
+    <Content Include="Admin\BOS_OperatorWiseCommission.aspx" />
+    <Content Include="Admin\BOS_MakePayment_Report.aspx" />
+    <Content Include="Admin\BOS_ApprovePayment.aspx" />
+    <Content Include="Admin\BOS_CommissionSettingMaster_Latest.aspx" />
+    <Content Include="Admin\BOS_PAN_UTI_Login.aspx" />
+    <Content Include="Admin\API_Balance_Report.aspx" />
+    <Content Include="Admin\BOS_GST_TDS_Report.aspx" />
+    <Content Include="Admin\BOS_API_Wise_Report.aspx" />
+    <Content Include="Admin\BOS_Recharge_Report.aspx" />
+    <Content Include="Admin\BOS_PanCard_Report.aspx" />
+    <Content Include="Admin\BOS_GST_Raise_Request.aspx" />
+    <Content Include="Admin\BOS_GST_Raised_Report.aspx" />
+    <Content Include="Admin\BOS_GST_Request_Approve.aspx" />
+    <Content Include="Admin\BOS_AEPS.aspx" />
+    <Content Include="Admin\BOS_SlabWiseCommission.aspx" />
+    <Content Include="Admin\BOS_API_Log_Report.aspx" />
+    <Content Include="Admin\cKycFormRT.aspx" />
+    <Content Include="Admin\CLientRegistration.aspx" />
+    <Content Include="Admin\BOS_Create_Customer.aspx" />
+    <Content Include="Admin\BOS_Ref_Code_Master.aspx" />
+    <Content Include="Admin\BOS_SearchCustomer.aspx" />
+    <Content Include="Admin\BOS_AddMoneyToWallet_OLD.aspx" />
+    <Content Include="Admin\BOS_AddMoney_Report.aspx" />
+    <Content Include="Admin\BOS_ProductVsProblem_SA.aspx" />
+    <Content Include="Admin\BOS_API_Vs_Category_SA.aspx" />
+    <Content Include="Admin\BOS_Notification_SA.aspx" />
+    <Content Include="Admin\BOS_ProductServiceMaster_AD.aspx" />
+    <Content Include="Admin\BOS_ProductServiceMaster_SA.aspx" />
+    <Content Include="Admin\BOS_OperatorWiseCommission_SA.aspx" />
+    <Content Include="Admin\BOS_SlabWiseCommission_SA.aspx" />
+    <Content Include="Admin\BOS_SlabWiseCommVsAdmin_SA.aspx" />
+    <Content Include="Admin\BOS_CommissionChart_AD.aspx" />
+    <Content Include="Admin\BOS_OperatorWiseCommVsAdmin_SA.aspx" />
+    <Content Include="Admin\BOS_ClosedComplaint_Report_SA.aspx" />
+    <Content Include="Admin\BOS_PendingForm_Report_SA.aspx" />
+    <Content Include="Admin\BOS_ApproveRefund.aspx" />
+    <Content Include="Admin\BOS_Refund_Req_Report.aspx" />
+    <Content Include="Admin\BOS_DeletedReport.aspx" />
+    <Content Include="Admin\BOS_UpdateKYCAgent.aspx" />
+    <Content Include="Admin\BOS_UpdateKYC_Customer.aspx" />
+    <Content Include="Admin\BOS_MoneyTransfer_Old.aspx" />
+    <Content Include="Admin\Admin_DyanamicServices.aspx" />
+    <Content Include="Admin\Admin_UserRigths_Dashboard.aspx" />
+    <Content Include="Admin\BOS_Irctc_Login.aspx" />
+    <Content Include="Admin\BOS_irctc_api.aspx" />
+    <Content Include="Admin\Frm_Support.aspx" />
+    <Content Include="Admin\indexETalk.html" />
+    <Content Include="Admin\My_Acc_Details.aspx" />
+    <Content Include="Admin\linkVirtualAcc_Form.aspx" />
+    <Content Include="Admin\kycForm.aspx" />
+    <Content Include="Admin\PrintReceipt.aspx" />
+    <Content Include="Admin\SAM_DashBoard_old1.aspx" />
+    <Content Include="Admin\SAM_DashBoard.aspx" />
+    <Content Include="Admin\SAM_DashBoard_old.aspx" />
+    <Content Include="Admin\cKycForm.aspx" />
+    <Content Include="Admin\frm_udyam_registration.aspx" />
+    <Content Include="Admin\Frm_Shop_Act.aspx" />
+    <Content Include="Admin\Frm_Gst_Registration.aspx" />
+    <Content Include="Admin\Frm_IT_Return.aspx" />
+    <Content Include="Admin\Frm_Digital_Signature.aspx" />
+    <Content Include="Admin\Frm_Voter_ID.aspx" />
+    <Content Include="Admin\Frm_Passport_Sewa.aspx" />
+    <Content Include="Admin\Frm_Food_Licence.aspx" />
+    <Content Include="Admin\Frm_NSDC.aspx" />
+    <Content Include="Admin\Frm_Gazzet.aspx" />
+    <Content Include="Admin\Frm_Pan_Card_Form.aspx" />
+    <Content Include="Admin\testMantraAeps.aspx" />
+    <Content Include="Admin\Urja_Dashboard2.aspx" />
+    <Content Include="Admin\BOS_Customer_ViewAccounts.aspx" />
+    <Content Include="Admin\BOS_Customer_UPI_QRCode.aspx" />
+    <Content Include="Admin\BOS_Link_Customer_Accounts.aspx" />
+    <Content Include="Admin\BOS_Link_Customers_UPI_QRCode.aspx" />
+    <Content Include="Admin\BOS_SA_Link_Virtual_Accounts.aspx" />
+    <Content Include="Admin\BOS_Admin_View_Acc_UPI_QRCode.aspx" />
+    <Content Include="Admin\BOS_Payin_Transfer_Report.aspx" />
+    <Content Include="Admin\BOS_Payout_Transfer_Report.aspx" />
+    <Content Include="Admin\WebForm1.aspx" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\skins\default.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\img\animated-text-2.png" />
+    <Content Include="assets\img\animated-text.png" />
+    <Content Include="assets\img\favicon.ico" />
+    <Content Include="assets\img\img-1.png" />
+    <Content Include="assets\img\img-100.jpg" />
+    <Content Include="assets\img\img-11.png" />
+    <Content Include="assets\img\img-12.jpg" />
+    <Content Include="assets\img\img-14.jpg" />
+    <Content Include="assets\img\img-15.jpg" />
+    <Content Include="assets\img\img-16.jpg" />
+    <Content Include="assets\img\img-17.jpg" />
+    <Content Include="assets\img\img-18.jpg" />
+    <Content Include="assets\img\img-2.png" />
+    <Content Include="assets\img\img-24.jpg" />
+    <Content Include="assets\img\img-26.jpg" />
+    <Content Include="assets\img\img-29.png" />
+    <Content Include="assets\img\img-3.jpg" />
+    <Content Include="assets\img\img-30.jpg" />
+    <Content Include="assets\img\img-31.jpg" />
+    <Content Include="assets\img\img-33.jpg" />
+    <Content Include="assets\img\img-35.jpg" />
+    <Content Include="assets\img\img-36.jpg" />
+    <Content Include="assets\img\img-37.png" />
+    <Content Include="assets\img\img-38.jpg" />
+    <Content Include="assets\img\img-40.jpg" />
+    <Content Include="assets\img\img-43.jpg" />
+    <Content Include="assets\img\img-5.jpg" />
+    <Content Include="assets\img\img-50.png" />
+    <Content Include="assets\img\img-51.png" />
+    <Content Include="assets\img\img-6.png" />
+    <Content Include="assets\img\img-7.jpg" />
+    <Content Include="assets\img\img-9.jpg" />
+    <Content Include="assets\img\logos\logo.png" />
+    <Content Include="assets\img\paytsWallet.png" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets_bos\jquery.min.js" />
+    <Content Include="assets_bos\style.css" />
+    <Content Include="assets_bos\stylesheet.css" />
+    <Content Include="assets_bos\theme.js" />
+    <Content Include="CreateCustomer.aspx" />
+    <Content Include="create_custome1.aspx" />
+    <Content Include="create_retailer.aspx" />
+    <Content Include="EasyTalk_Login.aspx" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-16-29-06.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-16-36-40.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-16-36-59.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-16-37-32.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-16-38-03.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-16-45-36.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-16-46-00.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-16-46-15.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-16-46-19.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-17-02-56.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-17-03-14.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-17-04-30.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-17-05-10.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-17-06-51.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-17-07-24.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-17-07-40.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-17-07-44.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-17-13-26.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-17-13-50.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-17-14-17.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-17-15-09.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-17-15-30.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-17-15-45.txt" />
+    <Content Include="ErrorLog\BOSLog_27-05-2023-17-15-55.txt" />
+    <Content Include="Ezlypay_Login.aspx" />
+    <Content Include="InstaAdmin_Loginpage.aspx" />
+    <Content Include="KotakPayments.aspx" />
+    <Content Include="Login_ClickToPay.aspx" />
+    <Content Include="Login_instape.aspx" />
+    <Content Include="M_BOS_Loging.aspx" />
+    <Content Include="OzzypeB2B_Login.aspx" />
+    <Content Include="OzzyPeLogin.aspx" />
+    <Content Include="PayKre_Login.aspx" />
+    <Content Include="Payu_Handler_Cancel.aspx" />
+    <Content Include="Payu_Handler_Fail.aspx" />
+    <Content Include="Easebuzz_Handler_Success.aspx" />
+    <Content Include="Payu_Handler_Success.aspx" />
+    <Content Include="PaytsLogin.aspx" />
+    <Content Include="ETLogin.aspx" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\2.jpg" />
+    <Content Include="images\3.jpg" />
+    <Content Include="images\4.jpg" />
+    <Content Include="images\5.jpg" />
+    <Content Include="images\6.jpg" />
+    <Content Include="images\aeps1.png" />
+    <Content Include="images\AEPS2.png" />
+    <Content Include="images\dmt1.jpg" />
+    <Content Include="images\dmt2.jpg" />
+    <Content Include="images\f_b_2.png" />
+    <Content Include="images\google_play.png" />
+    <Content Include="images\KUBERLOGO.jpg" />
+    <Content Include="images\kvMoney.png" />
+    <Content Include="images\kvMoney1.jpg" />
+    <Content Include="images\pancard1.png" />
+    <Content Include="kmindex.html" />
+    <Content Include="images\f_b_1.jpg" />
+    <Content Include="images\f_b_2.jpg" />
+    <Content Include="images\f_b_3.jpg" />
+    <Content Include="images\f_b_4.jpg" />
+    <Content Include="inside.html" />
+    <Content Include="CreateCustomer_1.aspx" />
+    <Content Include="CreateAgent.aspx" />
+    <Content Include="Admin\MobileD.aspx" />
+    <Content Include="Admin\SetAPI_Status_AdminWise.aspx" />
+    <Content Include="Admin\GoToClientAccount.aspx" />
+    <Content Include="Admin\BOS_Notification.aspx" />
+    <Content Include="Admin\Recharge_Callback_Report.aspx" />
+    <Content Include="Admin\SearchClientDetails.aspx" />
+    <Content Include="Admin\SetAPI_Status_RetailerWise.aspx" />
+    <Content Include="Admin\testDMTAPI.aspx" />
+    <Content Include="Admin\GoToAccount.aspx" />
+    <Content Include="Admin\Admin_EmployeeTypeMaster.aspx" />
+    <Content Include="Admin\Admin_EmployeeSkillMaster.aspx" />
+    <Content Include="Admin\testAPI.aspx" />
+    <Content Include="Admin\SuperAdminMainModuleMaster.aspx" />
+    <Content Include="Admin\SuperAdminSubModuleMaster.aspx" />
+    <Content Include="Admin\SuperAdmin_DesignationMaster.aspx" />
+    <Content Include="Admin\SuperAdmin_ProfileMaster.aspx" />
+    <Content Include="Admin\DashBoard.aspx" />
+    <Content Include="Admin\BOS_CreateAgent.aspx" />
+    <Content Include="AdminLogin.aspx" />
+    <Content Include="Iconss\153-512.png" />
+    <Content Include="Iconss\240_F_164294722_C4yk8VQZS6cJ9iddZXn4E8YKort5XoRZ.jpg" />
+    <Content Include="Iconss\2933961.png" />
+    <Content Include="Iconss\2934006.png" />
+    <Content Include="Iconss\aeps1.png" />
+    <Content Include="Iconss\airplane.png" />
+    <Content Include="Iconss\antenna.png" />
+    <Content Include="Iconss\atm.png" />
+    <Content Include="Iconss\atm_1.png" />
+    <Content Include="Iconss\atm_2.png" />
+    <Content Include="Iconss\bank.png" />
+    <Content Include="Iconss\banks.png" />
+    <Content Include="Iconss\beach.png" />
+    <Content Include="Iconss\beach1.png" />
+    <Content Include="Iconss\beach2.png" />
+    <Content Include="Iconss\bill.png" />
+    <Content Include="Iconss\bus.png" />
+    <Content Include="Iconss\bus1.png" />
+    <Content Include="Iconss\bus2.png" />
+    <Content Include="Iconss\bus3.png" />
+    <Content Include="Iconss\bus4.png" />
+    <Content Include="Iconss\calendar _1.png" />
+    <Content Include="Iconss\calendar.png" />
+    <Content Include="Iconss\click %281%29.png" />
+    <Content Include="Iconss\click %282%29.png" />
+    <Content Include="Iconss\click.png" />
+    <Content Include="Iconss\debit-card %281%29.png" />
+    <Content Include="Iconss\debit-card.png" />
+    <Content Include="Iconss\DTH.jpg" />
+    <Content Include="Iconss\entertainment.png" />
+    <Content Include="Iconss\fastag-logo.png" />
+    <Content Include="Iconss\fasttag1.png" />
+    <Content Include="Iconss\fasttag2.png" />
+    <Content Include="Iconss\fasttag3.png" />
+    <Content Include="Iconss\gas %281%29.png" />
+    <Content Include="Iconss\gas.png" />
+    <Content Include="Iconss\hobbies-and-free-time.png" />
+    <Content Include="Iconss\hotel.png" />
+    <Content Include="Iconss\hotel1.png" />
+    <Content Include="Iconss\idea.png" />
+    <Content Include="Iconss\insurance.png" />
+    <Content Include="Iconss\landline.png" />
+    <Content Include="Iconss\loan.png" />
+    <Content Include="Iconss\loan1.png" />
+    <Content Include="Iconss\member-card %281%29.png" />
+    <Content Include="Iconss\member-card.png" />
+    <Content Include="Iconss\membership.png" />
+    <Content Include="Iconss\mobile-recharge-2.png" />
+    <Content Include="Iconss\mobile-recharge.png" />
+    <Content Include="Iconss\money-transfer.png" />
+    <Content Include="Iconss\money.png" />
+    <Content Include="Iconss\money1.png" />
+    <Content Include="Iconss\money2.png" />
+    <Content Include="Iconss\money3.png" />
+    <Content Include="Iconss\moneytrasfer.jpg" />
+    <Content Include="Iconss\MR.png" />
+    <Content Include="Iconss\online-payment.png" />
+    <Content Include="Iconss\online-payment_1.png" />
+    <Content Include="Iconss\online-shopping.png" />
+    <Content Include="Iconss\payment-method.png" />
+    <Content Include="Iconss\payment.png" />
+    <Content Include="Iconss\power.png" />
+    <Content Include="Iconss\protect.png" />
+    <Content Include="Iconss\shipped.png" />
+    <Content Include="Iconss\shoping.png" />
+    <Content Include="Iconss\speed.png" />
+    <Content Include="Iconss\subway.png" />
+    <Content Include="Iconss\sunset.png" />
+    <Content Include="Iconss\tagtag4.png" />
+    <Content Include="Iconss\tax.png" />
+    <Content Include="Iconss\taxes.png" />
+    <Content Include="Iconss\taxes_1.png" />
+    <Content Include="Iconss\taxes_3.png" />
+    <Content Include="Iconss\tools-and-utensils.png" />
+    <Content Include="Iconss\train.png" />
+    <Content Include="Iconss\train1.png" />
+    <Content Include="Iconss\train2.png" />
+    <Content Include="Iconss\transfer %281%29.png" />
+    <Content Include="Iconss\transfer.png" />
+    <Content Include="Iconss\transfer_1.png" />
+    <Content Include="Iconss\transfer_2.png" />
+    <Content Include="Iconss\travel.png" />
+    <Content Include="Iconss\travel1.png" />
+    <Content Include="Iconss\travel2.png" />
+    <Content Include="Iconss\travel3.png" />
+    <Content Include="Iconss\umbrella %281%29.png" />
+    <Content Include="Iconss\unnamed.png" />
+    <Content Include="Iconss\user-profiles.png" />
+    <Content Include="Iconss\user.png" />
+    <Content Include="Iconss\user_1.png" />
+    <Content Include="Iconss\user_2.png" />
+    <Content Include="Iconss\video.png" />
+    <Content Include="Iconss\wallet.png" />
+    <Content Include="Iconss\wallet1.png" />
+    <Content Include="Iconss\wallet2.png" />
+    <Content Include="Iconss\wallet3.png" />
+    <Content Include="Iconss\wallet4.png" />
+    <Content Include="Iconss\wallet5.png" />
+    <Content Include="Iconss\wallet_1.png" />
+    <Content Include="Iconss\wallet_w.png" />
+    <Content Include="Iconss\wifi.png" />
+    <Content Include="img_bos\bostravel_banner.png" />
+    <Content Include="img_bos\flight.jpg" />
+    <Content Include="img_bos\hero_image.jpg" />
+    <Content Include="img_bos\image-1.jpg" />
+    <Content Include="img_bos\logo-1.png" />
+    <Content Include="img_bos\small-banner-11-600x220.jpg" />
+    <Content Include="img_bos\small-banner-12-600x220.jpg" />
+    <Content Include="img_bos\small-banner-14-600x320.jpg" />
+    <Content Include="img_bos\small-banner-15-600x320.jpg" />
+    <Content Include="index.html" />
+    <Content Include="Admin\inside1.html" />
+    <Content Include="InstaResponseHandler.aspx" />
+    <Content Include="CreateCustomer_old.aspx" />
+    <Content Include="css\ABC.css" />
+    <Content Include="css\bootstrap-combined.min.css" />
+    <Content Include="css\bootstrap.min.js" />
+    <Content Include="css\admin_Purple.css" />
+    <Content Include="css\admin_Green.css" />
+    <Content Include="css\admin_Blue.css" />
+    <Content Include="css\admin_Yellow.css" />
+    <Content Include="css\PDFProject.css" />
+    <Content Include="css\prefixfree.min.js" />
+    <Content Include="ErrorPages\404.aspx" />
+    <Content Include="ErrorPages\500.aspx" />
+    <Content Include="ErrorPages\Oops.aspx" />
+    <Content Include="images\ajax-loader.gif" />
+    <Content Include="images\documents.png" />
+    <Content Include="images\dot.jpg" />
+    <Content Include="images\dot2.jpg" />
+    <Content Include="images\Down.png" />
+    <Content Include="images\emv-logo.png" />
+    <Content Include="images\excel_32X32.png" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\logo_login2.png" />
+    <Content Include="images\Male.gif" />
+    <Content Include="images\pdf_32X32.png" />
+    <Content Include="images\UP.png" />
+    <Content Include="images\warning-icon-24.png" />
+    <Content Include="images\word_32X32.png" />
+    <Content Include="js\jquery-1.10.2.min.js" />
+    <Content Include="js\jquery-1.8.2.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\JSstop.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\dist\jspdf.debug.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\dist\jspdf.min.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\doc\files.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\doc\index.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\doc\symbols\FontObject.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\doc\symbols\jsPDF-jsPDF.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\doc\symbols\jsPDF-PubSub.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\doc\symbols\jsPDF.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\doc\symbols\jsPDFClass.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\doc\symbols\PubSub.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\doc\symbols\src\c__work_jsPDF_jspdf.js.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\doc\symbols\src\c__work_jsPDF_tools_jspdf.js.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\doc\symbols\src\jspdf.js.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\doc\symbols\_global_.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\annotation\test_annotation.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\annotation\test_annotation_2.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\basic.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\bootstrap\css\bootstrap.css" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\bootstrap\css\bootstrap.min.css" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\bootstrap\js\bootstrap.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\bootstrap\js\bootstrap.min.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\context2d\test_context2d.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\context2d\test_context2d_paths.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\editor.css" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\main.css" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\css\smoothness\jquery-ui-1.8.17.custom.css" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\downloadify.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\html2pdf\auto_break.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\html2pdf\examples.css" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\html2pdf\images\favicon.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\html2pdf\lists.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\html2pdf\page_break.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\html2pdf\pdf.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\html2pdf\pdf2.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\html2pdf\showcase.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\html2pdf\showcase_supported_html.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\html2pdf\simple.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\html2pdf\tables.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\html2pdf\total_mess.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\images.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\images\24_bit.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\images\32_bit.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\images\grayscale_16bpc.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\images\grayscale_8bpc.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\images\grayscale_alpha_16_bpc.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\images\grayscale_alpha_8bpc.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\images\grid.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\images\jpg.jpg" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\images\png8_flat.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\images\png8_trans.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\images\RGBA_16bpc.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\images\RGB_16bpc.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\images\tiny_png_indexed.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\jaxer.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\jspdf.PLUGINTEMPLATE.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\AcroForm.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\basic.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\circles.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\editor.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\font-faces.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\font-size.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\from-html.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\html2canvas.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\images.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\jquery\jquery-1.7.1.min.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\jquery\jquery-ui-1.8.17.custom.min.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\kitchen-sink.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\landscape.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\lines.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\rectangles.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\string-splitting.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\test_harness.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\text-colors.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\theme-ambiance.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\triangles.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\two-page.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\js\user-input.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\null-logo-trans.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\octocat.jpg" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\octocat.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\outline\test_outline.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\runner.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\test_from_html.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\test_from_html_css_page_breaks.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\test_insert_page.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\thinking-monkey.jpg" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\index.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\jspdf.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\css_colors.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\deflate.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\Downloadify\images\download.png" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\Downloadify\js\downloadify.min.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\Downloadify\js\swfobject.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\Downloadify\LICENSE.txt" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\Downloadify\media\downloadify.swf" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\Downloadify\src\downloadify.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\Downloadify\test.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\dist\html2canvas.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\core.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\dummyimagecontainer.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\fallback.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\font.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\fontmetrics.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\framecontainer.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\gradientcontainer.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\imagecontainer.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\imageloader.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\lineargradientcontainer.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\log.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\nodecontainer.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\nodeparser.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\promise.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\proxy.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\proxyimagecontainer.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\pseudoelementcontainer.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\renderer.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\renderers\canvas.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\stackingcontext.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\support.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\svgcontainer.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\svgnodecontainer.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\textcontainer.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\webkitgradientcontainer.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\src\xhr.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2pdf.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\png_support\png.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\png_support\zlib.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\polyfill.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\require\config.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\require\require.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\MIT-LICENSE.txt" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\acroform.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\addhtml.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\addimage.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\annotations.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\autoprint.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\canvas.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\cell.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\context2d.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\from_html.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\javascript.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\outline.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\png_support.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\prevent_scale_to_fit.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\split_text_to_size.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\standard_fonts_metrics.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\svg.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\plugins\total_pages.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\013_sillysvgrenderer.svg" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\014_addImage.jpeg" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\014_addImage.jpeg.base64.txt" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\014_addImage.pdf.base64.txt" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\014_addImage.txt" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\015_splittext.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\components_tests.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\index.htm" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\libs\curl-0.5.4.min.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\libs\custom_fill.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\libs\qunit.css" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\libs\qunit.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\pdf_generate_tests.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\test.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\test_from_html_css_page_breaks.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\test_harness.js" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\test_min.html" />
+    <Content Include="js\jsPDF-1.2.60\jsPDF-1.2.60\todo.txt" />
+    <Content Include="Admin\AddMessageTemplates.aspx" />
+    <Content Include="Admin\Admin_CreateAllBackup.aspx" />
+    <Content Include="Admin\ProfileInfo.aspx" />
+    <Content Include="Admin\BOS_DistrictMaster.aspx" />
+    <Content Include="Admin\BOS_StateMaster.aspx" />
+    <Content Include="Admin\SuperAdmin_CountryMaster.aspx" />
+    <Content Include="Admin\Admin_ChangePassword.aspx" />
+    <Content Include="Admin\AddMailTemplates.aspx" />
+    <Content Include="Admin\ClientPasswordReport.aspx" />
+    <Content Include="Admin\ChangeOperatorPassword.aspx" />
+    <Content Include="Admin\OperatorLoginLogoffReport.aspx" />
+    <Content Include="Admin\LoginLogOffMaster.aspx" />
+    <Content Include="Admin\LoginTimeFrame.aspx" />
+    <Content Include="Admin\CreateLogin.aspx" />
+    <Content Include="images\uploadimage.png" />
+    <Content Include="Admin\SuperAdminMenuCreation.aspx" />
+    <Content Include="Admin\SuperAdminUserRigths.aspx" />
+    <Content Include="Admin\Group_Master.aspx" />
+    <Content Include="css\admin.css" />
+    <Content Include="css\admin_new.css" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\style.css" />
+    <Content Include="images\gear.gif" />
+    <Content Include="images\hex-loader.gif" />
+    <Content Include="images\loadmore.gif" />
+    <Content Include="images\spinner.gif" />
+    <Content Include="Admin\Mainpage.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="images\bg1.jpg" />
+    <Content Include="images\bg1_old.jpg" />
+    <Content Include="images\branches.png" />
+    <Content Include="images\Loan.png" />
+    <Content Include="images\man-156584_960_720.png" />
+    <Content Include="js\app.min.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\Chart.min.js" />
+    <Content Include="js\demo.js" />
+    <Content Include="js\fastclick.js" />
+    <Content Include="js\jQuery-2.1.4.min.js" />
+    <Content Include="js\npm.js" />
+    <Content Include="kmLogin.aspx" />
+    <Content Include="PaytsLogn.html" />
+    <Content Include="publicSevaKendra.aspx" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="ProductImages\Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="ProductImages\Scripts\jquery-1.4.1.js" />
+    <Content Include="ProductImages\Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Admin\SuperAdminLogout.aspx" />
+    <Content Include="UrgamitraLogin.aspx" />
+    <Content Include="UrjamitraB2B_login.aspx" />
+    <Content Include="vpaylogin.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Admin\SuperAdminHome.aspx" />
+    <Content Include="psk_mLogin.aspx" />
+    <Content Include="WebService\AppService.asmx" />
+    <Content Include="WebService\SecuWebService.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddFund.vb" />
+    <Compile Include="AddFundController.vb" />
+    <Compile Include="Admin\Add_Money_EaseBuzz_Handler_Success.aspx.designer.vb">
+      <DependentUpon>Add_Money_EaseBuzz_Handler_Success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Add_Money_EaseBuzz_Handler_Success.aspx.vb">
+      <DependentUpon>Add_Money_EaseBuzz_Handler_Success.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Add_Money_Handler_Success.aspx.designer.vb">
+      <DependentUpon>Add_Money_Handler_Success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Add_Money_Handler_Success.aspx.vb">
+      <DependentUpon>Add_Money_Handler_Success.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Add_Money_Handler_Cancel.aspx.designer.vb">
+      <DependentUpon>Add_Money_Handler_Cancel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Add_Money_Handler_Cancel.aspx.vb">
+      <DependentUpon>Add_Money_Handler_Cancel.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin_AreaMaster.aspx.designer.vb">
+      <DependentUpon>Admin_AreaMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin_AreaMaster.aspx.vb">
+      <DependentUpon>Admin_AreaMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin_BankAccount_Master.aspx.designer.vb">
+      <DependentUpon>Admin_BankAccount_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin_BankAccount_Master.aspx.vb">
+      <DependentUpon>Admin_BankAccount_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin_IdSettings.aspx.designer.vb">
+      <DependentUpon>Admin_IdSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin_IdSettings.aspx.vb">
+      <DependentUpon>Admin_IdSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AEPS_Functions.vb" />
+    <Compile Include="Admin\Add_Money_Handler_Fail.aspx.designer.vb">
+      <DependentUpon>Add_Money_Handler_Fail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Add_Money_Handler_Fail.aspx.vb">
+      <DependentUpon>Add_Money_Handler_Fail.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_AddMoneyToWallet.aspx.designer.vb">
+      <DependentUpon>BOS_AddMoneyToWallet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_AddMoneyToWallet.aspx.vb">
+      <DependentUpon>BOS_AddMoneyToWallet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_AEPS_Report.aspx.designer.vb">
+      <DependentUpon>BOS_AEPS_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_AEPS_Report.aspx.vb">
+      <DependentUpon>BOS_AEPS_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_BBPS_PS.aspx.designer.vb">
+      <DependentUpon>BOS_BBPS_PS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_BBPS_PS.aspx.vb">
+      <DependentUpon>BOS_BBPS_PS.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_BillPayment_Report.aspx.designer.vb">
+      <DependentUpon>BOS_BillPayment_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_BillPayment_Report.aspx.vb">
+      <DependentUpon>BOS_BillPayment_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_FidyPayOut_API.aspx.designer.vb">
+      <DependentUpon>BOS_FidyPayOut_API.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_FidyPayOut_API.aspx.vb">
+      <DependentUpon>BOS_FidyPayOut_API.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductAPIMaster_AD.aspx.designer.vb">
+      <DependentUpon>BOS_ProductAPIMaster_AD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductAPIMaster_AD.aspx.vb">
+      <DependentUpon>BOS_ProductAPIMaster_AD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductService_VsAdmin1.aspx.designer.vb">
+      <DependentUpon>BOS_ProductService_VsAdmin1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductService_VsAdmin1.aspx.vb">
+      <DependentUpon>BOS_ProductService_VsAdmin1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frm_AEPS_PS.aspx.designer.vb">
+      <DependentUpon>Frm_AEPS_PS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frm_AEPS_PS.aspx.vb">
+      <DependentUpon>Frm_AEPS_PS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frm_FinancialAudit.aspx.designer.vb">
+      <DependentUpon>Frm_FinancialAudit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frm_FinancialAudit.aspx.vb">
+      <DependentUpon>Frm_FinancialAudit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frm_Service_Report.aspx.designer.vb">
+      <DependentUpon>Frm_Service_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frm_Service_Report.aspx.vb">
+      <DependentUpon>Frm_Service_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\cKycFormRT_Print.aspx.designer.vb">
+      <DependentUpon>cKycFormRT_Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\cKycFormRT_Print.aspx.vb">
+      <DependentUpon>cKycFormRT_Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin_UserRigths.aspx.designer.vb">
+      <DependentUpon>Admin_UserRigths.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin_UserRigths.aspx.vb">
+      <DependentUpon>Admin_UserRigths.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_ApproveKyc.aspx.designer.vb">
+      <DependentUpon>BOS_ApproveKyc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_ApproveKyc.aspx.vb">
+      <DependentUpon>BOS_ApproveKyc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Axis_Bank.aspx.designer.vb">
+      <DependentUpon>BOS_Axis_Bank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Axis_Bank.aspx.vb">
+      <DependentUpon>BOS_Axis_Bank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Card_Kyc_Report_RT.aspx.designer.vb">
+      <DependentUpon>BOS_Card_Kyc_Report_RT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Card_Kyc_Report_RT.aspx.vb">
+      <DependentUpon>BOS_Card_Kyc_Report_RT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Card_Kyc_Report.aspx.designer.vb">
+      <DependentUpon>BOS_Card_Kyc_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Card_Kyc_Report.aspx.vb">
+      <DependentUpon>BOS_Card_Kyc_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_MakePayment_Report_SA.aspx.designer.vb">
+      <DependentUpon>BOS_MakePayment_Report_SA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_MakePayment_Report_SA.aspx.vb">
+      <DependentUpon>BOS_MakePayment_Report_SA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductServiceVsAdmin_SA.aspx.designer.vb">
+      <DependentUpon>BOS_ProductServiceVsAdmin_SA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductServiceVsAdmin_SA.aspx.vb">
+      <DependentUpon>BOS_ProductServiceVsAdmin_SA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductServiceVsAdmin_SA_MD.aspx.designer.vb">
+      <DependentUpon>BOS_ProductServiceVsAdmin_SA_MD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductServiceVsAdmin_SA_MD.aspx.vb">
+      <DependentUpon>BOS_ProductServiceVsAdmin_SA_MD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_TransferAmount_Frm_N.aspx.designer.vb">
+      <DependentUpon>BOS_TransferAmount_Frm_N.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_TransferAmount_Frm_N.aspx.vb">
+      <DependentUpon>BOS_TransferAmount_Frm_N.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Transfer_Agent.aspx.designer.vb">
+      <DependentUpon>BOS_Transfer_Agent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Transfer_Agent.aspx.vb">
+      <DependentUpon>BOS_Transfer_Agent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_AgenentProfile.aspx.designer.vb">
+      <DependentUpon>BOS_AgenentProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_AgenentProfile.aspx.vb">
+      <DependentUpon>BOS_AgenentProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_MakePayment.aspx.designer.vb">
+      <DependentUpon>BOS_MakePayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_MakePayment.aspx.vb">
+      <DependentUpon>BOS_MakePayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductServiceMaster.aspx.designer.vb">
+      <DependentUpon>BOS_ProductServiceMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductServiceMaster.aspx.vb">
+      <DependentUpon>BOS_ProductServiceMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductVsProblem.aspx.designer.vb">
+      <DependentUpon>BOS_ProductVsProblem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductVsProblem.aspx.vb">
+      <DependentUpon>BOS_ProductVsProblem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Raise_Request_Complaint.aspx.designer.vb">
+      <DependentUpon>BOS_Raise_Request_Complaint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Raise_Request_Complaint.aspx.vb">
+      <DependentUpon>BOS_Raise_Request_Complaint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_RechargeAPI.aspx.designer.vb">
+      <DependentUpon>BOS_RechargeAPI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_RechargeAPI.aspx.vb">
+      <DependentUpon>BOS_RechargeAPI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_SearchAgent.aspx.designer.vb">
+      <DependentUpon>BOS_SearchAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_SearchAgent.aspx.vb">
+      <DependentUpon>BOS_SearchAgent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_BankDetails.aspx.designer.vb">
+      <DependentUpon>BOS_BankDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_BankDetails.aspx.vb">
+      <DependentUpon>BOS_BankDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_TransferAmount_Form.aspx.designer.vb">
+      <DependentUpon>BOS_TransferAmount_Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_TransferAmount_Form.aspx.vb">
+      <DependentUpon>BOS_TransferAmount_Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_TransactionReport.aspx.designer.vb">
+      <DependentUpon>BOS_TransactionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_TransactionReport.aspx.vb">
+      <DependentUpon>BOS_TransactionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_WalletTransationReport.aspx.designer.vb">
+      <DependentUpon>BOS_WalletTransationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_WalletTransationReport.aspx.vb">
+      <DependentUpon>BOS_WalletTransationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_ChangePinNumber.aspx.designer.vb">
+      <DependentUpon>BOS_ChangePinNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_ChangePinNumber.aspx.vb">
+      <DependentUpon>BOS_ChangePinNumber.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_CommissionSettingMaster.aspx.designer.vb">
+      <DependentUpon>BOS_CommissionSettingMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_CommissionSettingMaster.aspx.vb">
+      <DependentUpon>BOS_CommissionSettingMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Trans_Com_Report.aspx.designer.vb">
+      <DependentUpon>BOS_Trans_Com_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Trans_Com_Report.aspx.vb">
+      <DependentUpon>BOS_Trans_Com_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_MoneyTransfer.aspx.designer.vb">
+      <DependentUpon>BOS_MoneyTransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_MoneyTransfer.aspx.vb">
+      <DependentUpon>BOS_MoneyTransfer.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_PanCard.aspx.designer.vb">
+      <DependentUpon>BOS_PanCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_PanCard.aspx.vb">
+      <DependentUpon>BOS_PanCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_MoneyTransferTransaction_Report.aspx.designer.vb">
+      <DependentUpon>BOS_MoneyTransferTransaction_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_MoneyTransferTransaction_Report.aspx.vb">
+      <DependentUpon>BOS_MoneyTransferTransaction_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_API_LogFile.aspx.designer.vb">
+      <DependentUpon>BOS_API_LogFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_API_LogFile.aspx.vb">
+      <DependentUpon>BOS_API_LogFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_UnallotedForm_Report.aspx.designer.vb">
+      <DependentUpon>BOS_UnallotedForm_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_UnallotedForm_Report.aspx.vb">
+      <DependentUpon>BOS_UnallotedForm_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_PendingForm_Report.aspx.designer.vb">
+      <DependentUpon>BOS_PendingForm_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_PendingForm_Report.aspx.vb">
+      <DependentUpon>BOS_PendingForm_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_ClosedComplaint_Report.aspx.designer.vb">
+      <DependentUpon>BOS_ClosedComplaint_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_ClosedComplaint_Report.aspx.vb">
+      <DependentUpon>BOS_ClosedComplaint_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_API_Vs_Category.aspx.designer.vb">
+      <DependentUpon>BOS_API_Vs_Category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_API_Vs_Category.aspx.vb">
+      <DependentUpon>BOS_API_Vs_Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_OperatorWiseCommission.aspx.designer.vb">
+      <DependentUpon>BOS_OperatorWiseCommission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_OperatorWiseCommission.aspx.vb">
+      <DependentUpon>BOS_OperatorWiseCommission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_MakePayment_Report.aspx.designer.vb">
+      <DependentUpon>BOS_MakePayment_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_MakePayment_Report.aspx.vb">
+      <DependentUpon>BOS_MakePayment_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_ApprovePayment.aspx.designer.vb">
+      <DependentUpon>BOS_ApprovePayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_ApprovePayment.aspx.vb">
+      <DependentUpon>BOS_ApprovePayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_CommissionSettingMaster_Latest.aspx.designer.vb">
+      <DependentUpon>BOS_CommissionSettingMaster_Latest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_CommissionSettingMaster_Latest.aspx.vb">
+      <DependentUpon>BOS_CommissionSettingMaster_Latest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_PAN_UTI_Login.aspx.designer.vb">
+      <DependentUpon>BOS_PAN_UTI_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_PAN_UTI_Login.aspx.vb">
+      <DependentUpon>BOS_PAN_UTI_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\API_Balance_Report.aspx.designer.vb">
+      <DependentUpon>API_Balance_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\API_Balance_Report.aspx.vb">
+      <DependentUpon>API_Balance_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_GST_TDS_Report.aspx.designer.vb">
+      <DependentUpon>BOS_GST_TDS_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_GST_TDS_Report.aspx.vb">
+      <DependentUpon>BOS_GST_TDS_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_API_Wise_Report.aspx.designer.vb">
+      <DependentUpon>BOS_API_Wise_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_API_Wise_Report.aspx.vb">
+      <DependentUpon>BOS_API_Wise_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Recharge_Report.aspx.designer.vb">
+      <DependentUpon>BOS_Recharge_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Recharge_Report.aspx.vb">
+      <DependentUpon>BOS_Recharge_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_PanCard_Report.aspx.designer.vb">
+      <DependentUpon>BOS_PanCard_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_PanCard_Report.aspx.vb">
+      <DependentUpon>BOS_PanCard_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_GST_Raise_Request.aspx.designer.vb">
+      <DependentUpon>BOS_GST_Raise_Request.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_GST_Raise_Request.aspx.vb">
+      <DependentUpon>BOS_GST_Raise_Request.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_GST_Raised_Report.aspx.designer.vb">
+      <DependentUpon>BOS_GST_Raised_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_GST_Raised_Report.aspx.vb">
+      <DependentUpon>BOS_GST_Raised_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_GST_Request_Approve.aspx.designer.vb">
+      <DependentUpon>BOS_GST_Request_Approve.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_GST_Request_Approve.aspx.vb">
+      <DependentUpon>BOS_GST_Request_Approve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_AEPS.aspx.designer.vb">
+      <DependentUpon>BOS_AEPS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_AEPS.aspx.vb">
+      <DependentUpon>BOS_AEPS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_SlabWiseCommission.aspx.designer.vb">
+      <DependentUpon>BOS_SlabWiseCommission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_SlabWiseCommission.aspx.vb">
+      <DependentUpon>BOS_SlabWiseCommission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_API_Log_Report.aspx.designer.vb">
+      <DependentUpon>BOS_API_Log_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_API_Log_Report.aspx.vb">
+      <DependentUpon>BOS_API_Log_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\cKycFormRT.aspx.designer.vb">
+      <DependentUpon>cKycFormRT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\cKycFormRT.aspx.vb">
+      <DependentUpon>cKycFormRT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CLientRegistration.aspx.designer.vb">
+      <DependentUpon>CLientRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CLientRegistration.aspx.vb">
+      <DependentUpon>CLientRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Create_Customer.aspx.designer.vb">
+      <DependentUpon>BOS_Create_Customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Create_Customer.aspx.vb">
+      <DependentUpon>BOS_Create_Customer.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Ref_Code_Master.aspx.designer.vb">
+      <DependentUpon>BOS_Ref_Code_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Ref_Code_Master.aspx.vb">
+      <DependentUpon>BOS_Ref_Code_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_SearchCustomer.aspx.designer.vb">
+      <DependentUpon>BOS_SearchCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_SearchCustomer.aspx.vb">
+      <DependentUpon>BOS_SearchCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_AddMoneyToWallet_OLD.aspx.designer.vb">
+      <DependentUpon>BOS_AddMoneyToWallet_OLD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_AddMoneyToWallet_OLD.aspx.vb">
+      <DependentUpon>BOS_AddMoneyToWallet_OLD.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_AddMoney_Report.aspx.designer.vb">
+      <DependentUpon>BOS_AddMoney_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_AddMoney_Report.aspx.vb">
+      <DependentUpon>BOS_AddMoney_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductVsProblem_SA.aspx.designer.vb">
+      <DependentUpon>BOS_ProductVsProblem_SA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductVsProblem_SA.aspx.vb">
+      <DependentUpon>BOS_ProductVsProblem_SA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_API_Vs_Category_SA.aspx.designer.vb">
+      <DependentUpon>BOS_API_Vs_Category_SA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_API_Vs_Category_SA.aspx.vb">
+      <DependentUpon>BOS_API_Vs_Category_SA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Notification_SA.aspx.designer.vb">
+      <DependentUpon>BOS_Notification_SA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Notification_SA.aspx.vb">
+      <DependentUpon>BOS_Notification_SA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductServiceMaster_AD.aspx.designer.vb">
+      <DependentUpon>BOS_ProductServiceMaster_AD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductServiceMaster_AD.aspx.vb">
+      <DependentUpon>BOS_ProductServiceMaster_AD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductServiceMaster_SA.aspx.designer.vb">
+      <DependentUpon>BOS_ProductServiceMaster_SA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_ProductServiceMaster_SA.aspx.vb">
+      <DependentUpon>BOS_ProductServiceMaster_SA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_OperatorWiseCommission_SA.aspx.designer.vb">
+      <DependentUpon>BOS_OperatorWiseCommission_SA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_OperatorWiseCommission_SA.aspx.vb">
+      <DependentUpon>BOS_OperatorWiseCommission_SA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_SlabWiseCommission_SA.aspx.designer.vb">
+      <DependentUpon>BOS_SlabWiseCommission_SA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_SlabWiseCommission_SA.aspx.vb">
+      <DependentUpon>BOS_SlabWiseCommission_SA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_SlabWiseCommVsAdmin_SA.aspx.designer.vb">
+      <DependentUpon>BOS_SlabWiseCommVsAdmin_SA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_SlabWiseCommVsAdmin_SA.aspx.vb">
+      <DependentUpon>BOS_SlabWiseCommVsAdmin_SA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_CommissionChart_AD.aspx.designer.vb">
+      <DependentUpon>BOS_CommissionChart_AD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_CommissionChart_AD.aspx.vb">
+      <DependentUpon>BOS_CommissionChart_AD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_OperatorWiseCommVsAdmin_SA.aspx.designer.vb">
+      <DependentUpon>BOS_OperatorWiseCommVsAdmin_SA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_OperatorWiseCommVsAdmin_SA.aspx.vb">
+      <DependentUpon>BOS_OperatorWiseCommVsAdmin_SA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_ClosedComplaint_Report_SA.aspx.designer.vb">
+      <DependentUpon>BOS_ClosedComplaint_Report_SA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_ClosedComplaint_Report_SA.aspx.vb">
+      <DependentUpon>BOS_ClosedComplaint_Report_SA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_PendingForm_Report_SA.aspx.designer.vb">
+      <DependentUpon>BOS_PendingForm_Report_SA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_PendingForm_Report_SA.aspx.vb">
+      <DependentUpon>BOS_PendingForm_Report_SA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_ApproveRefund.aspx.designer.vb">
+      <DependentUpon>BOS_ApproveRefund.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_ApproveRefund.aspx.vb">
+      <DependentUpon>BOS_ApproveRefund.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Refund_Req_Report.aspx.designer.vb">
+      <DependentUpon>BOS_Refund_Req_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Refund_Req_Report.aspx.vb">
+      <DependentUpon>BOS_Refund_Req_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_DeletedReport.aspx.designer.vb">
+      <DependentUpon>BOS_DeletedReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_DeletedReport.aspx.vb">
+      <DependentUpon>BOS_DeletedReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_UpdateKYCAgent.aspx.designer.vb">
+      <DependentUpon>BOS_UpdateKYCAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_UpdateKYCAgent.aspx.vb">
+      <DependentUpon>BOS_UpdateKYCAgent.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_UpdateKYC_Customer.aspx.designer.vb">
+      <DependentUpon>BOS_UpdateKYC_Customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_UpdateKYC_Customer.aspx.vb">
+      <DependentUpon>BOS_UpdateKYC_Customer.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_MoneyTransfer_Old.aspx.designer.vb">
+      <DependentUpon>BOS_MoneyTransfer_Old.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_MoneyTransfer_Old.aspx.vb">
+      <DependentUpon>BOS_MoneyTransfer_Old.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin_DyanamicServices.aspx.designer.vb">
+      <DependentUpon>Admin_DyanamicServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin_DyanamicServices.aspx.vb">
+      <DependentUpon>Admin_DyanamicServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin_UserRigths_Dashboard.aspx.designer.vb">
+      <DependentUpon>Admin_UserRigths_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin_UserRigths_Dashboard.aspx.vb">
+      <DependentUpon>Admin_UserRigths_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Irctc_Login.aspx.designer.vb">
+      <DependentUpon>BOS_Irctc_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Irctc_Login.aspx.vb">
+      <DependentUpon>BOS_Irctc_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_irctc_api.aspx.designer.vb">
+      <DependentUpon>BOS_irctc_api.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_irctc_api.aspx.vb">
+      <DependentUpon>BOS_irctc_api.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frm_Support.aspx.designer.vb">
+      <DependentUpon>Frm_Support.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frm_Support.aspx.vb">
+      <DependentUpon>Frm_Support.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\My_Acc_Details.aspx.designer.vb">
+      <DependentUpon>My_Acc_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\My_Acc_Details.aspx.vb">
+      <DependentUpon>My_Acc_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\linkVirtualAcc_Form.aspx.designer.vb">
+      <DependentUpon>linkVirtualAcc_Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\linkVirtualAcc_Form.aspx.vb">
+      <DependentUpon>linkVirtualAcc_Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\kycForm.aspx.designer.vb">
+      <DependentUpon>kycForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\kycForm.aspx.vb">
+      <DependentUpon>kycForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PrintReceipt.aspx.designer.vb">
+      <DependentUpon>PrintReceipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PrintReceipt.aspx.vb">
+      <DependentUpon>PrintReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SAM_DashBoard_old1.aspx.designer.vb">
+      <DependentUpon>SAM_DashBoard_old1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SAM_DashBoard_old1.aspx.vb">
+      <DependentUpon>SAM_DashBoard_old1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SAM_DashBoard.aspx.designer.vb">
+      <DependentUpon>SAM_DashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SAM_DashBoard.aspx.vb">
+      <DependentUpon>SAM_DashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SAM_DashBoard_old.aspx.designer.vb">
+      <DependentUpon>SAM_DashBoard_old.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SAM_DashBoard_old.aspx.vb">
+      <DependentUpon>SAM_DashBoard_old.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\cKycForm.aspx.designer.vb">
+      <DependentUpon>cKycForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\cKycForm.aspx.vb">
+      <DependentUpon>cKycForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\frm_udyam_registration.aspx.designer.vb">
+      <DependentUpon>frm_udyam_registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frm_udyam_registration.aspx.vb">
+      <DependentUpon>frm_udyam_registration.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frm_Shop_Act.aspx.designer.vb">
+      <DependentUpon>Frm_Shop_Act.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frm_Shop_Act.aspx.vb">
+      <DependentUpon>Frm_Shop_Act.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frm_Gst_Registration.aspx.designer.vb">
+      <DependentUpon>Frm_Gst_Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frm_Gst_Registration.aspx.vb">
+      <DependentUpon>Frm_Gst_Registration.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frm_IT_Return.aspx.designer.vb">
+      <DependentUpon>Frm_IT_Return.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frm_IT_Return.aspx.vb">
+      <DependentUpon>Frm_IT_Return.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frm_Digital_Signature.aspx.designer.vb">
+      <DependentUpon>Frm_Digital_Signature.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frm_Digital_Signature.aspx.vb">
+      <DependentUpon>Frm_Digital_Signature.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frm_Voter_ID.aspx.designer.vb">
+      <DependentUpon>Frm_Voter_ID.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frm_Voter_ID.aspx.vb">
+      <DependentUpon>Frm_Voter_ID.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frm_Passport_Sewa.aspx.designer.vb">
+      <DependentUpon>Frm_Passport_Sewa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frm_Passport_Sewa.aspx.vb">
+      <DependentUpon>Frm_Passport_Sewa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frm_Food_Licence.aspx.designer.vb">
+      <DependentUpon>Frm_Food_Licence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frm_Food_Licence.aspx.vb">
+      <DependentUpon>Frm_Food_Licence.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frm_NSDC.aspx.designer.vb">
+      <DependentUpon>Frm_NSDC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frm_NSDC.aspx.vb">
+      <DependentUpon>Frm_NSDC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frm_Gazzet.aspx.designer.vb">
+      <DependentUpon>Frm_Gazzet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frm_Gazzet.aspx.vb">
+      <DependentUpon>Frm_Gazzet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Frm_Pan_Card_Form.aspx.designer.vb">
+      <DependentUpon>Frm_Pan_Card_Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Frm_Pan_Card_Form.aspx.vb">
+      <DependentUpon>Frm_Pan_Card_Form.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\testMantraAeps.aspx.designer.vb">
+      <DependentUpon>testMantraAeps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\testMantraAeps.aspx.vb">
+      <DependentUpon>testMantraAeps.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Urja_Dashboard2.aspx.designer.vb">
+      <DependentUpon>Urja_Dashboard2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Urja_Dashboard2.aspx.vb">
+      <DependentUpon>Urja_Dashboard2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Customer_ViewAccounts.aspx.designer.vb">
+      <DependentUpon>BOS_Customer_ViewAccounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Customer_ViewAccounts.aspx.vb">
+      <DependentUpon>BOS_Customer_ViewAccounts.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Customer_UPI_QRCode.aspx.designer.vb">
+      <DependentUpon>BOS_Customer_UPI_QRCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Customer_UPI_QRCode.aspx.vb">
+      <DependentUpon>BOS_Customer_UPI_QRCode.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Link_Customer_Accounts.aspx.designer.vb">
+      <DependentUpon>BOS_Link_Customer_Accounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Link_Customer_Accounts.aspx.vb">
+      <DependentUpon>BOS_Link_Customer_Accounts.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Link_Customers_UPI_QRCode.aspx.designer.vb">
+      <DependentUpon>BOS_Link_Customers_UPI_QRCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Link_Customers_UPI_QRCode.aspx.vb">
+      <DependentUpon>BOS_Link_Customers_UPI_QRCode.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_SA_Link_Virtual_Accounts.aspx.designer.vb">
+      <DependentUpon>BOS_SA_Link_Virtual_Accounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_SA_Link_Virtual_Accounts.aspx.vb">
+      <DependentUpon>BOS_SA_Link_Virtual_Accounts.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Admin_View_Acc_UPI_QRCode.aspx.designer.vb">
+      <DependentUpon>BOS_Admin_View_Acc_UPI_QRCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Admin_View_Acc_UPI_QRCode.aspx.vb">
+      <DependentUpon>BOS_Admin_View_Acc_UPI_QRCode.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Payin_Transfer_Report.aspx.designer.vb">
+      <DependentUpon>BOS_Payin_Transfer_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Payin_Transfer_Report.aspx.vb">
+      <DependentUpon>BOS_Payin_Transfer_Report.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Payout_Transfer_Report.aspx.designer.vb">
+      <DependentUpon>BOS_Payout_Transfer_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Payout_Transfer_Report.aspx.vb">
+      <DependentUpon>BOS_Payout_Transfer_Report.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebForm1.aspx.designer.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebForm1.aspx.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CashfreeInstaCallbkController.vb" />
+    <Compile Include="CreateCustomer.aspx.designer.vb">
+      <DependentUpon>CreateCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateCustomer.aspx.vb">
+      <DependentUpon>CreateCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="create_custome1.aspx.designer.vb">
+      <DependentUpon>create_custome1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="create_custome1.aspx.vb">
+      <DependentUpon>create_custome1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="create_retailer.aspx.designer.vb">
+      <DependentUpon>create_retailer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="create_retailer.aspx.vb">
+      <DependentUpon>create_retailer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EasebuzzInstaCallbkController.vb" />
+    <Compile Include="EasyTalk_Login.aspx.designer.vb">
+      <DependentUpon>EasyTalk_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EasyTalk_Login.aspx.vb">
+      <DependentUpon>EasyTalk_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ezlypay_Login.aspx.designer.vb">
+      <DependentUpon>Ezlypay_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ezlypay_Login.aspx.vb">
+      <DependentUpon>Ezlypay_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InstaAdmin_Loginpage.aspx.designer.vb">
+      <DependentUpon>InstaAdmin_Loginpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InstaAdmin_Loginpage.aspx.vb">
+      <DependentUpon>InstaAdmin_Loginpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KotakPayments.aspx.designer.vb">
+      <DependentUpon>KotakPayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KotakPayments.aspx.vb">
+      <DependentUpon>KotakPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginMDL.vb" />
+    <Compile Include="Login_ClickToPay.aspx.designer.vb">
+      <DependentUpon>Login_ClickToPay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login_ClickToPay.aspx.vb">
+      <DependentUpon>Login_ClickToPay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login_instape.aspx.designer.vb">
+      <DependentUpon>Login_instape.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login_instape.aspx.vb">
+      <DependentUpon>Login_instape.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="M_BOS_Loging.aspx.designer.vb">
+      <DependentUpon>M_BOS_Loging.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="M_BOS_Loging.aspx.vb">
+      <DependentUpon>M_BOS_Loging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OzzypeB2B_Login.aspx.designer.vb">
+      <DependentUpon>OzzypeB2B_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OzzypeB2B_Login.aspx.vb">
+      <DependentUpon>OzzypeB2B_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OzzyPeLogin.aspx.designer.vb">
+      <DependentUpon>OzzyPeLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OzzyPeLogin.aspx.vb">
+      <DependentUpon>OzzyPeLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayKre_Login.aspx.designer.vb">
+      <DependentUpon>PayKre_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PayKre_Login.aspx.vb">
+      <DependentUpon>PayKre_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaysprintInstaCallbkController.vb" />
+    <Compile Include="PayuCallbkController.vb" />
+    <Compile Include="Payu_Handler_Cancel.aspx.designer.vb">
+      <DependentUpon>Payu_Handler_Cancel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payu_Handler_Cancel.aspx.vb">
+      <DependentUpon>Payu_Handler_Cancel.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Payu_Handler_Fail.aspx.designer.vb">
+      <DependentUpon>Payu_Handler_Fail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payu_Handler_Fail.aspx.vb">
+      <DependentUpon>Payu_Handler_Fail.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Easebuzz_Handler_Success.aspx.designer.vb">
+      <DependentUpon>Easebuzz_Handler_Success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Easebuzz_Handler_Success.aspx.vb">
+      <DependentUpon>Easebuzz_Handler_Success.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Payu_Handler_Success.aspx.designer.vb">
+      <DependentUpon>Payu_Handler_Success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payu_Handler_Success.aspx.vb">
+      <DependentUpon>Payu_Handler_Success.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PaySprintAEPSCallbkController.vb" />
+    <Compile Include="PaytsLogin.aspx.designer.vb">
+      <DependentUpon>PaytsLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaytsLogin.aspx.vb">
+      <DependentUpon>PaytsLogin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ETLogin.aspx.designer.vb">
+      <DependentUpon>ETLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ETLogin.aspx.vb">
+      <DependentUpon>ETLogin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="GenerateUCCController.vb" />
+    <Compile Include="kmLogin.aspx.designer.vb">
+      <DependentUpon>kmLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kmLogin.aspx.vb">
+      <DependentUpon>kmLogin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PaySprintDMTCallbkController.vb" />
+    <Compile Include="IrctcOrderBookingController.vb" />
+    <Compile Include="IrctcLoginAuthController.vb" />
+    <Compile Include="LoginAuthController.vb" />
+    <Compile Include="CreateCustomer_1.aspx.designer.vb">
+      <DependentUpon>CreateCustomer_1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateCustomer_1.aspx.vb">
+      <DependentUpon>CreateCustomer_1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CreateAgent.aspx.designer.vb">
+      <DependentUpon>CreateAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateAgent.aspx.vb">
+      <DependentUpon>CreateAgent.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MobileD.aspx.designer.vb">
+      <DependentUpon>MobileD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MobileD.aspx.vb">
+      <DependentUpon>MobileD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SetAPI_Status_AdminWise.aspx.designer.vb">
+      <DependentUpon>SetAPI_Status_AdminWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SetAPI_Status_AdminWise.aspx.vb">
+      <DependentUpon>SetAPI_Status_AdminWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GoToClientAccount.aspx.designer.vb">
+      <DependentUpon>GoToClientAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GoToClientAccount.aspx.vb">
+      <DependentUpon>GoToClientAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_Notification.aspx.designer.vb">
+      <DependentUpon>BOS_Notification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_Notification.aspx.vb">
+      <DependentUpon>BOS_Notification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Recharge_Callback_Report.aspx.designer.vb">
+      <DependentUpon>Recharge_Callback_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Recharge_Callback_Report.aspx.vb">
+      <DependentUpon>Recharge_Callback_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SearchClientDetails.aspx.designer.vb">
+      <DependentUpon>SearchClientDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SearchClientDetails.aspx.vb">
+      <DependentUpon>SearchClientDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SetAPI_Status_RetailerWise.aspx.designer.vb">
+      <DependentUpon>SetAPI_Status_RetailerWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SetAPI_Status_RetailerWise.aspx.vb">
+      <DependentUpon>SetAPI_Status_RetailerWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\testDMTAPI.aspx.designer.vb">
+      <DependentUpon>testDMTAPI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\testDMTAPI.aspx.vb">
+      <DependentUpon>testDMTAPI.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GoToAccount.aspx.designer.vb">
+      <DependentUpon>GoToAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GoToAccount.aspx.vb">
+      <DependentUpon>GoToAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin_EmployeeTypeMaster.aspx.designer.vb">
+      <DependentUpon>Admin_EmployeeTypeMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin_EmployeeTypeMaster.aspx.vb">
+      <DependentUpon>Admin_EmployeeTypeMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin_EmployeeSkillMaster.aspx.designer.vb">
+      <DependentUpon>Admin_EmployeeSkillMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin_EmployeeSkillMaster.aspx.vb">
+      <DependentUpon>Admin_EmployeeSkillMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\testAPI.aspx.designer.vb">
+      <DependentUpon>testAPI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\testAPI.aspx.vb">
+      <DependentUpon>testAPI.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SuperAdminMainModuleMaster.aspx.designer.vb">
+      <DependentUpon>SuperAdminMainModuleMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SuperAdminMainModuleMaster.aspx.vb">
+      <DependentUpon>SuperAdminMainModuleMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SuperAdminSubModuleMaster.aspx.designer.vb">
+      <DependentUpon>SuperAdminSubModuleMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SuperAdminSubModuleMaster.aspx.vb">
+      <DependentUpon>SuperAdminSubModuleMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SuperAdmin_DesignationMaster.aspx.designer.vb">
+      <DependentUpon>SuperAdmin_DesignationMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SuperAdmin_DesignationMaster.aspx.vb">
+      <DependentUpon>SuperAdmin_DesignationMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SuperAdmin_ProfileMaster.aspx.designer.vb">
+      <DependentUpon>SuperAdmin_ProfileMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SuperAdmin_ProfileMaster.aspx.vb">
+      <DependentUpon>SuperAdmin_ProfileMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DashBoard.aspx.designer.vb">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DashBoard.aspx.vb">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_CreateAgent.aspx.designer.vb">
+      <DependentUpon>BOS_CreateAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_CreateAgent.aspx.vb">
+      <DependentUpon>BOS_CreateAgent.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AEPSController.vb" />
+    <Compile Include="AdminLogin.aspx.designer.vb">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.vb">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InstaResponseHandler.aspx.designer.vb">
+      <DependentUpon>InstaResponseHandler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InstaResponseHandler.aspx.vb">
+      <DependentUpon>InstaResponseHandler.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CreateCustomer_old.aspx.designer.vb">
+      <DependentUpon>CreateCustomer_old.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateCustomer_old.aspx.vb">
+      <DependentUpon>CreateCustomer_old.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\404.aspx.designer.vb">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\404.aspx.vb">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\500.aspx.designer.vb">
+      <DependentUpon>500.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\500.aspx.vb">
+      <DependentUpon>500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\Oops.aspx.designer.vb">
+      <DependentUpon>Oops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\Oops.aspx.vb">
+      <DependentUpon>Oops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddMessageTemplates.aspx.designer.vb">
+      <DependentUpon>AddMessageTemplates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddMessageTemplates.aspx.vb">
+      <DependentUpon>AddMessageTemplates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GlobalVariable.vb" />
+    <Compile Include="Admin\Admin_CreateAllBackup.aspx.designer.vb">
+      <DependentUpon>Admin_CreateAllBackup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin_CreateAllBackup.aspx.vb">
+      <DependentUpon>Admin_CreateAllBackup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProfileInfo.aspx.designer.vb">
+      <DependentUpon>ProfileInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProfileInfo.aspx.vb">
+      <DependentUpon>ProfileInfo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_DistrictMaster.aspx.designer.vb">
+      <DependentUpon>BOS_DistrictMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_DistrictMaster.aspx.vb">
+      <DependentUpon>BOS_DistrictMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BOS_StateMaster.aspx.designer.vb">
+      <DependentUpon>BOS_StateMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BOS_StateMaster.aspx.vb">
+      <DependentUpon>BOS_StateMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SuperAdmin_CountryMaster.aspx.designer.vb">
+      <DependentUpon>SuperAdmin_CountryMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SuperAdmin_CountryMaster.aspx.vb">
+      <DependentUpon>SuperAdmin_CountryMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddMailTemplates.aspx.designer.vb">
+      <DependentUpon>AddMailTemplates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddMailTemplates.aspx.vb">
+      <DependentUpon>AddMailTemplates.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ClientPasswordReport.aspx.designer.vb">
+      <DependentUpon>ClientPasswordReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ClientPasswordReport.aspx.vb">
+      <DependentUpon>ClientPasswordReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChangeOperatorPassword.aspx.designer.vb">
+      <DependentUpon>ChangeOperatorPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ChangeOperatorPassword.aspx.vb">
+      <DependentUpon>ChangeOperatorPassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OperatorLoginLogoffReport.aspx.designer.vb">
+      <DependentUpon>OperatorLoginLogoffReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OperatorLoginLogoffReport.aspx.vb">
+      <DependentUpon>OperatorLoginLogoffReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LoginLogOffMaster.aspx.designer.vb">
+      <DependentUpon>LoginLogOffMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LoginLogOffMaster.aspx.vb">
+      <DependentUpon>LoginLogOffMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LoginTimeFrame.aspx.designer.vb">
+      <DependentUpon>LoginTimeFrame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LoginTimeFrame.aspx.vb">
+      <DependentUpon>LoginTimeFrame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateLogin.aspx.designer.vb">
+      <DependentUpon>CreateLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CreateLogin.aspx.vb">
+      <DependentUpon>CreateLogin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Module1.vb" />
+    <Compile Include="Admin\SuperAdminMenuCreation.aspx.designer.vb">
+      <DependentUpon>SuperAdminMenuCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SuperAdminMenuCreation.aspx.vb">
+      <DependentUpon>SuperAdminMenuCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SuperAdminUserRigths.aspx.designer.vb">
+      <DependentUpon>SuperAdminUserRigths.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SuperAdminUserRigths.aspx.vb">
+      <DependentUpon>SuperAdminUserRigths.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Group_Master.aspx.designer.vb">
+      <DependentUpon>Group_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Group_Master.aspx.vb">
+      <DependentUpon>Group_Master.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Mainpage.aspx.designer.vb">
+      <DependentUpon>Mainpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Mainpage.aspx.vb">
+      <DependentUpon>Mainpage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Admin\SuperAdmin.Master.designer.vb">
+      <DependentUpon>SuperAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SuperAdmin.Master.vb">
+      <DependentUpon>SuperAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SuperAdminHome.aspx.designer.vb">
+      <DependentUpon>SuperAdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SuperAdminHome.aspx.vb">
+      <DependentUpon>SuperAdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SuperAdminLogout.aspx.designer.vb">
+      <DependentUpon>SuperAdminLogout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SuperAdminLogout.aspx.vb">
+      <DependentUpon>SuperAdminLogout.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Product.vb" />
+    <Compile Include="ProductsController.vb" />
+    <Compile Include="publicSevaKendra.aspx.designer.vb">
+      <DependentUpon>publicSevaKendra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="publicSevaKendra.aspx.vb">
+      <DependentUpon>publicSevaKendra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RechargeController.vb" />
+    <Compile Include="RechargeKitCallbackController.vb" />
+    <Compile Include="Trans_Login.vb" />
+    <Compile Include="UrgamitraLogin.aspx.designer.vb">
+      <DependentUpon>UrgamitraLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UrgamitraLogin.aspx.vb">
+      <DependentUpon>UrgamitraLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UrjamitraB2B_login.aspx.designer.vb">
+      <DependentUpon>UrjamitraB2B_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UrjamitraB2B_login.aspx.vb">
+      <DependentUpon>UrjamitraB2B_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="psk_mLogin.aspx.designer.vb">
+      <DependentUpon>psk_mLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="psk_mLogin.aspx.vb">
+      <DependentUpon>psk_mLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vpaylogin.aspx.designer.vb">
+      <DependentUpon>vpaylogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vpaylogin.aspx.vb">
+      <DependentUpon>vpaylogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebService\AppService.asmx.vb">
+      <DependentUpon>AppService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebService\SecuWebService.asmx.vb">
+      <DependentUpon>SecuWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\fonts\flaticon\flaticon.4.delaye" />
+    <Content Include="assets\fonts\flatico\Flaticon.14.delaye" />
+    <Content Include="assets\fonts\flatico\Flaticon.16.delaye" />
+    <Content Include="assets\fonts\flatico\Flaticon.17.delaye" />
+    <Content Include="assets\fonts\flatico\Flaticon.18.delaye" />
+    <Content Include="assets\fonts\flatico\Flaticon.19.delaye" />
+    <Content Include="assets\fonts\fla\Flaticon.15d41d.delaye" />
+    <Content Include="assets\fonts\fo\font-awesome.min.3.dela" />
+    <Content Include="assets\fonts\fo\fontawesome-webfont.103" />
+    <Content Include="assets\fonts\fo\fontawesome-webfont.113" />
+    <Content Include="assets\fonts\fo\fontawesome-webfont.123" />
+    <Content Include="assets\fonts\fo\fontawesome-webfont.133" />
+    <Content Include="assets\fonts\fo\fontawesome-webfont.e3e" />
+    <Content Include="assets\fonts\fo\fontawesome-webfont.fd4" />
+    <Content Include="assets\js\bootstrap.bundle.min.d.delaye" />
+    <None Include="css\bootstrap-theme.css.map" />
+    <None Include="css\bootstrap-theme.min.css.map" />
+    <None Include="css\bootstrap.css.map" />
+    <None Include="css\bootstrap.min.css.map" />
+    <None Include="fonts\fontawesome-webfont.eot" />
+    <None Include="fonts\fontawesome-webfont.ttf" />
+    <None Include="fonts\fontawesome-webfont.woff" />
+    <None Include="fonts\fontawesome-webfont.woff2" />
+    <None Include="fonts\FontAwesome.otf" />
+    <None Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="fonts\glyphicons-halflings-regular.svg" />
+    <None Include="fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Iconss\aeps_1.webp" />
+    <None Include="Iconss\icon.webp" />
+    <None Include="Iconss\Thumbs.db" />
+    <None Include="images\bg1.psd" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\.gitignore" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\.gitmodules" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\bower.json" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\build.sh" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\CNAME" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\docs\getting_started.md" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\doc\plugins\from_html.md" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\annotation\test_annotation-magFactor.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\annotation\test_annotation.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\examples\outline\test_outline.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\Downloadify\README.textile" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\Downloadify\src\com\dynamicflash\util\Base64.as" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\Downloadify\src\com\dynamicflash\util\tests\Base64Test.as" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\Downloadify\src\Downloadify.as" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\LICENSE" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\html2canvas\readme.md" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\README" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\Makefile" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\package.json" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\README.md" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\SUMMARY.md" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\001_blankpdf.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\002_twopagedoc.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\002_twopagedoc_oldapi.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\003_demolandscape.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\004_fontsizes.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\005_demofonttypes.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\006_demotestcolors.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\007_demometadata.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\008_demorectangles.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\009_demoliness.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\010_democircles.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\011_multilinetext.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\012_multiplelines.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\013_sillysvgrenderer.pdf" />
+    <None Include="js\jsPDF-1.2.60\jsPDF-1.2.60\test\015_splittext.pdf" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Admin\SuperAdmin.Master" />
+    <None Include="Admin\temp%25.sys" />
+    <Content Include="packages.config" />
+    <None Include="temp%25.sys" />
+    <None Include="WebService\temp%25.sys" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\adler32cs.js\" />
+    <Folder Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\Blob.js\" />
+    <Folder Include="js\jsPDF-1.2.60\jsPDF-1.2.60\libs\FileSaver.js\" />
+    <Folder Include="OrderImages\" />
+    <Folder Include="Template\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56380</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

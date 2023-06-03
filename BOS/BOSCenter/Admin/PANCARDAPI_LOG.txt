@@ -1,0 +1,250 @@
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 1260
+Trans DateTime : 11/01/2019 10:11:21 AM
+Request String  : {"CType":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ"}
+
+Response String  : {"status":101,"message":"An error occurred while updating the entries. See the inner exception for details."}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 1261
+Trans DateTime : 11/01/2019 10:11:48 AM
+Request String  : {"CType":2,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ"}
+
+Response String  : {"status":101,"message":"An error occurred while updating the entries. See the inner exception for details."}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 1391
+Trans DateTime : 11/01/2019 3:58:58 PM
+Request String  : {"CType":2,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ"}
+
+Response String  : {"status":101,"message":"An error occurred while updating the entries. See the inner exception for details."}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 1397
+Trans DateTime : 11/01/2019 4:03:33 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 2663
+Trans DateTime : 11/07/2019 5:34:32 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-101And RetailerMobileNo - 1231231231"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 16373
+Trans DateTime : 01/20/2020 10:12:42 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-101 And RetailerMobileNo - 1231231231"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 16374
+Trans DateTime : 01/20/2020 10:20:42 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-101 And RetailerMobileNo - 1231231231"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 22662
+Trans DateTime : 03/26/2021 05:29:12 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - 9911477688"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 22980
+Trans DateTime : 09/07/2021 1:38:49 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - "}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 22981
+Trans DateTime : 09/07/2021 1:39:03 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - "}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 22982
+Trans DateTime : 09/07/2021 1:44:43 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - "}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 22983
+Trans DateTime : 09/07/2021 5:09:47 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - "}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 22984
+Trans DateTime : 09/07/2021 5:22:29 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - "}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 23319
+Trans DateTime : 11/22/2021 4:10:10 PM
+Request String  : {"Card_Type":2,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - 9911477688"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 23320
+Trans DateTime : 11/22/2021 4:21:32 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - 9911477688"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 23321
+Trans DateTime : 11/22/2021 4:40:04 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - 9911477688"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 23322
+Trans DateTime : 11/22/2021 4:50:59 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - 9911477688"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 23323
+Trans DateTime : 11/22/2021 4:59:39 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - 9911477688"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 23324
+Trans DateTime : 11/22/2021 5:02:30 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - 9911477688"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 23326
+Trans DateTime : 11/22/2021 5:25:11 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - 9911477688"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 23327
+Trans DateTime : 11/22/2021 5:57:31 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - 9911477688"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 23328
+Trans DateTime : 11/22/2021 5:59:37 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - 9911477688"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 23329
+Trans DateTime : 11/22/2021 6:11:06 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - 9911477688"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 23330
+Trans DateTime : 11/22/2021 6:20:57 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - 9911477688"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Trans ID : 23331
+Trans DateTime : 11/22/2021 6:37:28 PM
+Request String  : {"Card_Type":1,"Qty":1,"Key":"UTwHXNFqMTAUPrW5wktuluSARpx7SQ2k3lFh14sZ","Remarks":" RetailerID - RTE-554 And RetailerMobileNo - 9911477688"}
+
+Response String  : {"status":0,"message":"Success"}
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container-fluid{
+    background: url("../Images/background/background-one.png");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+.container-fluid .row .login-panel .login-section{
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+}
+#headinglogin{
+    font-size: 40px; 
+    font-weight: bold;
+    color: #7BAB52;
+}
+#headinglogin::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 52px;
+    left: 70px;
+    width: 110px;
+    height: 3px;
+    border-radius: 15px;
+    background: linear-gradient(rgb(41,74,146),rgb(120,170,76));
+}
+#btnForgotPassword{
+    text-decoration: none;
+    color: #284991;
+}
+#btnForgotPassword:hover {
+    text-decoration: underline;
+    transition: 0.2s ease-in-out;
+}
+#ddl_Login_For{
+    border: 1px solid grey;
+    padding: 5px;
+    border-radius: 6px;
+    background: #EAF9DD;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+#txtUserName {
+    border: none;
+    padding: 8px;
+    border-radius: none;
+    background: #EAF9DD;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid green;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#txtPassword {
+    border: none;
+    padding: 8px;
+    border-radius: none;
+    background: #EAF9DD;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid green;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#continue-bar{
+    text-decoration: none;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+    border-radius: 6px;
+    background: rgb(120,170,76);
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    position: relative;
+    outline: none;
+    display: flex;
+    border: 4px solid black;
+}
+
+#lnkSignup {
+    text-decoration: none;
+    padding: 10px 20px;
+    width: 50%;
+    text-align: center;
+    border-radius: 6px;
+    background: #284992;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 1px;
+    position: relative;
+}
+    #lnkSignup:hover {
+        transition: 0.2s ease-in-out;
+        background: rgb(120,170,76);
+    }

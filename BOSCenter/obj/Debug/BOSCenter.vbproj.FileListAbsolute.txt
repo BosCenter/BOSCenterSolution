@@ -1,0 +1,442 @@
+D:\BOS_API\BOS\BOSCenter\bin\BOSCenter.dll
+D:\BOS_API\BOS\BOSCenter\bin\BOSCenter.pdb
+D:\BOS_API\BOS\BOSCenter\bin\BOSCenter.xml
+D:\BOS_API\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+D:\BOS_API\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.Cache
+D:\BOS_API\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+D:\BOS_API\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+D:\BOS_API\BOS\BOSCenter\obj\Debug\BOSCenter.pdb
+D:\BOS_API\BOS\BOSCenter\obj\Debug\BOSCenter.vbprojResolveAssemblyReference.cache
+E:\BOS\BOSCenter\bin\BOSCenter.dll
+E:\BOS\BOSCenter\bin\BOSCenter.pdb
+E:\BOS\BOSCenter\bin\BOSCenter.xml
+E:\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.dll
+E:\BOS\BOSCenter\bin\System.Net.Http.dll
+E:\BOS\BOSCenter\bin\System.Net.Http.Formatting.dll
+E:\BOS\BOSCenter\bin\System.Net.Http.WebRequest.dll
+E:\BOS\BOSCenter\bin\System.Web.Http.dll
+E:\BOS\BOSCenter\bin\System.Web.Http.WebHost.dll
+E:\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.xml
+E:\BOS\BOSCenter\bin\System.Net.Http.xml
+E:\BOS\BOSCenter\bin\System.Net.Http.Formatting.xml
+E:\BOS\BOSCenter\bin\System.Net.Http.WebRequest.xml
+E:\BOS\BOSCenter\bin\System.Web.Http.xml
+E:\BOS\BOSCenter\bin\System.Web.Http.WebHost.xml
+E:\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+E:\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.Cache
+E:\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+E:\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+E:\BOS\BOSCenter\obj\Debug\BOSCenter.pdb
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\bin\BOSCenter.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\bin\BOSCenter.pdb
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\bin\BOSCenter.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\bin\System.Net.Http.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\bin\System.Net.Http.Formatting.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\bin\System.Net.Http.WebRequest.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\bin\System.Web.Http.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\bin\System.Web.Http.WebHost.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\bin\System.Net.Http.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\bin\System.Net.Http.Formatting.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\bin\System.Net.Http.WebRequest.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\bin\System.Web.Http.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\bin\System.Web.Http.WebHost.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.Cache
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\obj\Debug\BOSCenter.pdb
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS\BOSCenter\obj\Debug\BOSCenter.vbprojResolveAssemblyReference.cache
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\bin\BOSCenter.dll
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\bin\BOSCenter.pdb
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\bin\BOSCenter.xml
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.dll
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\bin\System.Net.Http.dll
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\bin\System.Net.Http.Formatting.dll
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\bin\System.Net.Http.WebRequest.dll
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\bin\System.Web.Http.dll
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\bin\System.Web.Http.WebHost.dll
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.xml
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\bin\System.Net.Http.xml
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\bin\System.Net.Http.Formatting.xml
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\bin\System.Net.Http.WebRequest.xml
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\bin\System.Web.Http.xml
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\bin\System.Web.Http.WebHost.xml
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.Cache
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\obj\Debug\BOSCenter.pdb
+D:\SapnaProject\BOS_E_SHOPPING\BOS\BOSCenter\obj\Debug\BOSCenter.vbprojResolveAssemblyReference.cache
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\bin\BOSCenter.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\bin\BOSCenter.pdb
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\bin\BOSCenter.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\bin\Microsoft.Web.Infrastructure.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\bin\System.Net.Http.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\bin\System.Net.Http.Formatting.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\bin\System.Net.Http.WebRequest.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\bin\System.Web.Http.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\bin\System.Web.Http.WebHost.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\bin\Microsoft.Web.Infrastructure.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\bin\System.Net.Http.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\bin\System.Net.Http.Formatting.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\bin\System.Net.Http.WebRequest.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\bin\System.Web.Http.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\bin\System.Web.Http.WebHost.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\obj\Debug\BOSCenter.vbprojResolveAssemblyReference.cache
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.Cache
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\obj\Debug\BOSCenter.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\obj\Debug\BOSCenter.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS_12\BOSCenter\obj\Debug\BOSCenter.pdb
+D:\OFFICE_WORK\BOS\BOSCenter\bin\BOSCenter.dll
+D:\OFFICE_WORK\BOS\BOSCenter\bin\BOSCenter.pdb
+D:\OFFICE_WORK\BOS\BOSCenter\bin\BOSCenter.xml
+D:\OFFICE_WORK\BOS\BOSCenter\bin\System.Net.Http.dll
+D:\OFFICE_WORK\BOS\BOSCenter\bin\System.Net.Http.Formatting.dll
+D:\OFFICE_WORK\BOS\BOSCenter\bin\System.Net.Http.WebRequest.dll
+D:\OFFICE_WORK\BOS\BOSCenter\bin\System.Web.Http.dll
+D:\OFFICE_WORK\BOS\BOSCenter\bin\System.Web.Http.WebHost.dll
+D:\OFFICE_WORK\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.xml
+D:\OFFICE_WORK\BOS\BOSCenter\bin\System.Net.Http.xml
+D:\OFFICE_WORK\BOS\BOSCenter\bin\System.Net.Http.Formatting.xml
+D:\OFFICE_WORK\BOS\BOSCenter\bin\System.Net.Http.WebRequest.xml
+D:\OFFICE_WORK\BOS\BOSCenter\bin\System.Web.Http.xml
+D:\OFFICE_WORK\BOS\BOSCenter\bin\System.Web.Http.WebHost.xml
+D:\OFFICE_WORK\BOS\BOSCenter\obj\Debug\BOSCenter.vbprojResolveAssemblyReference.cache
+D:\OFFICE_WORK\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+D:\OFFICE_WORK\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.Cache
+D:\OFFICE_WORK\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+D:\OFFICE_WORK\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+D:\OFFICE_WORK\BOS\BOSCenter\obj\Debug\BOSCenter.pdb
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\bin\BOSCenter.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\bin\BOSCenter.pdb
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\bin\BOSCenter.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\bin\System.Net.Http.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\bin\System.Net.Http.Formatting.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\bin\System.Net.Http.WebRequest.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\bin\System.Web.Http.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\bin\System.Web.Http.WebHost.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\bin\System.Net.Http.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\bin\System.Net.Http.Formatting.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\bin\System.Net.Http.WebRequest.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\bin\System.Web.Http.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\bin\System.Web.Http.WebHost.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\obj\Debug\BOSCenter.vbprojResolveAssemblyReference.cache
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.Cache
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS_WITH_SUPERADMIN\BOS\BOSCenter\obj\Debug\BOSCenter.pdb
+D:\Sharefolder\BOS\BOSCenter\bin\BOSCenter.dll.config
+D:\Sharefolder\BOS\BOSCenter\bin\BOSCenter.dll
+D:\Sharefolder\BOS\BOSCenter\bin\BOSCenter.pdb
+D:\Sharefolder\BOS\BOSCenter\bin\BOSCenter.xml
+D:\Sharefolder\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Sharefolder\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.dll
+D:\Sharefolder\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.dll
+D:\Sharefolder\BOS\BOSCenter\bin\Octokit.dll
+D:\Sharefolder\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\Sharefolder\BOS\BOSCenter\bin\System.Net.Http.Formatting.dll
+D:\Sharefolder\BOS\BOSCenter\bin\System.Web.Http.dll
+D:\Sharefolder\BOS\BOSCenter\bin\System.Web.Http.WebHost.dll
+D:\Sharefolder\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\Sharefolder\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.xml
+D:\Sharefolder\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.xml
+D:\Sharefolder\BOS\BOSCenter\bin\Octokit.xml
+D:\Sharefolder\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\Sharefolder\BOS\BOSCenter\bin\System.Net.Http.Formatting.xml
+D:\Sharefolder\BOS\BOSCenter\bin\System.Web.Http.xml
+D:\Sharefolder\BOS\BOSCenter\bin\System.Web.Http.WebHost.xml
+D:\Sharefolder\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+D:\Sharefolder\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.cache
+D:\Sharefolder\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CoreCompileInputs.cache
+D:\Sharefolder\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+D:\Sharefolder\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+D:\Sharefolder\BOS\BOSCenter\obj\Debug\BOSCenter.pdb
+D:\Sharefolder\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.AssemblyReference.cache
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\BOSCenter.dll.config
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\BOSCenter.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\BOSCenter.pdb
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\BOSCenter.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\Microsoft.IdentityModel.Logging.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\Microsoft.IdentityModel.Tokens.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\Microsoft.Web.Infrastructure.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\Octokit.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\System.Net.Http.Formatting.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\System.Web.Http.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\System.Web.Http.WebHost.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\Microsoft.IdentityModel.Logging.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\Microsoft.IdentityModel.Tokens.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\Microsoft.Web.Infrastructure.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\Octokit.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\System.Net.Http.Formatting.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\System.Web.Http.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\bin\System.Web.Http.WebHost.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\obj\Debug\BOSCenter.vbproj.AssemblyReference.cache
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.cache
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\obj\Debug\BOSCenter.vbproj.CoreCompileInputs.cache
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\obj\Debug\BOSCenter.vbproj.CopyComplete
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\obj\Debug\BOSCenter.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\obj\Debug\BOSCenter.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS_5\BOSCenter\obj\Debug\BOSCenter.pdb
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\BOSCenter.dll.config
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\BOSCenter.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\BOSCenter.pdb
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\BOSCenter.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\Octokit.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\System.Net.Http.Formatting.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\System.Web.Http.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\System.Web.Http.WebHost.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\Octokit.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\System.Net.Http.Formatting.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\System.Web.Http.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\bin\System.Web.Http.WebHost.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.cache
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CoreCompileInputs.cache
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CopyComplete
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\praveen\BOS\BOSCenter\obj\Debug\BOSCenter.pdb
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\BOSCenter.dll.config
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\BOSCenter.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\BOSCenter.pdb
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\BOSCenter.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\Octokit.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\System.Net.Http.Formatting.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\System.Web.Http.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\System.Web.Http.WebHost.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\Octokit.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\System.Net.Http.Formatting.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\System.Web.Http.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\bin\System.Web.Http.WebHost.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.AssemblyReference.cache
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.cache
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CoreCompileInputs.cache
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CopyComplete
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+E:\EMV-Work\WEB-PROJECTS\BOS-ASHOK\BOS-WITH-SA-MD-SD-RT\BOS\BOSCenter\obj\Debug\BOSCenter.pdb
+D:\New folder\BOS\BOS\BOSCenter\bin\BOSCenter.dll.config
+D:\New folder\BOS\BOS\BOSCenter\bin\BOSCenter.dll
+D:\New folder\BOS\BOS\BOSCenter\bin\BOSCenter.pdb
+D:\New folder\BOS\BOS\BOSCenter\bin\BOSCenter.xml
+D:\New folder\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\New folder\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.dll
+D:\New folder\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.dll
+D:\New folder\BOS\BOS\BOSCenter\bin\Octokit.dll
+D:\New folder\BOS\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\New folder\BOS\BOS\BOSCenter\bin\System.Net.Http.Formatting.dll
+D:\New folder\BOS\BOS\BOSCenter\bin\System.Web.Http.dll
+D:\New folder\BOS\BOS\BOSCenter\bin\System.Web.Http.WebHost.dll
+D:\New folder\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\New folder\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.xml
+D:\New folder\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.xml
+D:\New folder\BOS\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.xml
+D:\New folder\BOS\BOS\BOSCenter\bin\Octokit.xml
+D:\New folder\BOS\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\New folder\BOS\BOS\BOSCenter\bin\System.Net.Http.Formatting.xml
+D:\New folder\BOS\BOS\BOSCenter\bin\System.Web.Http.xml
+D:\New folder\BOS\BOS\BOSCenter\bin\System.Web.Http.WebHost.xml
+D:\New folder\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.AssemblyReference.cache
+D:\New folder\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+D:\New folder\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.cache
+D:\New folder\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CoreCompileInputs.cache
+D:\New folder\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CopyComplete
+D:\New folder\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+D:\New folder\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+D:\New folder\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.pdb
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\BOSCenter.dll.config
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\BOSCenter.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\BOSCenter.pdb
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\BOSCenter.xml
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\Octokit.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Net.Http.Formatting.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.Http.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.Http.WebHost.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.xml
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.xml
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\Octokit.xml
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Net.Http.Formatting.xml
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.Http.xml
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.Http.WebHost.xml
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.AssemblyReference.cache
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.cache
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CoreCompileInputs.cache
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CopyComplete
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.pdb
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.Helpers.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.Mvc.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.Razor.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.WebPages.Deployment.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.WebPages.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.WebPages.Razor.dll
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.Helpers.xml
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.Mvc.xml
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.Razor.xml
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.WebPages.xml
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.WebPages.Deployment.xml
+D:\Updated Final Sof-BOS\BOS\BOS\BOSCenter\bin\System.Web.WebPages.Razor.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\BOSCenter.dll.config
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\BOSCenter.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\BOSCenter.pdb
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\BOSCenter.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\Octokit.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Net.Http.Formatting.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.Helpers.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.Http.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.Http.WebHost.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.Mvc.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.Razor.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.WebPages.Deployment.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.WebPages.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.WebPages.Razor.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\Octokit.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Net.Http.Formatting.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.Helpers.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.Http.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.Http.WebHost.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.Mvc.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.Razor.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.WebPages.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.WebPages.Deployment.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\bin\System.Web.WebPages.Razor.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.AssemblyReference.cache
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.cache
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CoreCompileInputs.cache
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CopyComplete
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+C:\Office Work\BOS\UAT Server BOSCENTER\BOS\BOSCenter\obj\Debug\BOSCenter.pdb
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.AssemblyReference.cache
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.cache
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CoreCompileInputs.cache
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\BOSCenter.dll.config
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\BOSCenter.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\BOSCenter.pdb
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\BOSCenter.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\Octokit.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Net.Http.Formatting.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.Helpers.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.Http.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.Http.WebHost.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.Mvc.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.Razor.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.WebPages.Deployment.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.WebPages.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.WebPages.Razor.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\Octokit.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Net.Http.Formatting.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.Helpers.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.Http.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.Http.WebHost.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.Mvc.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.Razor.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.WebPages.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.WebPages.Deployment.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\bin\System.Web.WebPages.Razor.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CopyComplete
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\obj\Debug\BOSCenter.pdb
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\BOSCenter.dll.config
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\BOSCenter.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\BOSCenter.pdb
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\BOSCenter.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\Octokit.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Net.Http.Formatting.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.Helpers.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.Http.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.Http.WebHost.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.Mvc.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.Razor.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.WebPages.Deployment.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.WebPages.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.WebPages.Razor.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\Octokit.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Net.Http.Formatting.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.Helpers.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.Http.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.Http.WebHost.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.Mvc.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.Razor.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.WebPages.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.WebPages.Deployment.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\bin\System.Web.WebPages.Razor.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.AssemblyReference.cache
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.cache
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CoreCompileInputs.cache
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CopyComplete
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\obj\Debug\BOSCenter.pdb

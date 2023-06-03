@@ -1,0 +1,5 @@
+-------------------START-------------5/27/2023 5:06:51 PM
+Page :
+The operation has timed outStackTrace :    at System.Net.WebClient.OpenRead(Uri address)
+   at BOSCenter.SuperAdmin.Page_Load(Object sender, EventArgs e) in C:\Office Work\BOS\Live Server BOSCENTER\BOS04112023\BOS\BOSCenter\Admin\SuperAdmin.Master.vb:line 276
+-------------------END-------------5/27/2023 5:06:51 PM

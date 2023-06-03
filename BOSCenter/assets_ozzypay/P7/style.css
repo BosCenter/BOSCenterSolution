@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .row{
+    width: 40vw;
+    margin-top: 15px;
+}
+.container .row .col{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    gap: 15px;
+    background-color: #F5F5F5;
+    border-radius: 15px;
+}
+.container .row .col .xmark{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+.container .row .col .xmark .fa-xmark{
+    font-size: 26px;
+    border-radius: 50%;
+    padding: 11px;
+    background-color: rgb(210, 205, 205);
+    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+.container .row .col .log-in-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container .row .col .second .log-in-bar-two-2{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.container .row .col .second .log-in-bar-two-2 input{
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+    width: 100%;
+}
+.container .row .col .second .log-in-bar-two-2 input::placeholder{
+    font-size: 15px;
+    font-weight: 500;
+}
+.container .row .col .second .log-in-bar-two-2 p a{
+    text-decoration: none;
+    color: palevioletred;
+}
+.container .row .col .third .log-in-bar-one .box-one{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px;
+}
+.container .row .col .third .log-in-bar-two-2-2{
+    width: 100%;
+    text-align: center;
+    background-color: #E52C01;
+    color: white;
+    border-radius: 5px;
+}
+.container .row .col .third .log-in-bar-three-3 p a{
+    text-decoration: none;
+    color: palevioletred;
+}
+@media screen and (max-width:700px){
+    .container .row{
+        width: 60vw;
+        margin-top: 15px;
+    }
+}
+@media screen and (max-width:450px){
+    .container .row{
+        width: 90vw;
+        margin-top: 15px;
+    }
+}

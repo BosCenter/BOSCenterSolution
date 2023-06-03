@@ -1,0 +1,8 @@
+-------------------START-------------5/29/2023 12:54:25 PM
+Page :
+Thread was being aborted. StackTrace :    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at BOSCenter.BOS_BBPS_PS.btnRedirectPage_Click(Object sender, EventArgs e) in C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\Admin\BOS_BBPS_PS.aspx.vb:line 1587
+-------------------END-------------5/29/2023 12:54:25 PM
