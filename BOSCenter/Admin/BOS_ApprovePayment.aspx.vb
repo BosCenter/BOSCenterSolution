@@ -423,48 +423,63 @@ Public Class BOS_ApprovePayment
                                                     lblDialogMsg.Text = "Record Updated Successfully."
                                                     lblDialogMsg.CssClass = "Successlabels"
                                                     Bind()
-
-                                                Else
-                                                    lblDialogMsg.Text = "Sorry !! Record Failed."
-                                                    lblDialogMsg.CssClass = "errorlabels"
+                                                    btnCancel.Text = "OK"
+                                                    btnUpdate.Visible = False
                                                 End If
-                                                btnCancel.Text = "OK"
-                                                btnUpdate.Visible = False
+
+                                                ModalPopupExtender1.Show()
+
+                                            ElseIf status = "Failed" Then
+                                                ModalPopupExtender3.Show()
+                                                lblPopDateTime.Text = sers_.SelectToken("creationDateTime").ToString.Trim
+                                                lblPopTransactionId.Text = sers_.SelectToken("trxn_id").ToString.Trim
+                                                lblPopbankAccount.Text = sers_.SelectToken("beneficiaryAccNo").ToString.Trim
+                                                lblpopAmount.Text = sers_.SelectToken("amount").ToString.Trim
+                                                lblpopName.Text = sers_.SelectToken("beneficiaryName").ToString.Trim
+                                                lblPopUTR.Text = sers_.SelectToken("utr").ToString.Trim
+                                                lblPopStatus.Text = sers_.SelectToken("status").ToString.Trim
+                                                v_Transfer_Trans_ID = GV.get_AutoNumber("TransId", "BosCenter_DB")
+
+
                                             End If
-
-                                            ModalPopupExtender1.Show()
-
-                                        ElseIf status = "Failed" Then
-                                            ModalPopupExtender3.Show()
-                                            lblPopDateTime.Text = sers_.SelectToken("creationDateTime").ToString.Trim
-                                            lblPopTransactionId.Text = sers_.SelectToken("trxn_id").ToString.Trim
-                                            lblPopbankAccount.Text = sers_.SelectToken("beneficiaryAccNo").ToString.Trim
-                                            lblpopAmount.Text = sers_.SelectToken("amount").ToString.Trim
-                                            lblpopName.Text = sers_.SelectToken("beneficiaryName").ToString.Trim
-                                            lblPopUTR.Text = sers_.SelectToken("utr").ToString.Trim
-                                            lblPopStatus.Text = sers_.SelectToken("status").ToString.Trim
-                                            v_Transfer_Trans_ID = GV.get_AutoNumber("TransId", "BosCenter_DB")
-
-
                                         End If
+
+                                    Else
+
+                                        lblDialogMsg.Text = Descriptions.ToString()
+                                        lblDialogMsg.CssClass = "errorlabels"
+                                        ModalPopupExtender1.Show()
+
+                                        'lblDialogMsg.Text = Descriptions.ToString()
+                                        'lblDialogMsg.CssClass = "errorlabels"
                                     End If
-
-                                Else
-
-                                    lblDialogMsg.Text = Descriptions.ToString()
-                                    lblDialogMsg.CssClass = "errorlabels"
-                                    ModalPopupExtender1.Show()
-
-                                    'lblDialogMsg.Text = Descriptions.ToString()
-                                    'lblDialogMsg.CssClass = "errorlabels"
                                 End If
-                            End If
 
+                            End If
+                        End If
+                    Else
+                        str = "update " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_MakePayemnts_Details set ApporvedStatus='" & GV.parseString(ddlStatus.SelectedValue.Trim) & "', ApporveRemakrs='" & VRemark & "', ApprovedBy='" & GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response) & "',ApprovedDateTime=getdate() where RID=" & GV.parseString(lblRID.Text) & " ; "
+                        If ddlStatus.SelectedValue.Trim.ToUpper = "Rejected".Trim.ToUpper Then
+                            Dim V_Amt_Transfer_TransID As String = GV.FL.getAutoNumber("TransId")
+                            VTransferFromMsg = "Your Wallet is Credited by Distributor (" & VTransferFrom & ")"
+                            VTransferToMsg = "Your Wallet is Debited by BOS CENTER PVT LTD"
+                            SMSMeassgeTo = "Your Wallet is Debited With Rs. " & VTransferAmt & " By BOS CENTER PVT LTD"
+                            str = str & "  " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values('" & GV.parseString(GV.GetIPAddress) & "','" & V_Amt_Transfer_TransID.Trim & "','" & VTransferAmt & "','" & lblRefrenceID.Text.Trim & "','" & V_Amt_Transfer_TransID.Trim & "','" & VTransferFromMsg & "','" & VTransferToMsg & "','MakePayment','" & VRemark & "','" & Now.Date & "','" & VTransferFrom & "','" & VTransferTo & "','" & VTransferAmt & "',getdate(),'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+
+                            If CDec(lblTransferAmount.Text.Trim) > 0 Then
+                                'Dim vTransID As String = GV.FL.getAutoNumber("TransId")
+                                Dim VFrom As String = "Your Account is credited by ServiceCharge " & txtDeductAmt.Text.Trim & " Rs. Due to MakePayment / AMT " & lblTransferAmount.Text.Trim & "."
+                                Dim VTo As String = "Your Account is debited by ServiceCharge " & txtDeductAmt.Text.Trim & " Rs. Due to MakePayment / AMT " & lblTransferAmount.Text.Trim & "."
+                                str = str & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values('" & GV.parseString(GV.GetIPAddress) & "','" & GV.parseString(V_Amt_Transfer_TransID) & "','" & lblTransferAmount.Text.Trim & "','" & GV.parseString(lblRefrenceID.Text.Trim) & "','" & VFrom & "','" & VTo & "','Service Charge','Service Charge',getdate(),'" & VTransferTo & "','" & VTransferFrom & "','" & txtDeductAmt.Text.Trim & "',getdate(),'" & VUpdatedBy & "',getdate() ) ;"
+                            End If
+                            If Not str.Trim = "" Then
+                                GV.FL.DMLQueriesBulk(str)
+                            End If
+                            lblDialogMsg.Text = "Sorry !! Record Failed."
+                            lblDialogMsg.CssClass = "errorlabels"
                         End If
                     End If
                 End If
-
-
             End If
 
         Catch ex As Exception
@@ -594,7 +609,7 @@ Public Class BOS_ApprovePayment
             Else
                 txtDeductAmt.Text = "0"
                 txtDeductAmt.ReadOnly = True
-                txtApprovedAmount.Text = "0"
+                txtApprovedAmount.Text = lblTransferAmount.Text.Trim
             End If
 
             ModalPopupExtender1.Show()
