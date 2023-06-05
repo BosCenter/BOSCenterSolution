@@ -289,7 +289,7 @@ Public Class BOS_BBPS_PS
 
 
     Public Class bill_fetch
-        Dim VbillAmount, Vbillnetamount, VdueDate, VmaxBillAmount As String
+        Dim VbillAmount, Vbillnetamount, VminBillAmount As String
         Dim VacceptPayment, VacceptPartPay, VcellNumber, VuserName As String
 
         Public Property billAmount() As String
@@ -308,22 +308,22 @@ Public Class BOS_BBPS_PS
                 Vbillnetamount = value
             End Set
         End Property
-        Public Property maxBillAmount() As String
+        Public Property minBillAmount() As String
             Get
-                Return VmaxBillAmount
+                Return VminBillAmount
             End Get
             Set(ByVal value As String)
-                VmaxBillAmount = value
+                VminBillAmount = value
             End Set
         End Property
-        Public Property dueDate() As String
-            Get
-                Return VdueDate
-            End Get
-            Set(ByVal value As String)
-                VdueDate = value
-            End Set
-        End Property
+        'Public Property dueDate() As String
+        '    Get
+        '        Return VdueDate
+        '    End Get
+        '    Set(ByVal value As String)
+        '        VdueDate = value
+        '    End Set
+        'End Property
         Public Property acceptPayment() As String
             Get
                 Return VacceptPayment
@@ -932,640 +932,648 @@ Public Class BOS_BBPS_PS
 
 
                     Dim VTransId As String = GV.parseString(GV.FL.getAutoNumber("TransId"))
+                    If lblSelectedService.Text.Trim.ToUpper = "MOBILE" Then
+                        Dim setParameter_API_Obj As New DO_RECHARGE_API_Parameters
+                        setParameter_API_Obj.canumber = GV.parseString(txt_Mobile_CA_No.Text)
+                        setParameter_API_Obj.operator = GV.parseString(ddlOperators.SelectedValue)
+                        setParameter_API_Obj.referenceid = VTransId
+                        setParameter_API_Obj.amount = GV.parseString(txt_Recharge_Amt.Text.Trim)
+                        APIResult = ReadbyRestClient_NEW(DO_RECHARGE_API_URL, Newtonsoft.Json.JsonConvert.SerializeObject(setParameter_API_Obj))
+                    ElseIf lblSelectedService.Text.Trim.ToUpper = "FASTTAGE" Then
+                        Dim setParameter_API_Obj As New DO_RECHARGE_API_Parameters
+                        setParameter_API_Obj.canumber = GV.parseString(txt_Mobile_CA_No.Text)
+                        setParameter_API_Obj.operator = GV.parseString(ddlOperators.SelectedValue)
+                        'setParameter_API_Obj.referenceid = VTransId
+                        setParameter_API_Obj.amount = GV.parseString(txt_Recharge_Amt.Text.Trim)
+                        APIResult = ReadbyRestClient_NEW(FASTAGE_FETCHCUSOMERDETAILS_API_URL, Newtonsoft.Json.JsonConvert.SerializeObject(setParameter_API_Obj))
 
-                    Dim setParameter_API_Obj As New DO_RECHARGE_API_Parameters
-                    setParameter_API_Obj.canumber = GV.parseString(txt_Mobile_CA_No.Text)
-                    setParameter_API_Obj.operator = GV.parseString(ddlOperators.SelectedValue)
-                    'setParameter_API_Obj.referenceid = VTransId
-                    setParameter_API_Obj.amount = GV.parseString(txt_Recharge_Amt.Text.Trim)
-                    APIResult = ReadbyRestClient_NEW(FASTAGE_FETCHCUSOMERDETAILS_API_URL, Newtonsoft.Json.JsonConvert.SerializeObject(setParameter_API_Obj))
-                    If lblSelectedService.Text.Trim.ToUpper = "FASTTAGE" Then
                         If APIResult IsNot String.Empty Then
 
-                            ' ("bill_fetch")
-                            Dim json As JObject = JObject.Parse(APIResult)
+                                ' ("bill_fetch")
+                                Dim json As JObject = JObject.Parse(APIResult)
 
-                            Dim setParameter_FastageRecharge_API_Obj As New DO_FASTAGE_RECHARGE_API_Parameters
-                            'Dim setbill_fetchParameter As New bill_fetch
-                            setParameter_FastageRecharge_API_Obj.operator = GV.parseString(ddlOperators.SelectedValue)
-                            setParameter_FastageRecharge_API_Obj.canumber = GV.parseString(json.SelectToken("bill_fetch")("cellNumber").ToString)
-                            setParameter_FastageRecharge_API_Obj.amount = GV.parseString(txt_Recharge_Amt.Text)
-                            setParameter_FastageRecharge_API_Obj.referenceid = VTransId
-                            setParameter_FastageRecharge_API_Obj.latitude = "99"
-                            setParameter_FastageRecharge_API_Obj.longitude = "98"
-                            setParameter_FastageRecharge_API_Obj.bill_fetch.billAmount = GV.parseString(json.SelectToken("bill_fetch")("billAmount").ToString)
-                            setParameter_FastageRecharge_API_Obj.bill_fetch.billnetamount = GV.parseString(json.SelectToken("bill_fetch")("billnetamount").ToString)
-                            setParameter_FastageRecharge_API_Obj.bill_fetch.dueDate = GV.parseString(json.SelectToken("bill_fetch")("dueDate").ToString)
-                            setParameter_FastageRecharge_API_Obj.bill_fetch.maxBillAmount = GV.parseString(json.SelectToken("bill_fetch")("maxBillAmount").ToString)
+                                Dim setParameter_FastageRecharge_API_Obj As New DO_FASTAGE_RECHARGE_API_Parameters
+                                'Dim setbill_fetchParameter As New bill_fetch
+                                setParameter_FastageRecharge_API_Obj.operator = GV.parseString(ddlOperators.SelectedValue)
+                                setParameter_FastageRecharge_API_Obj.canumber = GV.parseString(json.SelectToken("bill_fetch")("cellNumber").ToString)
+                                setParameter_FastageRecharge_API_Obj.amount = GV.parseString(txt_Recharge_Amt.Text)
+                                setParameter_FastageRecharge_API_Obj.referenceid = VTransId
+                                setParameter_FastageRecharge_API_Obj.latitude = "99"
+                                setParameter_FastageRecharge_API_Obj.longitude = "98"
+                                setParameter_FastageRecharge_API_Obj.bill_fetch.billAmount = GV.parseString(json.SelectToken("bill_fetch")("billAmount").ToString)
+                                setParameter_FastageRecharge_API_Obj.bill_fetch.billnetamount = GV.parseString(json.SelectToken("bill_fetch")("billnetamount").ToString)
+                            'setParameter_FastageRecharge_API_Obj.bill_fetch.dueDate = GV.parseString(json.SelectToken("bill_fetch")("dueDate").ToString)
+                            setParameter_FastageRecharge_API_Obj.bill_fetch.minBillAmount = GV.parseString(json.SelectToken("bill_fetch")("billAmount").ToString)
+                            setParameter_FastageRecharge_API_Obj.bill_fetch.acceptPayment = GV.parseString(json.SelectToken("bill_fetch")("acceptPayment").ToString)
                             setParameter_FastageRecharge_API_Obj.bill_fetch.acceptPartPay = GV.parseString(json.SelectToken("bill_fetch")("acceptPartPay").ToString)
                             setParameter_FastageRecharge_API_Obj.bill_fetch.cellNumber = GV.parseString(json.SelectToken("bill_fetch")("cellNumber").ToString)
-                            setParameter_FastageRecharge_API_Obj.bill_fetch.userName = GV.parseString(json.SelectToken("bill_fetch")("userName").ToString)
-                            APIResult = ReadbyRestClient_NEW(FASTAGE_RECHARGE_API_URL, Newtonsoft.Json.JsonConvert.SerializeObject(setParameter_FastageRecharge_API_Obj))
+                                setParameter_FastageRecharge_API_Obj.bill_fetch.userName = GV.parseString(json.SelectToken("bill_fetch")("userName").ToString)
+                            APIResult = ReadbyRestClient_NEW("https://api.paysprint.in/api/v1/service/fastag/Fastag/recharge", Newtonsoft.Json.JsonConvert.SerializeObject(setParameter_FastageRecharge_API_Obj))
 
                         End If
-                    End If
-
-
-                    'VTransId = "157063"
-
-                    Dim strBuild As String = ""
-                    Dim v_response_code, v_message, v_operatorid, v_ackno, v_refid As String
-                    Dim v_status As Boolean = False
-                    v_message = ""
-                    v_operatorid = ""
-                    v_ackno = ""
-                    v_refid = ""
-                    v_response_code = ""
-                    'APIResult = "{ ""status "":true, ""response_code "":1, ""operatorid "": ""0 "", ""ackno "":29506346, ""refid "": ""157063 "", ""message "": ""Recharge for Airtel of Amount 10 is successful. ""}"
-                    '{"status":true,"response_code":1,"operatorid":"0","ackno":29545627,"refid":"157281","message":"Recharge for Airtel of Amount 10 is successful."}
-                    'APIResult = "{ ""status "":true, ""response_code "":1, ""operatorid "": ""0 "", ""ackno "":29546989, ""refid "": ""157286 "", ""message "": ""Recharge for Airtel of Amount 10 is successful. ""}"
-                    Dim json2 As JObject = JObject.Parse(APIResult)
-                    Dim data1_ As List(Of JToken) = json2.Children().ToList
-                    For Each item As JProperty In data1_
-                        If item.Name.ToString.Trim.ToUpper = "response_code".ToString.Trim.ToUpper Then
-                            v_response_code = item.Value.ToString
-                        ElseIf item.Name.ToString.Trim.ToUpper = "status".ToString.Trim.ToUpper Then
-                            v_status = item.Value
-                        ElseIf item.Name.ToString.Trim.ToUpper = "message".ToString.Trim.ToUpper Then
-                            v_message = item.Value.ToString
-                        ElseIf item.Name.ToString.Trim.ToUpper = "operatorid".ToString.Trim.ToUpper Then
-                            v_operatorid = item.Value.ToString
-                        ElseIf item.Name.ToString.Trim.ToUpper = "ackno".ToString.Trim.ToUpper Then
-                            v_ackno = item.Value.ToString
-                        ElseIf item.Name.ToString.Trim.ToUpper = "refid".ToString.Trim.ToUpper Then
-                            v_refid = item.Value.ToString
                         End If
-                    Next
-                    lineNo = 5
-
-                    'Gateway 2
-                    VTransId = VTransId
-                    Dim Vurid As String = RetailerID
-                    Dim Vmobile As String = Cus_MobileNo
-                    Dim Vamount As String = VCus_Amount
-                    Dim VoperatorId As String = VOperatorCode
-                    Dim Verror_code As String = v_status
-                    Dim Vservice As String = TypeName
-                    Dim Vbal As String = "0"
-                    Dim VcommissionBal As String = "0"
-                    Dim VresText As String = v_message
-                    Dim VbillAmount As String = "0"
-                    Dim VbillName As String = ""
-                    Dim VRecord_DateTime As String = "GetDate()"
-                    Dim VorderId As String = v_refid
 
 
-                    QryStr = "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_Recharge_API (TransIpAddress,Gateway,Refund_Status,TransId,RetailerID,Recharge_ServiceType,Recharge_Operator,Recharge_MobileNo_CaNo,Recharge_Amount,Recharge_PayableAmount,Recharge_Date,API_orderId,API_status,API_TransId,API_urid,API_mobile,API_amount,API_operatorId,API_error_code,API_service,API_bal,API_commissionBal,API_resText,API_billAmount,API_billName,UpdatedBy,UpdatedOn) values ('" & GV.parseString(GV.GetIPAddress) & "','1','No','" & GV.parseString(lblTransId.Text.Trim) & "','" & RetailerID & "','" & VServiceType & "','" & Voperator & "','" & Cus_MobileNo & "','" & VCus_Amount & "','" & VCus_Amount & "'," & VUpdatedOn & ",'" & VorderId & "','" & v_status & "','" & VTransId & "','" & Vurid & "','" & Vmobile & "','" & Vamount & "','" & VoperatorId & "','" & Verror_code & "','" & Vservice & "','" & Vbal & "','" & VcommissionBal & "','" & VresText & "','" & VbillAmount & "','" & VbillName & "','" & VUpdatedBy & "'," & VUpdatedOn & ") ; "
-                    QryStr = QryStr & " " & " insert into " & GV.DefaultDatabase.Trim & ".dbo.Recharge_API_DB_Info (RecordDatetime,API_TransId,Recharge_TransId,API_status,API_resText,CompanyCode,DBName) values(getdate(),'" & VTransId & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & GV.parseString(v_status) & "','" & GV.parseString(VresText) & "','" & GV.get_SuperAdmin_SessionVariables("CompanyCode", Request, Response).Trim & "','" & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & "') ; "
-                    lineNo = 6
+                        'VTransId = "157063"
 
-                    If v_status = True Then
-                        Dim GRP As String = GV.get_SuperAdmin_SessionVariables("Group", Request, Response).Trim.ToUpper
-                        lineNo = 6.1
-                        If GRP = "Retailer".ToUpper Then
-                            'IF Type is of Retailer
-                            lineNo = 6.2
-                            RechargeCommision(lblSelectedService.Text.Trim, VOperatorCode, "Recharge", txt_Recharge_Amt.Text.Trim)
-                            lineNo = 6.3
-                            If Not lblRID.Text = "" Then
-                                lineNo = 6.4
-                                Dim AAID() As String = lblRID.Text.Split("*")
-                                Dim Adminid_Com() As String = AAID(0).Split(":")
-                                Dim DisID_Com() As String = AAID(1).Split(":")
-                                Dim SubDIsID_Com() As String = AAID(2).Split(":")
-                                Dim RetailerID_Com() As String = AAID(3).Split(":")
-                                Dim adminID As String = Adminid_Com(0)
-                                Dim adminCom As String = Adminid_Com(1)
+                        Dim strBuild As String = ""
+                        Dim v_response_code, v_message, v_operatorid, v_ackno, v_refid As String
+                        Dim v_status As Boolean = False
+                        v_message = ""
+                        v_operatorid = ""
+                        v_ackno = ""
+                        v_refid = ""
+                        v_response_code = ""
+                        'APIResult = "{ ""status "":true, ""response_code "":1, ""operatorid "": ""0 "", ""ackno "":29506346, ""refid "": ""157063 "", ""message "": ""Recharge for Airtel of Amount 10 is successful. ""}"
+                        '{"status":true,"response_code":1,"operatorid":"0","ackno":29545627,"refid":"157281","message":"Recharge for Airtel of Amount 10 is successful."}
+                        'APIResult = "{ ""status "":true, ""response_code "":1, ""operatorid "": ""0 "", ""ackno "":29546989, ""refid "": ""157286 "", ""message "": ""Recharge for Airtel of Amount 10 is successful. ""}"
+                        Dim json2 As JObject = JObject.Parse(APIResult)
+                        Dim data1_ As List(Of JToken) = json2.Children().ToList
+                        For Each item As JProperty In data1_
+                            If item.Name.ToString.Trim.ToUpper = "response_code".ToString.Trim.ToUpper Then
+                                v_response_code = item.Value.ToString
+                            ElseIf item.Name.ToString.Trim.ToUpper = "status".ToString.Trim.ToUpper Then
+                                v_status = item.Value
+                            ElseIf item.Name.ToString.Trim.ToUpper = "message".ToString.Trim.ToUpper Then
+                                v_message = item.Value.ToString
+                            ElseIf item.Name.ToString.Trim.ToUpper = "operatorid".ToString.Trim.ToUpper Then
+                                v_operatorid = item.Value.ToString
+                            ElseIf item.Name.ToString.Trim.ToUpper = "ackno".ToString.Trim.ToUpper Then
+                                v_ackno = item.Value.ToString
+                            ElseIf item.Name.ToString.Trim.ToUpper = "refid".ToString.Trim.ToUpper Then
+                                v_refid = item.Value.ToString
+                            End If
+                        Next
+                        lineNo = 5
 
-                                Dim DisID As String = DisID_Com(0)
-                                Dim DisCom As String = DisID_Com(1)
-                                Dim SUBDisID As String = SubDIsID_Com(0)
-                                Dim SUBDisCom As String = SubDIsID_Com(1)
-                                Dim RTEID As String = RetailerID_Com(0)
-                                Dim RTECom As String = RetailerID_Com(1)
+                        'Gateway 2
+                        VTransId = VTransId
+                        Dim Vurid As String = RetailerID
+                        Dim Vmobile As String = Cus_MobileNo
+                        Dim Vamount As String = VCus_Amount
+                        Dim VoperatorId As String = VOperatorCode
+                        Dim Verror_code As String = v_status
+                        Dim Vservice As String = TypeName
+                        Dim Vbal As String = "0"
+                        Dim VcommissionBal As String = "0"
+                        Dim VresText As String = v_message
+                        Dim VbillAmount As String = "0"
+                        Dim VbillName As String = ""
+                        Dim VRecord_DateTime As String = "GetDate()"
+                        Dim VorderId As String = v_refid
 
-                                Dim arrCanChange() As String = AAID(4).Split(":")
-                                Dim vCanChange As String = arrCanChange(1)
 
-                                lineNo = 7
-                                If vCanChange.Trim.ToUpper = "YES" Then
-                                    Dim typeAmtForm As String = "Your Account is debited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                    Dim typeAmtTo As String = "Your Account is credited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                        QryStr = "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_Recharge_API (TransIpAddress,Gateway,Refund_Status,TransId,RetailerID,Recharge_ServiceType,Recharge_Operator,Recharge_MobileNo_CaNo,Recharge_Amount,Recharge_PayableAmount,Recharge_Date,API_orderId,API_status,API_TransId,API_urid,API_mobile,API_amount,API_operatorId,API_error_code,API_service,API_bal,API_commissionBal,API_resText,API_billAmount,API_billName,UpdatedBy,UpdatedOn) values ('" & GV.parseString(GV.GetIPAddress) & "','1','No','" & GV.parseString(lblTransId.Text.Trim) & "','" & RetailerID & "','" & VServiceType & "','" & Voperator & "','" & Cus_MobileNo & "','" & VCus_Amount & "','" & VCus_Amount & "'," & VUpdatedOn & ",'" & VorderId & "','" & v_status & "','" & VTransId & "','" & Vurid & "','" & Vmobile & "','" & Vamount & "','" & VoperatorId & "','" & Verror_code & "','" & Vservice & "','" & Vbal & "','" & VcommissionBal & "','" & VresText & "','" & VbillAmount & "','" & VbillName & "','" & VUpdatedBy & "'," & VUpdatedOn & ") ; "
+                        QryStr = QryStr & " " & " insert into " & GV.DefaultDatabase.Trim & ".dbo.Recharge_API_DB_Info (RecordDatetime,API_TransId,Recharge_TransId,API_status,API_resText,CompanyCode,DBName) values(getdate(),'" & VTransId & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & GV.parseString(v_status) & "','" & GV.parseString(VresText) & "','" & GV.get_SuperAdmin_SessionVariables("CompanyCode", Request, Response).Trim & "','" & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & "') ; "
+                        lineNo = 6
 
-                                    Dim Admintypecommfrom As String = "Your Account is debited by commission " & adminCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                    Dim Distypecommfrom As String = "Your Account is debited by commission " & DisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                    Dim SDtypecommfrom As String = "Your Account is debited by commission " & SUBDisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                    Dim RTEtypecommfrom As String = "Your Account is debited by commission " & RTECom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                        If v_status = True Then
+                            Dim GRP As String = GV.get_SuperAdmin_SessionVariables("Group", Request, Response).Trim.ToUpper
+                            lineNo = 6.1
+                            If GRP = "Retailer".ToUpper Then
+                                'IF Type is of Retailer
+                                lineNo = 6.2
+                                RechargeCommision(lblSelectedService.Text.Trim, VOperatorCode, "Recharge", txt_Recharge_Amt.Text.Trim)
+                                lineNo = 6.3
+                                If Not lblRID.Text = "" Then
+                                    lineNo = 6.4
+                                    Dim AAID() As String = lblRID.Text.Split("*")
+                                    Dim Adminid_Com() As String = AAID(0).Split(":")
+                                    Dim DisID_Com() As String = AAID(1).Split(":")
+                                    Dim SubDIsID_Com() As String = AAID(2).Split(":")
+                                    Dim RetailerID_Com() As String = AAID(3).Split(":")
+                                    Dim adminID As String = Adminid_Com(0)
+                                    Dim adminCom As String = Adminid_Com(1)
 
-                                    Dim AdmintypecommTo As String = "Your Account is credited by commission " & adminCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                    Dim DistypecommTo As String = "Your Account is credited by commission " & DisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                    Dim SDtypecommTo As String = "Your Account is credited by commission " & SUBDisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                    Dim RTEtypecommTo As String = "Your Account is credited by commission " & RTECom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                    Dim DisID As String = DisID_Com(0)
+                                    Dim DisCom As String = DisID_Com(1)
+                                    Dim SUBDisID As String = SubDIsID_Com(0)
+                                    Dim SUBDisCom As String = SubDIsID_Com(1)
+                                    Dim RTEID As String = RetailerID_Com(0)
+                                    Dim RTECom As String = RetailerID_Com(1)
 
-                                    QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & typeAmtTo & "','" & typeAmtForm & "','" & TypeName & "','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & RTEID & "','Admin','" & txt_Recharge_Amt.Text.Trim & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                    Dim arrCanChange() As String = AAID(4).Split(":")
+                                    Dim vCanChange As String = arrCanChange(1)
 
-                                    Dim V_Actual_Commission_Amt, V_GSTAmt, V_Commission_Without_GST, V_TDS_Amt, V_Net_Commission_Amt As Decimal
-                                    '//// Distributor Commission Calculation - Start
-                                    V_Actual_Commission_Amt = 0
-                                    V_GSTAmt = 0
-                                    V_Commission_Without_GST = 0
-                                    V_TDS_Amt = 0
-                                    V_Net_Commission_Amt = 0
+                                    lineNo = 7
+                                    If vCanChange.Trim.ToUpper = "YES" Then
+                                        Dim typeAmtForm As String = "Your Account is debited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                        Dim typeAmtTo As String = "Your Account is credited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
 
-                                    If DisCom > 0 Then
-                                        V_Actual_Commission_Amt = DisCom
-                                        V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
-                                        V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
-                                        V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
-                                        V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
-                                        DisCom = V_Net_Commission_Amt
-                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "', '" & VTransId & "', '" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & DistypecommTo & "','" & Distypecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & adminID & "','" & DisID & "','" & DisCom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                        Dim Admintypecommfrom As String = "Your Account is debited by commission " & adminCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                        Dim Distypecommfrom As String = "Your Account is debited by commission " & DisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                        Dim SDtypecommfrom As String = "Your Account is debited by commission " & SUBDisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                        Dim RTEtypecommfrom As String = "Your Account is debited by commission " & RTECom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+
+                                        Dim AdmintypecommTo As String = "Your Account is credited by commission " & adminCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                        Dim DistypecommTo As String = "Your Account is credited by commission " & DisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                        Dim SDtypecommTo As String = "Your Account is credited by commission " & SUBDisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                        Dim RTEtypecommTo As String = "Your Account is credited by commission " & RTECom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+
+                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & typeAmtTo & "','" & typeAmtForm & "','" & TypeName & "','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & RTEID & "','Admin','" & txt_Recharge_Amt.Text.Trim & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+
+                                        Dim V_Actual_Commission_Amt, V_GSTAmt, V_Commission_Without_GST, V_TDS_Amt, V_Net_Commission_Amt As Decimal
+                                        '//// Distributor Commission Calculation - Start
+                                        V_Actual_Commission_Amt = 0
+                                        V_GSTAmt = 0
+                                        V_Commission_Without_GST = 0
+                                        V_TDS_Amt = 0
+                                        V_Net_Commission_Amt = 0
+
+                                        If DisCom > 0 Then
+                                            V_Actual_Commission_Amt = DisCom
+                                            V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
+                                            V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
+                                            V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
+                                            V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
+                                            DisCom = V_Net_Commission_Amt
+                                            QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "', '" & VTransId & "', '" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & DistypecommTo & "','" & Distypecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & adminID & "','" & DisID & "','" & DisCom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                        End If
+
+
+                                        '//// Distributor Commission Calculation - End
+
+                                        '//// SUB Distributor Commission Calculation - Start
+                                        V_Actual_Commission_Amt = 0
+                                        V_GSTAmt = 0
+                                        V_Commission_Without_GST = 0
+                                        V_TDS_Amt = 0
+                                        V_Net_Commission_Amt = 0
+
+                                        If SUBDisCom > 0 Then
+                                            V_Actual_Commission_Amt = SUBDisCom
+                                            V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
+                                            V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
+                                            V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
+                                            V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
+                                            SUBDisCom = V_Net_Commission_Amt
+                                            QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "', '" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & SDtypecommTo & "','" & SDtypecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & DisID & "','" & SUBDisID & "','" & SUBDisCom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                        End If
+                                        lineNo = 8
+                                        '//// SUB Distributor Commission Calculation - End
+
+                                        '//// Retailer Commission Calculation - Start
+                                        V_Actual_Commission_Amt = 0
+                                        V_GSTAmt = 0
+                                        V_Commission_Without_GST = 0
+                                        V_TDS_Amt = 0
+                                        V_Net_Commission_Amt = 0
+
+                                        If RTECom > 0 Then
+                                            V_Actual_Commission_Amt = RTECom
+                                            V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
+                                            V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
+                                            V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
+                                            V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
+                                            RTECom = V_Net_Commission_Amt
+                                            QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "', '" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & RTEtypecommTo & "','" & RTEtypecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & SUBDisID & "','" & RTEID & "','" & RTECom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                        End If
+
+                                        '//// Retailer Commission Calculation - END
+
+
+                                    Else
+                                        'vCanChange.Trim.ToUpper = "No"
+                                        lineNo = 9
+                                        Dim typeAmtForm As String = "Your Account is debited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                        Dim typeAmtTo As String = "Your Account is credited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+
+                                        Dim Admintypecommfrom As String = "Your Account is debited by commission " & adminCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                        Dim Distypecommfrom As String = "Your Account is debited by commission " & DisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                        Dim SDtypecommfrom As String = "Your Account is debited by commission " & SUBDisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                        Dim RTEtypecommfrom As String = "Your Account is debited by commission " & RTECom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+
+                                        Dim AdmintypecommTo As String = "Your Account is credited by commission " & adminCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                        Dim DistypecommTo As String = "Your Account is credited by commission " & DisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                        Dim SDtypecommTo As String = "Your Account is credited by commission " & SUBDisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                        Dim RTEtypecommTo As String = "Your Account is credited by commission " & RTECom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+
+                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & typeAmtTo & "','" & typeAmtForm & "','" & TypeName & "','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & RTEID & "','Admin','" & txt_Recharge_Amt.Text.Trim & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+
+                                        Dim V_Actual_Commission_Amt, V_GSTAmt, V_Commission_Without_GST, V_TDS_Amt, V_Net_Commission_Amt As Decimal
+                                        '//// Distributor Commission Calculation - Start
+                                        V_Actual_Commission_Amt = 0
+                                        V_GSTAmt = 0
+                                        V_Commission_Without_GST = 0
+                                        V_TDS_Amt = 0
+                                        V_Net_Commission_Amt = 0
+
+                                        If DisCom > 0 Then
+                                            V_Actual_Commission_Amt = DisCom
+                                            V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
+                                            V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
+                                            V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
+                                            V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
+                                            DisCom = V_Net_Commission_Amt
+                                            QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "', '" & VTransId & "', '" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & DistypecommTo & "','" & Distypecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & adminID & "','" & DisID & "','" & DisCom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                        End If
+
+
+                                        '//// Distributor Commission Calculation - End
+                                        lineNo = 10
+                                        '//// SUB Distributor Commission Calculation - Start
+                                        V_Actual_Commission_Amt = 0
+                                        V_GSTAmt = 0
+                                        V_Commission_Without_GST = 0
+                                        V_TDS_Amt = 0
+                                        V_Net_Commission_Amt = 0
+
+                                        If SUBDisCom > 0 Then
+                                            V_Actual_Commission_Amt = SUBDisCom
+                                            V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
+                                            V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
+                                            V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
+                                            V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
+                                            SUBDisCom = V_Net_Commission_Amt
+                                            QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "', '" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & SDtypecommTo & "','" & SDtypecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & adminID & "','" & SUBDisID & "','" & SUBDisCom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                        End If
+
+                                        '//// SUB Distributor Commission Calculation - End
+
+                                        '//// Retailer Commission Calculation - Start
+                                        V_Actual_Commission_Amt = 0
+                                        V_GSTAmt = 0
+                                        V_Commission_Without_GST = 0
+                                        V_TDS_Amt = 0
+                                        V_Net_Commission_Amt = 0
+
+                                        If RTECom > 0 Then
+                                            V_Actual_Commission_Amt = RTECom
+                                            V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
+                                            V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
+                                            V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
+                                            V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
+                                            RTECom = V_Net_Commission_Amt
+                                            QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "', '" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & RTEtypecommTo & "','" & RTEtypecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & adminID & "','" & RTEID & "','" & RTECom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                        End If
+
+                                        '//// Retailer Commission Calculation - END
+
+
                                     End If
 
+                                    lineNo = 11
+                                    Dim ServiceCharge As Decimal = 0
+                                    If CDec(GV.parseString(ServiceCharge)) > 0 Then
+                                        ServiceCharge = ServiceCharge
+                                        'If CDec(GV.parseString(txtServiceCharge.Text.Trim)) > 10 Then
+                                        '    ServiceCharge = GV.parseString(txtServiceCharge.Text.Trim)
+                                        'Else
+                                        '    ServiceCharge = 10
+                                        'End If
+                                        If ServiceCharge > 0 Then
+                                            Dim RTE As String = GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response)
+                                            Dim VFrom As String = "Your Account is debited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
+                                            Dim VTo As String = "Your Account is credited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
+                                            QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','" & RTE & "','ADMIN','" & ServiceCharge & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                        End If
 
-                                    '//// Distributor Commission Calculation - End
-
-                                    '//// SUB Distributor Commission Calculation - Start
-                                    V_Actual_Commission_Amt = 0
-                                    V_GSTAmt = 0
-                                    V_Commission_Without_GST = 0
-                                    V_TDS_Amt = 0
-                                    V_Net_Commission_Amt = 0
-
-                                    If SUBDisCom > 0 Then
-                                        V_Actual_Commission_Amt = SUBDisCom
-                                        V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
-                                        V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
-                                        V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
-                                        V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
-                                        SUBDisCom = V_Net_Commission_Amt
-                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "', '" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & SDtypecommTo & "','" & SDtypecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & DisID & "','" & SUBDisID & "','" & SUBDisCom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
-                                    End If
-                                    lineNo = 8
-                                    '//// SUB Distributor Commission Calculation - End
-
-                                    '//// Retailer Commission Calculation - Start
-                                    V_Actual_Commission_Amt = 0
-                                    V_GSTAmt = 0
-                                    V_Commission_Without_GST = 0
-                                    V_TDS_Amt = 0
-                                    V_Net_Commission_Amt = 0
-
-                                    If RTECom > 0 Then
-                                        V_Actual_Commission_Amt = RTECom
-                                        V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
-                                        V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
-                                        V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
-                                        V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
-                                        RTECom = V_Net_Commission_Amt
-                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "', '" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & RTEtypecommTo & "','" & RTEtypecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & SUBDisID & "','" & RTEID & "','" & RTECom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
                                     End If
 
-                                    '//// Retailer Commission Calculation - END
+                                    ''////// Service Charge For Admin To SuperAdmin - Start
+                                    Dim NetAmount As Decimal = 0
+                                    Dim Service() As String = GV.FL.AddInVar("convert(nvarchar,ServiceCharge)+':'+ServiceType", "" & GV.DefaultDatabase.Trim & ".dbo.BOS_OperatorWiseCommissionVsAdmin_SA where AdminID='" & GV.get_SuperAdmin_SessionVariables("CompanyCode", Request, Response).Trim & "' and   APIName='" & GV.parseString(ddlGateway.SelectedValue.Trim) & "' and OperatorName='" & GV.parseString(ddlOperators.SelectedItem.Text) & "'").Split(":")
+                                    If Service.Length > 1 Then
+                                        If Service(1).Trim = "Percentage" Then
+                                            NetAmount = (CDec(txt_Recharge_Amt.Text.Trim) * CDec(Service(0))) / 100
+                                        ElseIf Service(1).Trim = "Amount" Then
+                                            NetAmount = CDec(Service(0))
+                                        ElseIf Service(1).Trim = "Not Applicable" Then
+                                            NetAmount = CDec(Service(0))
+                                        End If
+                                    End If
+                                    If NetAmount > 0 Then
+                                        Dim RTE As String = GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response)
+                                        Dim VFrom As String = "Your Account is debited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
+                                        Dim VTo As String = "Your Account is credited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
+                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','ADMIN','SUPER ADMIN','" & NetAmount & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                    End If
+                                    ''///////  Service Charge For Admin To SuperAdmin - End
+                                    lineNo = 12
 
 
                                 Else
-                                    'vCanChange.Trim.ToUpper = "No"
-                                    lineNo = 9
+
+                                    ' Retailer
+                                    Dim typeAmtForm As String = "Your Account is debited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                    Dim typeAmtTo As String = "Your Account is credited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                    QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & typeAmtTo & "','" & typeAmtForm & "','" & TypeName & "','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & RetailerID & "','Admin','" & txt_Recharge_Amt.Text.Trim & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                    Dim ServiceCharge As Decimal = 0
+                                    If ServiceCharge > 0 Then
+                                        ServiceCharge = ServiceCharge
+                                        If ServiceCharge > 0 Then
+                                            Dim RTE As String = GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response)
+                                            Dim VFrom As String = "Your Account is debited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
+                                            Dim VTo As String = "Your Account is credited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
+                                            QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','" & RTE & "','ADMIN','" & ServiceCharge & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                        End If
+
+                                    End If
+                                    lineNo = 13
+
+                                    ''////// Service Charge For Admin To SuperAdmin - Start
+                                    Dim NetAmount As Decimal = 0
+                                    Dim Service() As String = GV.FL.AddInVar("convert(nvarchar,ServiceCharge)+':'+ServiceType", "" & GV.DefaultDatabase.Trim & ".dbo.BOS_OperatorWiseCommissionVsAdmin_SA where AdminID='" & GV.get_SuperAdmin_SessionVariables("CompanyCode", Request, Response).Trim & "' and   APIName='" & GV.parseString(ddlGateway.SelectedValue.Trim) & "' and OperatorName='" & GV.parseString(ddlOperators.SelectedItem.Text.Trim) & "'").Split(":")
+                                    If Service.Length > 1 Then
+                                        If Service(1).Trim = "Percentage" Then
+                                            NetAmount = (CDec(txt_Recharge_Amt.Text.Trim) * CDec(Service(0))) / 100
+                                        ElseIf Service(1).Trim = "Amount" Then
+                                            NetAmount = CDec(Service(0))
+                                        ElseIf Service(1).Trim = "Not Applicable" Then
+                                            NetAmount = CDec(Service(0))
+                                        End If
+                                    End If
+                                    If NetAmount > 0 Then
+                                        Dim RTE As String = GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response)
+                                        Dim VFrom As String = "Your Account is debited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
+                                        Dim VTo As String = "Your Account is credited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
+                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','ADMIN','SUPER ADMIN','" & NetAmount & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                    End If
+                                    ''///////  Service Charge For Admin To SuperAdmin - End
+
+                                End If
+                                lineNo = 14
+                            ElseIf GRP = "Customer".ToUpper Then
+                                'In case of Customer 
+
+                                '//// Customer Commission Calculation - Start
+                                RechargeCommision_Customer(lblSelectedService.Text.Trim, VOperatorCode, "Recharge", txt_Recharge_Amt.Text.Trim)
+                                If Not lblRID.Text = "" Then
+
+                                    Dim AAID() As String = lblRID.Text.Split("*")
+                                    Dim Adminid_Com() As String = AAID(0).Split(":")
+                                    Dim CustID_Com() As String = AAID(1).Split(":")
+                                    Dim adminID As String = Adminid_Com(0)
+                                    Dim adminCom As String = Adminid_Com(1)
+
+                                    Dim CustID As String = CustID_Com(0)
+                                    Dim CustCom As String = CustID_Com(1)
+
+
+
                                     Dim typeAmtForm As String = "Your Account is debited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
                                     Dim typeAmtTo As String = "Your Account is credited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
 
                                     Dim Admintypecommfrom As String = "Your Account is debited by commission " & adminCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                    Dim Distypecommfrom As String = "Your Account is debited by commission " & DisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                    Dim SDtypecommfrom As String = "Your Account is debited by commission " & SUBDisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                    Dim RTEtypecommfrom As String = "Your Account is debited by commission " & RTECom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-
                                     Dim AdmintypecommTo As String = "Your Account is credited by commission " & adminCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                    Dim DistypecommTo As String = "Your Account is credited by commission " & DisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                    Dim SDtypecommTo As String = "Your Account is credited by commission " & SUBDisCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                    Dim RTEtypecommTo As String = "Your Account is credited by commission " & RTECom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
 
-                                    QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & typeAmtTo & "','" & typeAmtForm & "','" & TypeName & "','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & RTEID & "','Admin','" & txt_Recharge_Amt.Text.Trim & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                    Dim CustTypecommfrom As String = "Your Account is debited by commission " & CustCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                    Dim CustTypecommTo As String = "Your Account is credited by commission " & CustCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                    lineNo = 15
+
+                                    QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & typeAmtTo & "','" & typeAmtForm & "','" & TypeName & "','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & CustID & "','Admin','" & txt_Recharge_Amt.Text.Trim & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                    'QryStr = QryStr & " " & "insert into BOS_TransferAmountToAgents (TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values('" & AdmintypecommTo & "','" & Admintypecommfrom & "','Commission','" & TypeName & "','" & Now.Date & "','SuperAdmin','" & adminID & "','" & adminCom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
 
                                     Dim V_Actual_Commission_Amt, V_GSTAmt, V_Commission_Without_GST, V_TDS_Amt, V_Net_Commission_Amt As Decimal
-                                    '//// Distributor Commission Calculation - Start
+                                    '//// Customer Commission Calculation - Start
                                     V_Actual_Commission_Amt = 0
                                     V_GSTAmt = 0
                                     V_Commission_Without_GST = 0
                                     V_TDS_Amt = 0
                                     V_Net_Commission_Amt = 0
 
-                                    If DisCom > 0 Then
-                                        V_Actual_Commission_Amt = DisCom
+                                    If CustCom > 0 Then
+                                        V_Actual_Commission_Amt = CustCom
                                         V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
                                         V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
                                         V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
                                         V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
-                                        DisCom = V_Net_Commission_Amt
-                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "', '" & VTransId & "', '" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & DistypecommTo & "','" & Distypecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & adminID & "','" & DisID & "','" & DisCom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                        CustCom = V_Net_Commission_Amt
+                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "', '" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & CustTypecommTo & "','" & CustTypecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & "ADMIN" & "','" & CustID & "','" & CustCom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
                                     End If
+                                    lineNo = 16
 
-
-                                    '//// Distributor Commission Calculation - End
-                                    lineNo = 10
-                                    '//// SUB Distributor Commission Calculation - Start
-                                    V_Actual_Commission_Amt = 0
-                                    V_GSTAmt = 0
-                                    V_Commission_Without_GST = 0
-                                    V_TDS_Amt = 0
-                                    V_Net_Commission_Amt = 0
-
-                                    If SUBDisCom > 0 Then
-                                        V_Actual_Commission_Amt = SUBDisCom
-                                        V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
-                                        V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
-                                        V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
-                                        V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
-                                        SUBDisCom = V_Net_Commission_Amt
-                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "', '" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & SDtypecommTo & "','" & SDtypecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & adminID & "','" & SUBDisID & "','" & SUBDisCom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
-                                    End If
-
-                                    '//// SUB Distributor Commission Calculation - End
-
-                                    '//// Retailer Commission Calculation - Start
-                                    V_Actual_Commission_Amt = 0
-                                    V_GSTAmt = 0
-                                    V_Commission_Without_GST = 0
-                                    V_TDS_Amt = 0
-                                    V_Net_Commission_Amt = 0
-
-                                    If RTECom > 0 Then
-                                        V_Actual_Commission_Amt = RTECom
-                                        V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
-                                        V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
-                                        V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
-                                        V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
-                                        RTECom = V_Net_Commission_Amt
-                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "', '" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & RTEtypecommTo & "','" & RTEtypecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & adminID & "','" & RTEID & "','" & RTECom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
-                                    End If
-
-                                    '//// Retailer Commission Calculation - END
-
-
-                                End If
-
-                                lineNo = 11
-                                Dim ServiceCharge As Decimal = 0
-                                If CDec(GV.parseString(ServiceCharge)) > 0 Then
-                                    ServiceCharge = ServiceCharge
-                                    'If CDec(GV.parseString(txtServiceCharge.Text.Trim)) > 10 Then
-                                    '    ServiceCharge = GV.parseString(txtServiceCharge.Text.Trim)
-                                    'Else
-                                    '    ServiceCharge = 10
-                                    'End If
+                                    Dim ServiceCharge As Decimal = 0
                                     If ServiceCharge > 0 Then
+                                        ServiceCharge = ServiceCharge
+                                        'If CDec(GV.parseString(txtServiceCharge.Text.Trim)) > 10 Then
+                                        '    ServiceCharge = GV.parseString(txtServiceCharge.Text.Trim)
+                                        'Else
+                                        '    ServiceCharge = 10
+                                        'End If
+                                        If ServiceCharge > 0 Then
+                                            Dim RTE As String = GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response)
+                                            Dim VFrom As String = "Your Account is debited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
+                                            Dim VTo As String = "Your Account is credited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
+                                            QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','" & RTE & "','ADMIN','" & ServiceCharge & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                        End If
+
+                                    End If
+                                    lineNo = 17
+                                    ''////// Service Charge For Admin To SuperAdmin - Start
+                                    Dim NetAmount As Decimal = 0
+                                    Dim Service() As String = GV.FL.AddInVar("convert(nvarchar,ServiceCharge)+':'+ServiceType", "" & GV.DefaultDatabase.Trim & ".dbo.BOS_OperatorWiseCommissionVsAdmin_SA where AdminID='" & GV.get_SuperAdmin_SessionVariables("CompanyCode", Request, Response).Trim & "' and   APIName='" & GV.parseString(ddlGateway.SelectedValue.Trim) & "' and OperatorName='" & GV.parseString(ddlOperators.SelectedItem.Text.Trim) & "'").Split(":")
+                                    If Service.Length > 1 Then
+                                        If Service(1).Trim = "Percentage" Then
+                                            NetAmount = (CDec(txt_Recharge_Amt.Text.Trim) * CDec(Service(0))) / 100
+                                        ElseIf Service(1).Trim = "Amount" Then
+                                            NetAmount = CDec(Service(0))
+                                        ElseIf Service(1).Trim = "Not Applicable" Then
+                                            NetAmount = CDec(Service(0))
+                                        End If
+                                    End If
+                                    If NetAmount > 0 Then
                                         Dim RTE As String = GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response)
-                                        Dim VFrom As String = "Your Account is debited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
-                                        Dim VTo As String = "Your Account is credited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
-                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','" & RTE & "','ADMIN','" & ServiceCharge & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                        Dim VFrom As String = "Your Account is debited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
+                                        Dim VTo As String = "Your Account is credited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
+                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','ADMIN','SUPER ADMIN','" & NetAmount & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
                                     End If
+                                    ''///////  Service Charge For Admin To SuperAdmin - End
 
-                                End If
+                                    '//// Customer Commission Calculation - END
 
-                                ''////// Service Charge For Admin To SuperAdmin - Start
-                                Dim NetAmount As Decimal = 0
-                                Dim Service() As String = GV.FL.AddInVar("convert(nvarchar,ServiceCharge)+':'+ServiceType", "" & GV.DefaultDatabase.Trim & ".dbo.BOS_OperatorWiseCommissionVsAdmin_SA where AdminID='" & GV.get_SuperAdmin_SessionVariables("CompanyCode", Request, Response).Trim & "' and   APIName='" & GV.parseString(ddlGateway.SelectedValue.Trim) & "' and OperatorName='" & GV.parseString(ddlOperators.SelectedItem.Text) & "'").Split(":")
-                                If Service.Length > 1 Then
-                                    If Service(1).Trim = "Percentage" Then
-                                        NetAmount = (CDec(txt_Recharge_Amt.Text.Trim) * CDec(Service(0))) / 100
-                                    ElseIf Service(1).Trim = "Amount" Then
-                                        NetAmount = CDec(Service(0))
-                                    ElseIf Service(1).Trim = "Not Applicable" Then
-                                        NetAmount = CDec(Service(0))
+                                    lineNo = 18
+                                Else
+                                    Dim typeAmtForm As String = "Your Account is debited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                    Dim typeAmtTo As String = "Your Account is credited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+
+                                    QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & typeAmtTo & "','" & typeAmtForm & "','" & TypeName & "','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response) & "','Admin','" & txt_Recharge_Amt.Text.Trim & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                    lineNo = 19
+                                    Dim ServiceCharge As Decimal = 0
+                                    If CDec(ServiceCharge) > 0 Then
+                                        ServiceCharge = ServiceCharge
+                                        'If CDec(GV.parseString(txtServiceCharge.Text.Trim)) > 10 Then
+                                        '    ServiceCharge = GV.parseString(txtServiceCharge.Text.Trim)
+                                        'Else
+                                        '    ServiceCharge = 10
+                                        'End If
+                                        If ServiceCharge > 0 Then
+                                            Dim RTE As String = GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response)
+                                            Dim VFrom As String = "Your Account is debited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
+                                            Dim VTo As String = "Your Account is credited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
+                                            QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','" & RTE & "','ADMIN','" & ServiceCharge & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                        End If
+
                                     End If
-                                End If
-                                If NetAmount > 0 Then
-                                    Dim RTE As String = GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response)
-                                    Dim VFrom As String = "Your Account is debited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
-                                    Dim VTo As String = "Your Account is credited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
-                                    QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','ADMIN','SUPER ADMIN','" & NetAmount & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
-                                End If
-                                ''///////  Service Charge For Admin To SuperAdmin - End
-                                lineNo = 12
-
-
-                            Else
-
-                                ' Retailer
-                                Dim typeAmtForm As String = "Your Account is debited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                Dim typeAmtTo As String = "Your Account is credited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & typeAmtTo & "','" & typeAmtForm & "','" & TypeName & "','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & RetailerID & "','Admin','" & txt_Recharge_Amt.Text.Trim & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
-                                Dim ServiceCharge As Decimal = 0
-                                If ServiceCharge > 0 Then
-                                    ServiceCharge = ServiceCharge
-                                    If ServiceCharge > 0 Then
+                                    lineNo = 20
+                                    ''////// Service Charge For Admin To SuperAdmin - Start
+                                    Dim NetAmount As Decimal = 0
+                                    Dim Service() As String = GV.FL.AddInVar("convert(nvarchar,ServiceCharge)+':'+ServiceType", "" & GV.DefaultDatabase.Trim & ".dbo.BOS_OperatorWiseCommissionVsAdmin_SA where AdminID='" & GV.get_SuperAdmin_SessionVariables("CompanyCode", Request, Response).Trim & "' and   APIName='" & GV.parseString(ddlGateway.SelectedValue.Trim) & "' and OperatorName='" & GV.parseString(ddlOperators.SelectedItem.Text.Trim) & "'").Split(":")
+                                    If Service.Length > 1 Then
+                                        If Service(1).Trim = "Percentage" Then
+                                            NetAmount = (CDec(txt_Recharge_Amt.Text.Trim) * CDec(Service(0))) / 100
+                                        ElseIf Service(1).Trim = "Amount" Then
+                                            NetAmount = CDec(Service(0))
+                                        ElseIf Service(1).Trim = "Not Applicable" Then
+                                            NetAmount = CDec(Service(0))
+                                        End If
+                                    End If
+                                    If NetAmount > 0 Then
                                         Dim RTE As String = GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response)
-                                        Dim VFrom As String = "Your Account is debited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
-                                        Dim VTo As String = "Your Account is credited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
-                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','" & RTE & "','ADMIN','" & ServiceCharge & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                        Dim VFrom As String = "Your Account is debited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
+                                        Dim VTo As String = "Your Account is credited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
+                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','ADMIN','SUPER ADMIN','" & NetAmount & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
                                     End If
-
+                                    ''///////  Service Charge For Admin To SuperAdmin - End
+                                    lineNo = 21
                                 End If
-                                lineNo = 13
-
-                                ''////// Service Charge For Admin To SuperAdmin - Start
-                                Dim NetAmount As Decimal = 0
-                                Dim Service() As String = GV.FL.AddInVar("convert(nvarchar,ServiceCharge)+':'+ServiceType", "" & GV.DefaultDatabase.Trim & ".dbo.BOS_OperatorWiseCommissionVsAdmin_SA where AdminID='" & GV.get_SuperAdmin_SessionVariables("CompanyCode", Request, Response).Trim & "' and   APIName='" & GV.parseString(ddlGateway.SelectedValue.Trim) & "' and OperatorName='" & GV.parseString(ddlOperators.SelectedItem.Text.Trim) & "'").Split(":")
-                                If Service.Length > 1 Then
-                                    If Service(1).Trim = "Percentage" Then
-                                        NetAmount = (CDec(txt_Recharge_Amt.Text.Trim) * CDec(Service(0))) / 100
-                                    ElseIf Service(1).Trim = "Amount" Then
-                                        NetAmount = CDec(Service(0))
-                                    ElseIf Service(1).Trim = "Not Applicable" Then
-                                        NetAmount = CDec(Service(0))
-                                    End If
-                                End If
-                                If NetAmount > 0 Then
-                                    Dim RTE As String = GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response)
-                                    Dim VFrom As String = "Your Account is debited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
-                                    Dim VTo As String = "Your Account is credited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
-                                    QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','ADMIN','SUPER ADMIN','" & NetAmount & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
-                                End If
-                                ''///////  Service Charge For Admin To SuperAdmin - End
 
                             End If
-                            lineNo = 14
-                        ElseIf GRP = "Customer".ToUpper Then
-                            'In case of Customer 
 
-                            '//// Customer Commission Calculation - Start
-                            RechargeCommision_Customer(lblSelectedService.Text.Trim, VOperatorCode, "Recharge", txt_Recharge_Amt.Text.Trim)
-                            If Not lblRID.Text = "" Then
+                            'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                            '//// Admin & Super Admin Commission Calculation - Start
+                            If GRP = "Retailer".ToUpper Or GRP = "Customer".ToUpper Then
 
-                                Dim AAID() As String = lblRID.Text.Split("*")
-                                Dim Adminid_Com() As String = AAID(0).Split(":")
-                                Dim CustID_Com() As String = AAID(1).Split(":")
-                                Dim adminID As String = Adminid_Com(0)
-                                Dim adminCom As String = Adminid_Com(1)
-
-                                Dim CustID As String = CustID_Com(0)
-                                Dim CustCom As String = CustID_Com(1)
-
-
-
-                                Dim typeAmtForm As String = "Your Account is debited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                Dim typeAmtTo As String = "Your Account is credited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-
-                                Dim Admintypecommfrom As String = "Your Account is debited by commission " & adminCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                Dim AdmintypecommTo As String = "Your Account is credited by commission " & adminCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-
-                                Dim CustTypecommfrom As String = "Your Account is debited by commission " & CustCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                Dim CustTypecommTo As String = "Your Account is credited by commission " & CustCom & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                lineNo = 15
-
-                                QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & typeAmtTo & "','" & typeAmtForm & "','" & TypeName & "','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & CustID & "','Admin','" & txt_Recharge_Amt.Text.Trim & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
-                                'QryStr = QryStr & " " & "insert into BOS_TransferAmountToAgents (TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values('" & AdmintypecommTo & "','" & Admintypecommfrom & "','Commission','" & TypeName & "','" & Now.Date & "','SuperAdmin','" & adminID & "','" & adminCom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
-
+                                '//// Admin Commission Calculation - Start
+                                Dim V_Amount, V_OperatorCategory, V_OperatorCode, V_APIName, V_AdminID, Result As String
                                 Dim V_Actual_Commission_Amt, V_GSTAmt, V_Commission_Without_GST, V_TDS_Amt, V_Net_Commission_Amt As Decimal
-                                '//// Customer Commission Calculation - Start
-                                V_Actual_Commission_Amt = 0
-                                V_GSTAmt = 0
-                                V_Commission_Without_GST = 0
-                                V_TDS_Amt = 0
-                                V_Net_Commission_Amt = 0
 
-                                If CustCom > 0 Then
-                                    V_Actual_Commission_Amt = CustCom
-                                    V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
-                                    V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
-                                    V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
-                                    V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
-                                    CustCom = V_Net_Commission_Amt
-                                    QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "', '" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & CustTypecommTo & "','" & CustTypecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & "ADMIN" & "','" & CustID & "','" & CustCom & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                If GV.parseString(txt_Recharge_Amt.Text.Trim) = "" Then
+                                    V_Amount = "0"
+                                Else
+                                    V_Amount = txt_Recharge_Amt.Text.Trim
                                 End If
-                                lineNo = 16
+                                lineNo = 22
+                                V_OperatorCategory = lblSelectedService.Text.Trim
+                                V_OperatorCode = VOperatorCode
+                                V_APIName = "Recharge"
+                                V_AdminID = GV.get_SuperAdmin_SessionVariables("CompanyCode", Request, Response).Trim
 
-                                Dim ServiceCharge As Decimal = 0
-                                If ServiceCharge > 0 Then
-                                    ServiceCharge = ServiceCharge
-                                    'If CDec(GV.parseString(txtServiceCharge.Text.Trim)) > 10 Then
-                                    '    ServiceCharge = GV.parseString(txtServiceCharge.Text.Trim)
-                                    'Else
-                                    '    ServiceCharge = 10
-                                    'End If
-                                    If ServiceCharge > 0 Then
-                                        Dim RTE As String = GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response)
-                                        Dim VFrom As String = "Your Account is debited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
-                                        Dim VTo As String = "Your Account is credited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
-                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','" & RTE & "','ADMIN','" & ServiceCharge & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                Result = GV.Commision_Calculation_For_Admin(V_Amount, V_OperatorCategory, V_OperatorCode, V_APIName, V_AdminID)
+                                lineNo = 23
+                                If Not GV.parseString(Result) = "" Then
+                                    Dim Result_Arry() As String = Result.Split("*")
+                                    Dim Admin_Com() As String = Result_Arry(0).Split(":")
+                                    Dim Admin_Com_ID As String = "Admin"
+                                    Dim Admin_Com_Amt As String = Admin_Com(1)
+
+                                    Dim Service_Charge() As String = Result_Arry(1).Split(":")
+                                    Dim Service_Charge_ID As String = ""
+                                    Dim Service_Charge_Amt As String = Service_Charge(1)
+
+
+                                    If Service_Charge_Amt > 0 Then
+                                        Dim VFrom As String = "Your Account is debited by ServiceCharge " & Service_Charge_Amt & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
+                                        Dim VTo As String = "Your Account is credited by ServiceCharge " & Service_Charge_Amt & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
+                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','Admin','Super Admin','" & Service_Charge_Amt & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                    End If
+
+                                    Dim Admin_Typecommfrom As String = "Your Account is debited by commission " & Admin_Com_Amt & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                    Dim Admin_TypecommTo As String = "Your Account is credited by commission " & Admin_Com_Amt & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                    lineNo = 24
+                                    V_Actual_Commission_Amt = 0
+                                    V_GSTAmt = 0
+                                    V_Commission_Without_GST = 0
+                                    V_TDS_Amt = 0
+                                    V_Net_Commission_Amt = 0
+
+                                    If Admin_Com_Amt > 0 Then
+                                        V_Actual_Commission_Amt = Admin_Com_Amt
+                                        V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
+                                        V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
+                                        V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
+                                        V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
+                                        Admin_Com_Amt = V_Net_Commission_Amt
+                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "', '" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & Admin_TypecommTo & "','" & Admin_Typecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & "Super Admin" & "','Admin','" & Admin_Com_Amt & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
                                     End If
 
                                 End If
-                                lineNo = 17
-                                ''////// Service Charge For Admin To SuperAdmin - Start
-                                Dim NetAmount As Decimal = 0
-                                Dim Service() As String = GV.FL.AddInVar("convert(nvarchar,ServiceCharge)+':'+ServiceType", "" & GV.DefaultDatabase.Trim & ".dbo.BOS_OperatorWiseCommissionVsAdmin_SA where AdminID='" & GV.get_SuperAdmin_SessionVariables("CompanyCode", Request, Response).Trim & "' and   APIName='" & GV.parseString(ddlGateway.SelectedValue.Trim) & "' and OperatorName='" & GV.parseString(ddlOperators.SelectedItem.Text.Trim) & "'").Split(":")
-                                If Service.Length > 1 Then
-                                    If Service(1).Trim = "Percentage" Then
-                                        NetAmount = (CDec(txt_Recharge_Amt.Text.Trim) * CDec(Service(0))) / 100
-                                    ElseIf Service(1).Trim = "Amount" Then
-                                        NetAmount = CDec(Service(0))
-                                    ElseIf Service(1).Trim = "Not Applicable" Then
-                                        NetAmount = CDec(Service(0))
+                                lineNo = 25
+                                '//// Admin Commission Calculation - End
+
+                                '//// Super Admin Commission Calculation - Start
+                                Result = GV.Commision_Calculation_For_SuperAdmin(V_Amount, V_OperatorCategory, V_OperatorCode, V_APIName)
+
+                                If Not GV.parseString(Result) = "" Then
+                                    Dim Result_Arry() As String = Result.Split("*")
+                                    Dim Admin_Com() As String = Result_Arry(0).Split(":")
+                                    Dim Admin_Com_ID As String = "Super Admin"
+                                    Dim Admin_Com_Amt As String = Admin_Com(1)
+
+                                    Dim Service_Charge() As String = Result_Arry(1).Split(":")
+                                    Dim Service_Charge_ID As String = ""
+                                    Dim Service_Charge_Amt As String = Service_Charge(1)
+
+
+                                    If Service_Charge_Amt > 0 Then
+                                        Dim VFrom As String = "Your Account is debited by ServiceCharge " & Service_Charge_Amt & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
+                                        Dim VTo As String = "Your Account is credited by ServiceCharge " & Service_Charge_Amt & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
+                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','Super Admin','API Partner','" & Service_Charge_Amt & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
                                     End If
-                                End If
-                                If NetAmount > 0 Then
-                                    Dim RTE As String = GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response)
-                                    Dim VFrom As String = "Your Account is debited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
-                                    Dim VTo As String = "Your Account is credited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
-                                    QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','ADMIN','SUPER ADMIN','" & NetAmount & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
-                                End If
-                                ''///////  Service Charge For Admin To SuperAdmin - End
 
-                                '//// Customer Commission Calculation - END
+                                    Dim Admin_Typecommfrom As String = "Your Account is debited by commission " & Admin_Com_Amt & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
+                                    Dim Admin_TypecommTo As String = "Your Account is credited by commission " & Admin_Com_Amt & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
 
-                                lineNo = 18
-                            Else
-                                Dim typeAmtForm As String = "Your Account is debited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                Dim typeAmtTo As String = "Your Account is credited by " & txt_Recharge_Amt.Text.Trim & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-
-                                QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & GV.parseString(lblTransId.Text.Trim) & "','" & typeAmtTo & "','" & typeAmtForm & "','" & TypeName & "','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response) & "','Admin','" & txt_Recharge_Amt.Text.Trim & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
-                                lineNo = 19
-                                Dim ServiceCharge As Decimal = 0
-                                If CDec(ServiceCharge) > 0 Then
-                                    ServiceCharge = ServiceCharge
-                                    'If CDec(GV.parseString(txtServiceCharge.Text.Trim)) > 10 Then
-                                    '    ServiceCharge = GV.parseString(txtServiceCharge.Text.Trim)
-                                    'Else
-                                    '    ServiceCharge = 10
-                                    'End If
-                                    If ServiceCharge > 0 Then
-                                        Dim RTE As String = GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response)
-                                        Dim VFrom As String = "Your Account is debited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
-                                        Dim VTo As String = "Your Account is credited by ServiceCharge " & ServiceCharge & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
-                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','" & RTE & "','ADMIN','" & ServiceCharge & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
+                                    V_Actual_Commission_Amt = 0
+                                    V_GSTAmt = 0
+                                    V_Commission_Without_GST = 0
+                                    V_TDS_Amt = 0
+                                    V_Net_Commission_Amt = 0
+                                    lineNo = 26
+                                    If Admin_Com_Amt > 0 Then
+                                        V_Actual_Commission_Amt = Admin_Com_Amt
+                                        V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
+                                        V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
+                                        V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
+                                        V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
+                                        Admin_Com_Amt = V_Net_Commission_Amt
+                                        QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "', '" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & Admin_TypecommTo & "','" & Admin_Typecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & "API Partner" & "','Super Admin','" & Admin_Com_Amt & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
                                     End If
 
                                 End If
-                                lineNo = 20
-                                ''////// Service Charge For Admin To SuperAdmin - Start
-                                Dim NetAmount As Decimal = 0
-                                Dim Service() As String = GV.FL.AddInVar("convert(nvarchar,ServiceCharge)+':'+ServiceType", "" & GV.DefaultDatabase.Trim & ".dbo.BOS_OperatorWiseCommissionVsAdmin_SA where AdminID='" & GV.get_SuperAdmin_SessionVariables("CompanyCode", Request, Response).Trim & "' and   APIName='" & GV.parseString(ddlGateway.SelectedValue.Trim) & "' and OperatorName='" & GV.parseString(ddlOperators.SelectedItem.Text.Trim) & "'").Split(":")
-                                If Service.Length > 1 Then
-                                    If Service(1).Trim = "Percentage" Then
-                                        NetAmount = (CDec(txt_Recharge_Amt.Text.Trim) * CDec(Service(0))) / 100
-                                    ElseIf Service(1).Trim = "Amount" Then
-                                        NetAmount = CDec(Service(0))
-                                    ElseIf Service(1).Trim = "Not Applicable" Then
-                                        NetAmount = CDec(Service(0))
-                                    End If
-                                End If
-                                If NetAmount > 0 Then
-                                    Dim RTE As String = GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response)
-                                    Dim VFrom As String = "Your Account is debited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
-                                    Dim VTo As String = "Your Account is credited by ServiceCharge " & NetAmount & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & " - " & RTE & " ."
-                                    QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','ADMIN','SUPER ADMIN','" & NetAmount & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
-                                End If
-                                ''///////  Service Charge For Admin To SuperAdmin - End
-                                lineNo = 21
+                                '//// Super Admin Commission Calculation - End
                             End If
-
+                            '//// Admin & Super Admin Commission Calculation - End
+                            'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                            lineNo = 27
                         End If
 
-                        'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        '//// Admin & Super Admin Commission Calculation - Start
-                        If GRP = "Retailer".ToUpper Or GRP = "Customer".ToUpper Then
-
-                            '//// Admin Commission Calculation - Start
-                            Dim V_Amount, V_OperatorCategory, V_OperatorCode, V_APIName, V_AdminID, Result As String
-                            Dim V_Actual_Commission_Amt, V_GSTAmt, V_Commission_Without_GST, V_TDS_Amt, V_Net_Commission_Amt As Decimal
-
-                            If GV.parseString(txt_Recharge_Amt.Text.Trim) = "" Then
-                                V_Amount = "0"
-                            Else
-                                V_Amount = txt_Recharge_Amt.Text.Trim
-                            End If
-                            lineNo = 22
-                            V_OperatorCategory = lblSelectedService.Text.Trim
-                            V_OperatorCode = VOperatorCode
-                            V_APIName = "Recharge"
-                            V_AdminID = GV.get_SuperAdmin_SessionVariables("CompanyCode", Request, Response).Trim
-
-                            Result = GV.Commision_Calculation_For_Admin(V_Amount, V_OperatorCategory, V_OperatorCode, V_APIName, V_AdminID)
-                            lineNo = 23
-                            If Not GV.parseString(Result) = "" Then
-                                Dim Result_Arry() As String = Result.Split("*")
-                                Dim Admin_Com() As String = Result_Arry(0).Split(":")
-                                Dim Admin_Com_ID As String = "Admin"
-                                Dim Admin_Com_Amt As String = Admin_Com(1)
-
-                                Dim Service_Charge() As String = Result_Arry(1).Split(":")
-                                Dim Service_Charge_ID As String = ""
-                                Dim Service_Charge_Amt As String = Service_Charge(1)
 
 
-                                If Service_Charge_Amt > 0 Then
-                                    Dim VFrom As String = "Your Account is debited by ServiceCharge " & Service_Charge_Amt & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
-                                    Dim VTo As String = "Your Account is credited by ServiceCharge " & Service_Charge_Amt & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
-                                    QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','Admin','Super Admin','" & Service_Charge_Amt & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
-                                End If
 
-                                Dim Admin_Typecommfrom As String = "Your Account is debited by commission " & Admin_Com_Amt & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                Dim Admin_TypecommTo As String = "Your Account is credited by commission " & Admin_Com_Amt & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                lineNo = 24
-                                V_Actual_Commission_Amt = 0
-                                V_GSTAmt = 0
-                                V_Commission_Without_GST = 0
-                                V_TDS_Amt = 0
-                                V_Net_Commission_Amt = 0
+                        If GV.FL.DMLQueriesBulk(QryStr) = True Then
+                            lineNo = 28
+                            lblDialogMsgInfo.Text = GV.FL.AddInVar("CompanyName", " BosCenter_DB.dbo.BOS_ClientRegistration where CompanyCode='" & GV.get_SuperAdmin_SessionVariables("CompanyCode", Request, Response).Trim & "' ")
+                            lblPopAgencyName.Text = GV.FL.AddInVar("AgencyName", "" & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_Dis_SubDis_Retailer_Registration where RegistrationId='" & GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response) & "'")
+                            lblPopDateTime.Text = Now.ToString("dd/MM/yyyy HH:mm:ss")
+                            lblPopTransactionID.Text = VTransId
+                            lblPopTransactionAmt.Text = GV.parseString(txt_Recharge_Amt.Text.Trim)
+                            lblPopStatus.Text = v_status
+                            lblpopOperator.Text = TypeName.Trim
+                            lblpopMobileNo.Text = txt_Mobile_CA_No.Text.Trim
 
-                                If Admin_Com_Amt > 0 Then
-                                    V_Actual_Commission_Amt = Admin_Com_Amt
-                                    V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
-                                    V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
-                                    V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
-                                    V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
-                                    Admin_Com_Amt = V_Net_Commission_Amt
-                                    QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "', '" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & Admin_TypecommTo & "','" & Admin_Typecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & "Super Admin" & "','Admin','" & Admin_Com_Amt & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
-                                End If
+                            ModalPopupExtender3.Show()
 
-                            End If
-                            lineNo = 25
-                            '//// Admin Commission Calculation - End
+                        Else
+                            lineNo = 29
 
-                            '//// Super Admin Commission Calculation - Start
-                            Result = GV.Commision_Calculation_For_SuperAdmin(V_Amount, V_OperatorCategory, V_OperatorCode, V_APIName)
-
-                            If Not GV.parseString(Result) = "" Then
-                                Dim Result_Arry() As String = Result.Split("*")
-                                Dim Admin_Com() As String = Result_Arry(0).Split(":")
-                                Dim Admin_Com_ID As String = "Super Admin"
-                                Dim Admin_Com_Amt As String = Admin_Com(1)
-
-                                Dim Service_Charge() As String = Result_Arry(1).Split(":")
-                                Dim Service_Charge_ID As String = ""
-                                Dim Service_Charge_Amt As String = Service_Charge(1)
-
-
-                                If Service_Charge_Amt > 0 Then
-                                    Dim VFrom As String = "Your Account is debited by ServiceCharge " & Service_Charge_Amt & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
-                                    Dim VTo As String = "Your Account is credited by ServiceCharge " & Service_Charge_Amt & " Rs. Due to " & TypeName & " / AMT " & VCus_Amount & "."
-                                    QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "','" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','Super Admin','API Partner','" & Service_Charge_Amt & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
-                                End If
-
-                                Dim Admin_Typecommfrom As String = "Your Account is debited by commission " & Admin_Com_Amt & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-                                Dim Admin_TypecommTo As String = "Your Account is credited by commission " & Admin_Com_Amt & " Rs. Due to " & TypeName & " on number " & txt_Mobile_CA_No.Text.Trim & " / AMT " & VCus_Amount & "."
-
-                                V_Actual_Commission_Amt = 0
-                                V_GSTAmt = 0
-                                V_Commission_Without_GST = 0
-                                V_TDS_Amt = 0
-                                V_Net_Commission_Amt = 0
-                                lineNo = 26
-                                If Admin_Com_Amt > 0 Then
-                                    V_Actual_Commission_Amt = Admin_Com_Amt
-                                    V_GSTAmt = Math.Round((V_Actual_Commission_Amt - (GST_Per * V_Actual_Commission_Amt)), 2)
-                                    V_Commission_Without_GST = Math.Round((GST_Per * V_Actual_Commission_Amt), 2)
-                                    V_TDS_Amt = Math.Round((GST_Per * V_Actual_Commission_Amt * TDS_Per), 2)
-                                    V_Net_Commission_Amt = Math.Round(((GST_Per * V_Actual_Commission_Amt) - (GST_Per * V_Actual_Commission_Amt * TDS_Per)), 2)
-                                    Admin_Com_Amt = V_Net_Commission_Amt
-                                    QryStr = QryStr & " " & "insert into " & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,Actual_Commission_Amt,GSTAmt,Commission_Without_GST,TDS_Amt,Net_Commission_Amt,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GV.parseString(GV.GetIPAddress) & "', '" & VTransId & "','" & VCus_Amount & "', '" & GV.parseString(lblTransId.Text.Trim) & "'," & V_Actual_Commission_Amt & "," & V_GSTAmt & "," & V_Commission_Without_GST & "," & V_TDS_Amt & "," & V_Net_Commission_Amt & ",'" & Admin_TypecommTo & "','" & Admin_Typecommfrom & "','Commission','" & TypeName & "','" & Now.Date.ToString("MM-dd-yyyy") & "','" & "API Partner" & "','Super Admin','" & Admin_Com_Amt & "'," & VRecord_DateTime & ",'" & VUpdatedBy & "'," & VUpdatedOn & " ) ;"
-                                End If
-
-                            End If
-                            '//// Super Admin Commission Calculation - End
+                            lblDialogMsg.Text = "Sorry !! Process Can't be Completed."
+                            lblDialogMsg.CssClass = "errorlabels"
+                            btnCancel.Text = "Ok"
+                            btnok.Visible = False
+                            ModalPopupExtender1.Show()
                         End If
-                        '//// Admin & Super Admin Commission Calculation - End
-                        'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        lineNo = 27
+
+
+
+
                     End If
 
-
-
-
-                    If GV.FL.DMLQueriesBulk(QryStr) = True Then
-                        lineNo = 28
-                        lblDialogMsgInfo.Text = GV.FL.AddInVar("CompanyName", " BosCenter_DB.dbo.BOS_ClientRegistration where CompanyCode='" & GV.get_SuperAdmin_SessionVariables("CompanyCode", Request, Response).Trim & "' ")
-                        lblPopAgencyName.Text = GV.FL.AddInVar("AgencyName", "" & GV.get_SuperAdmin_SessionVariables("DataBaseName", Request, Response).Trim & ".dbo.BOS_Dis_SubDis_Retailer_Registration where RegistrationId='" & GV.get_SuperAdmin_SessionVariables("LoginID", Request, Response) & "'")
-                        lblPopDateTime.Text = Now.ToString("dd/MM/yyyy HH:mm:ss")
-                        lblPopTransactionID.Text = VTransId
-                        lblPopTransactionAmt.Text = GV.parseString(txt_Recharge_Amt.Text.Trim)
-                        lblPopStatus.Text = v_status
-                        lblpopOperator.Text = TypeName.Trim
-                        lblpopMobileNo.Text = txt_Mobile_CA_No.Text.Trim
-
-                        ModalPopupExtender3.Show()
-
-                    Else
-                        lineNo = 29
-
-                        lblDialogMsg.Text = "Sorry !! Process Can't be Completed."
-                        lblDialogMsg.CssClass = "errorlabels"
-                        btnCancel.Text = "Ok"
-                        btnok.Visible = False
-                        ModalPopupExtender1.Show()
-                    End If
 
 
 
 
                 End If
-
-
-
-
-
-            End If
 
             'lblSearchCustomerError.Text = APIResult
         Catch ex As Exception
@@ -2788,7 +2796,7 @@ Public Class BOS_BBPS_PS
                             'setbill_fetchParameter.billdate = ""
                             setbill_fetchParameter.billnetamount = ""
                             setbill_fetchParameter.cellNumber = ""
-                            setbill_fetchParameter.dueDate = ""
+                            'setbill_fetchParameter.dueDate = ""
                             setbill_fetchParameter.userName = ""
 
                             setParameter_API_Obj.canumber = GV.parseString(txt_BBPS_CA_No.Text)
