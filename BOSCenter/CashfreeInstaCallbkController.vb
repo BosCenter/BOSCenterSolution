@@ -136,7 +136,7 @@ Public Class CashfreeInstaCallbkController
             '"Server=DESKTOP-CIBE9DM;DataBase=BosCenter_DB;user id=sa;password=eklavya".ToString())
             '"Server=103.35.121.85,5022;DataBase=BosCenter_DB;user id=sa;password=Boscenter@123"
 
-            con = New SqlConnection("Server=103.35.121.85,5022;DataBase=BosCenter_DB;user id=sa;password=Boscenter@123;Connection Timeout=30;Connection Lifetime=0;Min Pool Size=0;Max Pool Size=200;Pooling=true".ToString())
+            con = New SqlConnection("Server=103.155.85.146;DataBase=BosCenter_DB;user id=sa;password=Target@123;Connection Timeout=30;Connection Lifetime=0;Min Pool Size=0;Max Pool Size=200;Pooling=true".ToString())
             If con.State = ConnectionState.Closed Or con.State = ConnectionState.Broken Then
                 con.Open()
             End If
@@ -182,7 +182,7 @@ Public Class CashfreeInstaCallbkController
     End Function
     Public Function OpenDsWithSelectQuery(ByVal Query As String) As DataSet  'done
         Try
-            con = New SqlConnection("Server=103.35.121.85,5022;DataBase=BosCenter_DB;user id=sa;password=Boscenter@123;Connection Timeout=30;Connection Lifetime=0;Min Pool Size=0;Max Pool Size=200;Pooling=true".ToString())
+            con = New SqlConnection("Server=103.155.85.146;DataBase=BosCenter_DB;user id=sa;password=Target@123;Connection Timeout=30;Connection Lifetime=0;Min Pool Size=0;Max Pool Size=200;Pooling=true".ToString())
             If con.State = ConnectionState.Closed Or con.State = ConnectionState.Broken Then
                 con.Open()
             End If
@@ -200,7 +200,7 @@ Public Class CashfreeInstaCallbkController
     Public Function AddInVar(ByVal retrivefield As String, ByVal tablename As String) As String 'done
         Try
             Dim str, variablename As String
-            con = New SqlConnection("Server=103.35.121.85,5022;DataBase=BosCenter_DB;user id=sa;password=Boscenter@123;Connection Timeout=30;Connection Lifetime=0;Min Pool Size=0;Max Pool Size=200;Pooling=true".ToString())
+            con = New SqlConnection("Server=103.155.85.146;DataBase=BosCenter_DB;user id=sa;password=Target@123;Connection Timeout=30;Connection Lifetime=0;Min Pool Size=0;Max Pool Size=200;Pooling=true".ToString())
             If con.State = ConnectionState.Closed Or con.State = ConnectionState.Broken Then
                 con.Open()
             End If
@@ -280,12 +280,15 @@ Public Class CashfreeInstaCallbkController
             ElseIf rwData(1).ToString.Substring(0, 1).Trim.ToUpper = "B" Then
                 v_AgentType = "Customer"
                 v_AgentID = "BOS-" & rwData(1).ToString.Substring(3, rwData(1).Length - 3).Trim.ToUpper
+            ElseIf rwData(1).ToString.Substring(0, 1).Trim.ToUpper = "A" Then
+                v_AgentType = "Admin"
+                v_AgentID = "Admin"
             End If
 
             vAccountNumber = json1.SelectToken("vAccountNumber")
             email = json1.SelectToken("email")
             phone = json1.SelectToken("phone")
-            referenceId = CInt(json1.SelectToken("referenceId"))
+            referenceId = json1.SelectToken("referenceId")
             utr = json1.SelectToken("utr")
             creditRefNo = json1.SelectToken("creditRefNo")
             remitterAccount = json1.SelectToken("remitterAccount")
@@ -295,10 +298,6 @@ Public Class CashfreeInstaCallbkController
             paymentTime = json1.SelectToken("paymentTime")
             signature = json1.SelectToken("signature")
 
-
-            Dim str As String = "insert into boscenter_db.dbo.InstaCollectCallBack(AdminID,AgentID,AgentType,Transfer_Trans_ID,API_Response,RecordDatetime,API_event ,data_id  ,data_created_at  ,data_remitter_full_name  ,data_remitter_account_number  ,data_remitter_account_ifsc  ,data_remitter_phone_number  ,data_unique_transaction_reference  ,data_payment_mode  ,data_amount  ,data_service_charge  ,data_gst_amount  ,data_service_charge_with_gst  ,data_narration  ,data_status  ,data_transaction_date  ,virtual_account_id  ,virtual_label  ,virtual_account_number  ,virtual_ifsc_number  ,API_Authorization) values( '" & v_AdminID & "','" & v_AgentID & "','" & v_AgentType & "','" & referenceId & "','" & v_API_Response & "',getdate() , '" & v_event & "','" & vAccountId & "','" & paymentTime & "','" & remitterName & "','" & remitterAccount & "','" & remitterIfsc & "','" & phone & "','" & referenceId & "','online','" & amount & "','0','0','0','" & remarks & "','','" & paymentTime & "','" & vAccountId & "','','" & vAccountNumber & "','" & remitterIfsc & "','" & signature & "') ;"
-            executeDMLQuery(str)
-
             Dim VTransferFromMsg As String = ""
             Dim VTransferToMsg As String = ""
             Dim AmouontType As String = "Deposit"
@@ -306,41 +305,136 @@ Public Class CashfreeInstaCallbkController
             Dim VTransferFrom As String = "Admin"
             Dim VAmtTransTransID As String = v_Transfer_Trans_ID
             Dim VTransferAmt As String = amount
-
+            Dim v_Ret_ID As String
+            Dim QryStr As String
             Dim dbName As String = ""
+            Dim Trns_Id As String
+            Dim rowcount As Integer = 0
+            'Dim rowcount As Integer = 0
 
-            If v_AdminID.Trim.ToUpper = "CMP1045" Then
-                dbName = "boscenter_db"
-            Else
-                dbName = v_AdminID.Trim.ToUpper
-            End If
+            Dim str As String = "insert into boscenter_db.dbo.InstaCollectCallBack(AdminID,AgentID,AgentType,Transfer_Trans_ID,API_Response,RecordDatetime,API_event ,data_id  ,data_created_at  ,data_remitter_full_name  ,data_remitter_account_number  ,data_remitter_account_ifsc  ,data_remitter_phone_number  ,data_unique_transaction_reference  ,data_payment_mode  ,data_amount  ,data_service_charge  ,data_gst_amount  ,data_service_charge_with_gst  ,data_narration  ,data_status  ,data_transaction_date  ,virtual_account_id  ,virtual_label  ,virtual_account_number  ,virtual_ifsc_number  ,API_Authorization) values( '" & v_AdminID & "','" & v_AgentID & "','" & v_AgentType & "','" & referenceId & "','" & v_API_Response & "',getdate() , '" & v_event & "','" & vAccountId & "','" & paymentTime & "','" & remitterName & "','" & remitterAccount & "','" & remitterIfsc & "','" & phone & "','" & referenceId & "','online','" & amount & "','0','0','0','" & remarks & "','','" & paymentTime & "','" & vAccountId & "','','" & vAccountNumber & "','" & remitterIfsc & "','" & signature & "') ;"
+            executeDMLQuery(str)
 
-            Dim v_Ret_ID As String = AddInVar("RegistrationId", " " & dbName.Trim & ".dbo.BOS_Dis_SubDis_Retailer_Registration where easeBuzz_Virtual_Acc_No='" & vAccountId & "'")
+            'caclulation for Super Admin to Admin desposit and Service charges calcution for Admin to Super admin service charges
+            'Dev : Naim Khan
+            'Date : 07-06-2023
+            If v_AgentType.Trim.ToUpper = "ADMIN" Then
 
-            Dim Trns_Id As String = get_AutoNumber_Admin("TransId")
-            Dim QryStr As String = " insert into " & dbName.Trim & ".dbo.BOS_TransferAmountToAgents (Ref_TransID,TransIpAddress,API_TransId,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & v_Ref_TransID.Trim & "','" & GetIPAddress() & "','" & Trns_Id & "','" & Trns_Id & "','Your Wallet is Credited by BOS CENTER PVT LTD - Account Deposit','Your Wallet is Debited by Admin  (" & v_AdminID & ")  - Account Deposit','Deposit','" & "Add By Wallet - Account Deposit" & "',getdate(),'Super Admin','Admin','" & VTransferAmt & "',getdate(),'Admin',getdate() ) ;"
 
-            VTransferFromMsg = "Your Wallet is Debited by " & v_AgentType & " (" & VTransferTo & ")  - Account Deposit"
-            VTransferToMsg = "Your Wallet is Credited by Admin - Account Deposit"
-            QryStr = QryStr & " insert into " & dbName.Trim & ".dbo.BOS_TransferAmountToAgents (Ref_TransID,TransIpAddress,API_TransId,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & v_Ref_TransID.Trim & "','" & GetIPAddress() & "','" & VAmtTransTransID & "','" & VAmtTransTransID & "','" & VTransferToMsg & "','" & VTransferFromMsg & "','" & AmouontType & "','" & "Add By Wallet - Account Deposit" & "',getdate(),'" & VTransferFrom & "','" & VTransferTo & "','" & VTransferAmt & "',getdate(),'Admin',getdate() ) ;"
-            executeDMLQuery(QryStr)
-            'If Not v_Ret_ID.Trim = "" Then
-            If v_event.Trim.ToUpper = "AMOUNT_COLLECTED" Then
-                If VTransferTo.Trim.ToUpper = v_Ret_ID.Trim.ToUpper Then
-                    str = str & QryStr
+                If v_AdminID.Trim.ToUpper = "CMP1045" Then
+                    dbName = "boscenter_db"
+                Else
+                    dbName = v_AdminID.Trim.ToUpper
+                End If
+
+                v_Ret_ID = AddInVar("RegistrationId", " " & dbName.Trim & ".dbo.BOS_Dis_SubDis_Retailer_Registration where easeBuzz_Virtual_Acc_No='" & vAccountId & "'")
+
+                Trns_Id = get_AutoNumber_Admin("TransId")
+                QryStr = " insert into " & dbName.Trim & ".dbo.BOS_TransferAmountToAgents (Ref_TransID,TransIpAddress,API_TransId,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & Trns_Id.Trim & "','" & GetIPAddress() & "','" & Trns_Id & "','" & Trns_Id & "','Your Wallet is Credited by BOS CENTER PVT LTD - Account Deposit','Your Wallet is Debited by Admin  (" & v_AdminID & ")  - Account Deposit','Deposit','" & "Add By Wallet - Account Deposit" & "',getdate(),'Super Admin','Admin','" & VTransferAmt & "',getdate(),'Admin',getdate() ) ;"
+
+                'VTransferFromMsg = "Your Wallet is Debited by " & v_AgentType & " (" & VTransferTo & ")  - Account Deposit"
+                'VTransferToMsg = "Your Wallet is Credited by Admin - Account Deposit"
+                'QryStr = " insert into " & dbName.Trim & ".dbo.BOS_TransferAmountToAgents (Ref_TransID,TransIpAddress,API_TransId,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & v_Ref_TransID.Trim & "','" & GetIPAddress() & "','" & VAmtTransTransID & "','" & VAmtTransTransID & "','" & VTransferToMsg & "','" & VTransferFromMsg & "','" & AmouontType & "','" & "Add By Wallet - Account Deposit" & "',getdate(),'" & VTransferFrom & "','" & VTransferTo & "','" & VTransferAmt & "',getdate(),'Admin',getdate() ) ;"
+                executeDMLQuery(QryStr)
+                'If Not v_Ret_ID.Trim = "" Then
+
+
+                ''////// Service Charge For Admin To SuperAdmin - Start
+                Dim NetAmount As Decimal = 0
+                Dim GstAmt As Decimal = 0
+                Dim Service() As String = AddInVar("convert(nvarchar,ServiceCharge)+':'+ServiceType", "" & dbName & ".dbo.BOS_ProductServiceVsAdmin_SA where AdminID='CMP1045' and Title='UPI PayIn' ").Split(":")
+                If Service.Length > 1 Then
+                    If Service(1).Trim = "Percentage" Then
+                        NetAmount = (CDec(VTransferAmt) * CDec(Service(0))) / 100
+                        GstAmt = ((NetAmount * 18) / 100)
+                        NetAmount = NetAmount + GstAmt
+                    ElseIf Service(1).Trim = "Amount" Then
+                        NetAmount = CDec(Service(0))
+                        GstAmt = ((NetAmount * 18) / 100)
+                        NetAmount = NetAmount + GstAmt
+                    ElseIf Service(1).Trim = "Not Applicable" Then
+                        NetAmount = (2.5)
+                        GstAmt = ((NetAmount * 18) / 100)
+                        NetAmount = NetAmount + GstAmt
+                    End If
+                Else
+                    'After Discussion with Sir netamount1=5
+                    'Again changes after discussion with Sir betamount1=2.5
+                    NetAmount = 2.5
+                    GstAmt = ((NetAmount * 18) / 100)
+                    NetAmount = NetAmount + GstAmt
+                End If
+
+                If NetAmount > 0 Then
+                    Dim RTE As String = "ADMIN"
+                    Dim VFrom As String = "Your Account is debited by ServiceCharge " & NetAmount & " Rs. Due to Add Money - " & RTE & " ."
+                    Dim VTo As String = "Your Account is credited by ServiceCharge " & NetAmount & " Rs. Due to Add Money - " & RTE & " ."
+                    QryStr = "insert into " & dbName & ".dbo.BOS_TransferAmountToAgents (TransIpAddress,API_TransId,Actual_Transaction_Amount,Ref_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & GetIPAddress() & "','" & get_AutoNumber_Admin("TransId") & "','" & VTransferAmt & "', '" & VAmtTransTransID & "','" & VTo & "','" & VFrom & "','Service Charge','Service Charge','" & Now.Date.ToString("MM-dd-yyyy") & "','ADMIN','SUPER ADMIN','" & NetAmount & "',getdate(),'Admin',getdate() ) ;"
+                    executeDMLQuery(QryStr)
+                End If
+
+
+                If v_event.Trim.ToUpper = "AMOUNT_COLLECTED" Then
+                    If VTransferTo.Trim.ToUpper = v_Ret_ID.Trim.ToUpper Then
+                        str = str & QryStr
+                    Else
+                        str = str
+                    End If
                 Else
                     str = str
                 End If
-            Else
-                str = str
-                End If
-            'End If
-            Dim rowcount As Integer = 0
-            rowcount = RecCount(" boscenter_db.dbo.InstaCollectCallBack where data_unique_transaction_reference='" & referenceId & "'")
-            If Not rowcount > 0 Then
-                executeDMLQuery(str)
-            End If
+                'End If
 
+                rowcount = RecCount(" boscenter_db.dbo.InstaCollectCallBack where data_unique_transaction_reference='" & referenceId & "'")
+                If Not rowcount > 0 Then
+                    executeDMLQuery(str)
+                End If
+            Else
+                'Dim VTransferFromMsg As String = ""
+                'Dim VTransferToMsg As String = ""
+                'Dim AmouontType As String = "Deposit"
+                'Dim VTransferTo As String = v_AgentID
+                'Dim VTransferFrom As String = "Admin"
+                'Dim VAmtTransTransID As String = v_Transfer_Trans_ID
+                'Dim VTransferAmt As String = amount
+
+                'Dim dbName As String = ""
+
+                If v_AdminID.Trim.ToUpper = "CMP1045" Then
+                    dbName = "boscenter_db"
+                Else
+                    dbName = v_AdminID.Trim.ToUpper
+                End If
+
+                v_Ret_ID = AddInVar("RegistrationId", " " & dbName.Trim & ".dbo.BOS_Dis_SubDis_Retailer_Registration where easeBuzz_Virtual_Acc_No='" & vAccountId & "'")
+
+                Trns_Id = get_AutoNumber_Admin("TransId")
+                QryStr = " insert into " & dbName.Trim & ".dbo.BOS_TransferAmountToAgents (Ref_TransID,TransIpAddress,API_TransId,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & v_Ref_TransID.Trim & "','" & GetIPAddress() & "','" & Trns_Id & "','" & Trns_Id & "','Your Wallet is Credited by BOS CENTER PVT LTD - Account Deposit','Your Wallet is Debited by Admin  (" & v_AdminID & ")  - Account Deposit','Deposit','" & "Add By Wallet - Account Deposit" & "',getdate(),'Super Admin','Admin','" & VTransferAmt & "',getdate(),'Admin',getdate() ) ;"
+
+                VTransferFromMsg = "Your Wallet is Debited by " & v_AgentType & " (" & VTransferTo & ")  - Account Deposit"
+                VTransferToMsg = "Your Wallet is Credited by Admin - Account Deposit"
+                QryStr = QryStr & " insert into " & dbName.Trim & ".dbo.BOS_TransferAmountToAgents (Ref_TransID,TransIpAddress,API_TransId,Amt_Transfer_TransID,TransferToMsg,TransferFromMsg,Amount_Type,Remark,TransactionDate,TransferFrom,TransferTo,TransferAmt,RecordDateTime,UpdatedBy,UpdatedOn) values( '" & v_Ref_TransID.Trim & "','" & GetIPAddress() & "','" & VAmtTransTransID & "','" & VAmtTransTransID & "','" & VTransferToMsg & "','" & VTransferFromMsg & "','" & AmouontType & "','" & "Add By Wallet - Account Deposit" & "',getdate(),'" & VTransferFrom & "','" & VTransferTo & "','" & VTransferAmt & "',getdate(),'Admin',getdate() ) ;"
+                executeDMLQuery(QryStr)
+
+
+
+                'If Not v_Ret_ID.Trim = "" Then
+                If v_event.Trim.ToUpper = "AMOUNT_COLLECTED" Then
+                    If VTransferTo.Trim.ToUpper = v_Ret_ID.Trim.ToUpper Then
+                        str = str & QryStr
+                    Else
+                        str = str
+                    End If
+                Else
+                    str = str
+                End If
+                'End If
+
+                rowcount = RecCount(" boscenter_db.dbo.InstaCollectCallBack where data_unique_transaction_reference='" & referenceId & "'")
+                If Not rowcount > 0 Then
+                    executeDMLQuery(str)
+                End If
+            End If
             Return getCallbck()
 
             Exit Function
