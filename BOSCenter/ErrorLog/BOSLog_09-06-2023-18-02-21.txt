@@ -1,0 +1,5 @@
+-------------------START-------------6/9/2023 6:02:21 PM
+Page :
+Conversion from string "RECH" to type 'Double' is not valid.StackTrace :    at Microsoft.VisualBasic.CompilerServices.Conversions.ToDouble(String Value, NumberFormatInfo NumberFormat)
+   at BOSCenter.BOS_API_Wise_Report.Bind() in D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\Admin\BOS_API_Wise_Report.aspx.vb:line 1567
+-------------------END-------------6/9/2023 6:02:21 PM

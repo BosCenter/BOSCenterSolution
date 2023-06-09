@@ -440,3 +440,85 @@ C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\obj\Debug\BOSCen
 C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\obj\Debug\BOSCenter.dll
 C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\obj\Debug\BOSCenter.xml
 C:\Office Work\BOS\Live Server BOSCENTER\BOS Live\BOS\BOSCenter\obj\Debug\BOSCenter.pdb
+D:\BosGit\BOS\BOS\BOSCenter\bin\BOSCenter.dll.config
+D:\BosGit\BOS\BOS\BOSCenter\bin\BOSCenter.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\BOSCenter.pdb
+D:\BosGit\BOS\BOS\BOSCenter\bin\BOSCenter.xml
+D:\BosGit\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\Octokit.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Net.Http.Formatting.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Helpers.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Http.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Http.WebHost.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Mvc.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Razor.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.WebPages.Deployment.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.WebPages.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.WebPages.Razor.dll
+D:\BosGit\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\BosGit\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.xml
+D:\BosGit\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.xml
+D:\BosGit\BOS\BOS\BOSCenter\bin\Octokit.xml
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Net.Http.Formatting.xml
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Helpers.xml
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Http.xml
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Http.WebHost.xml
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Mvc.xml
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Razor.xml
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.WebPages.xml
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.WebPages.Deployment.xml
+D:\BosGit\BOS\BOS\BOSCenter\bin\System.Web.WebPages.Razor.xml
+D:\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.AssemblyReference.cache
+D:\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+D:\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.cache
+D:\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CoreCompileInputs.cache
+D:\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CopyComplete
+D:\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+D:\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+D:\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.pdb
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\BOSCenter.dll.config
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\BOSCenter.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\BOSCenter.pdb
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\BOSCenter.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\Microsoft.Web.Infrastructure.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\Octokit.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Net.Http.Formatting.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Helpers.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Http.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Http.WebHost.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Mvc.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Razor.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.WebPages.Deployment.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.WebPages.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.WebPages.Razor.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Logging.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\Microsoft.IdentityModel.Tokens.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\Octokit.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Net.Http.Formatting.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Helpers.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Http.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Http.WebHost.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Mvc.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.Razor.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.WebPages.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.WebPages.Deployment.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\bin\System.Web.WebPages.Razor.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.AssemblyReference.cache
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.Resources.resources
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.GenerateResource.cache
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CoreCompileInputs.cache
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.vbproj.CopyComplete
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.dll
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.xml
+D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\obj\Debug\BOSCenter.pdb

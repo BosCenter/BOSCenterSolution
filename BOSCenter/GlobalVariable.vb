@@ -15,9 +15,7 @@ Imports System.Security.Cryptography
 Imports RestSharp
 Imports System.Data.OleDb
 Imports Newtonsoft.Json.Linq
-
-
-
+Imports System.Data.SqlClient
 
 Public Class GlobalVariable
 
@@ -26,9 +24,36 @@ Public Class GlobalVariable
     Public FL_AdminLogin As EmvFuncLibForWebVBNET.WebVBDOTNET
 
     Public OrderIDInfo As New System.Web.HttpCookie("OrderIDInfo")
-    Public key As String = "b14ca5898a4e4133bbce2ea2315a1916"
-
+    Public key As String = EncryptionKey()
+    Public con1 As SqlConnection
     ' Public GDS As EmvFuncLibForWebVBNET.WebVBDOTNET
+    Public Function EncryptionKey() As String   'done
+        Dim KeyValue As String = ""
+
+        Try
+            '"Server=103.35.121.85,5022;DataBase=BosCenter_DB;user id=sa;password=Boscenter@123"
+
+            Dim sConnection As String = "Server=103.155.85.146;DataBase=BosCenter_DB;user id=sa;password=Target@123;Connection Timeout=30;Connection Lifetime=0;Min Pool Size=0;Max Pool Size=200;Pooling=true".ToString()
+            Using Con As New SqlConnection(sConnection)
+                Con.Open()
+                Using Com As New SqlCommand("Select KeyValue From BOS_Security where KeyStatus='Active'", Con)
+                    Using RDR = Com.ExecuteReader()
+                        If RDR.HasRows Then
+                            Do While RDR.Read
+                                KeyValue = RDR.Item("KeyValue").ToString()
+                            Loop
+                        End If
+                    End Using
+                End Using
+                Con.Close()
+            End Using
+        Catch ex As Exception
+            logerrors(ex.Message + "StackTrace : " + ex.StackTrace)
+        End Try
+        Return KeyValue
+    End Function
+
+
 
     Public Function sh1Encryption() As String
         Try
@@ -264,27 +289,27 @@ Public Class GlobalVariable
             '"103.155.85.146", "Target@123",
             '"103.216.146.185", "F8ze830m",
 
-            'If ConnectionFrom.Trim.ToUpper = "ADMIN" Then
-            '    FL = New EmvFuncLibForWebVBNET.WebVBDOTNET(get_SuperAdmin_SessionVariables("DataBaseName", HttpContext.Current.Request, HttpContext.Current.Response).Trim, "S", "103.155.85.146", "Target@123", "sa")
-            '    FL_AdminLogin = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.155.85.146", "Target@123", "sa")
-            'ElseIf ConnectionFrom.Trim.ToUpper = "SUPERADMIN" Then
-            '    FL = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.155.85.146", "Target@123", "sa")
-            '    FL_AdminLogin = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.155.85.146", "Target@123", "sa")
-            'ElseIf ConnectionFrom.Trim.ToUpper = "Webservice".Trim.ToUpper Then
-            '    FL_WebService = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.155.85.146", "Target@123", "sa")
-            'End If
+            If ConnectionFrom.Trim.ToUpper = "ADMIN" Then
+                FL = New EmvFuncLibForWebVBNET.WebVBDOTNET(get_SuperAdmin_SessionVariables("DataBaseName", HttpContext.Current.Request, HttpContext.Current.Response).Trim, "S", "103.155.85.146", "Target@123", "sa")
+                FL_AdminLogin = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.155.85.146", "Target@123", "sa")
+            ElseIf ConnectionFrom.Trim.ToUpper = "SUPERADMIN" Then
+                FL = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.155.85.146", "Target@123", "sa")
+                FL_AdminLogin = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.155.85.146", "Target@123", "sa")
+            ElseIf ConnectionFrom.Trim.ToUpper = "Webservice".Trim.ToUpper Then
+                FL_WebService = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.155.85.146", "Target@123", "sa")
+            End If
 
             'BosCenter_DB
             'New Server Prod
-            If ConnectionFrom.Trim.ToUpper = "ADMIN" Then
-                FL = New EmvFuncLibForWebVBNET.WebVBDOTNET(get_SuperAdmin_SessionVariables("DataBaseName", HttpContext.Current.Request, HttpContext.Current.Response).Trim, "S", "103.35.121.85,5022", "Boscenter@123", "sa")
-                FL_AdminLogin = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.35.121.85,5022", "Boscenter@123", "sa")
-            ElseIf ConnectionFrom.Trim.ToUpper = "SUPERADMIN" Then
-                FL = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.35.121.85,5022", "Boscenter@123", "sa")
-                FL_AdminLogin = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.35.121.85,5022", "Boscenter@123", "sa")
-            ElseIf ConnectionFrom.Trim.ToUpper = "Webservice".Trim.ToUpper Then
-                FL_WebService = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.35.121.85,5022", "Boscenter@123", "sa")
-            End If
+            'If ConnectionFrom.Trim.ToUpper = "ADMIN" Then
+            '    FL = New EmvFuncLibForWebVBNET.WebVBDOTNET(get_SuperAdmin_SessionVariables("DataBaseName", HttpContext.Current.Request, HttpContext.Current.Response).Trim, "S", "103.35.121.85,5022", "Boscenter@123", "sa")
+            '    FL_AdminLogin = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.35.121.85,5022", "Boscenter@123", "sa")
+            'ElseIf ConnectionFrom.Trim.ToUpper = "SUPERADMIN" Then
+            '    FL = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.35.121.85,5022", "Boscenter@123", "sa")
+            '    FL_AdminLogin = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.35.121.85,5022", "Boscenter@123", "sa")
+            'ElseIf ConnectionFrom.Trim.ToUpper = "Webservice".Trim.ToUpper Then
+            '    FL_WebService = New EmvFuncLibForWebVBNET.WebVBDOTNET("BosCenter_DB", "S", "103.35.121.85,5022", "Boscenter@123", "sa")
+            'End If
 
         Catch ex As Exception
             logerrors(ex.Message + "StackTrace : " + ex.StackTrace)

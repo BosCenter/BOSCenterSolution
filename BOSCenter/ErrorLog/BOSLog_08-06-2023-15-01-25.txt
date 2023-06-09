@@ -1,0 +1,12 @@
+-------------------START-------------6/8/2023 3:01:25 PM
+Page :
+Index was outside the bounds of the array.StackTrace :    at BOSCenter.GlobalVariable.returnDateMonthWiseWithDateChecking(String daywiseDate) in D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\GlobalVariable.vb:line 4262
+-------------------END-------------6/8/2023 3:01:25 PM
+-------------------START-------------6/8/2023 3:01:25 PM
+Page :
+Index was outside the bounds of the array.StackTrace :    at BOSCenter.GlobalVariable.returnDateMonthWiseWithDateChecking(String daywiseDate) in D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\GlobalVariable.vb:line 4262
+-------------------END-------------6/8/2023 3:01:25 PM
+-------------------START-------------6/8/2023 3:01:25 PM
+Page :
+Index was outside the bounds of the array.StackTrace :    at BOSCenter.GlobalVariable.returnDateMonthWiseWithDateChecking(String daywiseDate) in D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\GlobalVariable.vb:line 4262
+-------------------END-------------6/8/2023 3:01:25 PM

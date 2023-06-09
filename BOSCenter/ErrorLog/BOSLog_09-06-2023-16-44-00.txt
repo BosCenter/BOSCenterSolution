@@ -1,0 +1,8 @@
+-------------------START-------------6/9/2023 4:44:00 PM
+Page :
+Thread was being aborted.StackTrace :    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at BOSCenter.SuperAdmin.MainMenu_Click(Object sender, EventArgs e) in D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\Admin\SuperAdmin.Master.vb:line 483
+-------------------END-------------6/9/2023 4:44:00 PM

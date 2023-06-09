@@ -1262,7 +1262,7 @@ Public Class _Default
                                 txtCompanyCode.Enabled = True
                             End If
                         Else
-                            txtCompanyCode.Text = "CMP1085"
+                            txtCompanyCode.Text = "CMP1045"
                             txtCompanyCode.Enabled = True
                         End If
                         txtCompanyCode.CssClass = "form-control"

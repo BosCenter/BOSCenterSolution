@@ -1,0 +1,8 @@
+-------------------START-------------03-06-2023 15:13:08
+Page :
+Thread was being aborted.StackTrace :    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at BOSCenter._Default.btnSubmit_Click(Object sender, EventArgs e) in D:\BosGit\BOS\BOS\BOSCenter\Default.aspx.vb:line 451
+-------------------END-------------03-06-2023 15:13:08

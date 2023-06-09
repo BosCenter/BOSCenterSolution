@@ -1,0 +1,23 @@
+﻿----Create BOS Security table for encryption key-----
+
+IF  NOT EXISTS (SELECT * FROM sys.objects 
+WHERE object_id = OBJECT_ID(N'[dbo].[BOS_Security]') AND type in (N'U'))
+BEGIN
+create table BOS_Security
+(
+RID int primary key identity,
+KeyName varchar(45),
+KeyValue varchar(200),
+KeyStatus varchar(45)
+)
+END
+ELSE SELECT 'Exists BOS_Security table' as Result
+GO
+BEGIN
+IF NOT EXISTS (SELECT * FROM BOS_Security)
+BEGIN
+Insert into BOS_Security (KeyName,KeyValue,KeyStatus) values('Key','b14ca5898a4e4133bbce2ea2315a1916','Active')
+END
+ELSE SELECT 'Exists Record' as Result
+END
+

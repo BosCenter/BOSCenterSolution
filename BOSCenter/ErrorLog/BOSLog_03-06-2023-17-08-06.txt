@@ -1,0 +1,5 @@
+-------------------START-------------03-06-2023 17:08:06
+Page :
+Conversion from string "6/30/2023" to type 'Date' is not valid.StackTrace :    at Microsoft.VisualBasic.CompilerServices.Conversions.ToDate(String Value)
+   at BOSCenter.SAM_DashBoard.Page_Load(Object sender, EventArgs e) in D:\BosGit\BOS\BOS\BOSCenter\Admin\SAM_DashBoard.aspx.vb:line 147
+-------------------END-------------03-06-2023 17:08:06

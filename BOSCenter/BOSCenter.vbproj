@@ -838,6 +838,7 @@
     <Content Include="kmLogin.aspx" />
     <Content Include="PaytsLogn.html" />
     <Content Include="publicSevaKendra.aspx" />
+    <Content Include="SqlScript\TextFile1.txt" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="ProductImages\Scripts\jquery-1.4.1-vsdoc.js" />
@@ -2405,6 +2406,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

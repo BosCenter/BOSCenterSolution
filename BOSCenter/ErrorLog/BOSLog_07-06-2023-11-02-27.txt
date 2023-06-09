@@ -1,0 +1,8 @@
+-------------------START-------------6/7/2023 11:02:27 AM
+Page :
+Thread was being aborted.StackTrace :    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at BOSCenter.Add_Money_Handler_Cancel.btnRedirect_Click(Object sender, EventArgs e) in D:\BOS Projects\BosGit\BOS\BOS\BOSCenter\Admin\Add_Money_Handler_Cancel.aspx.vb:line 86
+-------------------END-------------6/7/2023 11:02:27 AM

@@ -1,13 +1,13 @@
 {
-  "amount": "1",
+  "amount": "10",
   "creditRefNo": "NA",
   "email": "techsupport@bos.center",
   "event": "AMOUNT_COLLECTED",
   "isVpa": "1",
-  "paymentTime": "2023-04-12 18:30:58",
+  "paymentTime": "2023-06-07 01:30:58",
   "phone": "8181898901",
   "referenceId": "106443563",
-  "remarks": "NA",
+  "remarks": "TestNaim",
   "remitterAccount": "NA",
   "remitterIfsc": "NA",
   "remitterName": "NAIM KHAN",
@@ -15,6 +15,6 @@
   "signature": "hx722XSoTtX8uTGt6Zy7hJeVnhBQ5FlllaPocxFGtEw=",
   "transferType": "UPI",
   "utr": "310232190777",
-  "vAccountId": "CMP1045ZBOS1886",
-  "virtualVpaId": "cfmer.1019cmp1045zbos1886@icici"
+  "vAccountId": "CMP1045ZADMIN",
+  "virtualVpaId": "cfmer.1019CMP1045ZADMIN"
 }
