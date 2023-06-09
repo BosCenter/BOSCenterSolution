@@ -198,7 +198,7 @@ Public Class BOS_AddMoneyToWallet
                 Exit Sub
             End If
 
-            If Not (CInt(txtAmount.Text.Trim) >= 100 And CInt(txtAmount.Text.Trim) <= 100000) Then
+            If Not (CInt(txtAmount.Text.Trim) >= 1 And CInt(txtAmount.Text.Trim) <= 100000) Then
                 lblError.Text = "Please Enter Amount Between 100 To 100000"
                 lblError.CssClass = "errorlabels"
                 txtAmount.Focus()
